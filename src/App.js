@@ -13,6 +13,7 @@ import ListaCategorias from "./components/adm-crud/ListaCategorias";
 import ListaNoticias from "./components/adm-crud/ListaNoticias";
 import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
 import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
+import Login from "./components/principal/Login";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route exact path="/suscripcion-form">
           <FormSuscripcion></FormSuscripcion>
+        </Route>
+        <Route exact path="/login">
+          <Login></Login>
         </Route>
         <Route exact path="/adm-inicio">
           <InicioAdm></InicioAdm>

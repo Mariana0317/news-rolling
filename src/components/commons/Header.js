@@ -10,6 +10,7 @@ import {
   faCameraRetro,
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -38,12 +39,12 @@ const Header = () => {
                 <FontAwesomeIcon icon={faCameraRetro} />
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link className="mx-5">
+            <NavLink className="mx-5" exact={true} to="/login" variant="dark" className="nav-link" activeClassName="active">
               <FontAwesomeIcon icon={faUser} />
-            </Nav.Link>
-            <Nav.Link  className="mx-5">
+            </NavLink>
+            <NavLink  className="mx-5" exact={true} to="/suscripcion-form" variant="secondary" className="nav-link" activeClassName="active">
               <Button variant="outline-dark">Suscribirse</Button>
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
