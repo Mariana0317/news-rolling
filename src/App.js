@@ -1,25 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from "./components/commons/Header";
+import Footer from "./components/commons/Footer";
+import Inicio from "./components/principal/Inicio";
+import CategoriasNoticias from "./components/noticias/CategoriasNoticias";
+import DetalleNoticia from "./components/noticias/DetalleNoticia";
+import FormSuscripcion from "./components/principal/FormSuscripcion";
+import InicioAdm from "./components/principal/InicioAdm";
+import ListaCategorias from "./components/adm-crud/ListaCategorias";
+import ListaNoticias from "./components/adm-crud/ListaNoticias";
+import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
+import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header></Header>
+      <Switch>
+        <Route exact path="/">
+          <Inicio></Inicio>
+        </Route>
+        <Route exact path="/categoria-noticias">
+          <CategoriasNoticias></CategoriasNoticias>
+        </Route>
+        <Route exact path="/detalle-noticia">
+          <DetalleNoticia></DetalleNoticia>
+        </Route>
+        <Route exact path="/suscripcion-form">
+          <FormSuscripcion></FormSuscripcion>
+        </Route>
+        <Route exact path="/adm-inicio">
+          <InicioAdm></InicioAdm>
+        </Route>
+        <Route exact path="/adm-inicio/listacategoria">
+          <ListaCategorias></ListaCategorias>
+        </Route>
+        <Route exact path="/adm-inicio/listanoticias">
+          <ListaNoticias></ListaNoticias>
+        </Route>
+        <Route exact path="/adm-inicio/listacategoria/nueva">
+          <NuevaCategoria></NuevaCategoria>
+        </Route>
+        <Route exact path="/adm-inicio/listanoticias/nuevanoticia">
+          <NuevaNoticia></NuevaNoticia>
+        </Route>
+      </Switch>
+      <Footer></Footer>
+    </Router>
   );
 }
 
