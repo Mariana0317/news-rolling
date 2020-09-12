@@ -1,9 +1,13 @@
 import React from 'react';
+import NoticiasDestacadas2 from './noticiasDestacadas/NoticiasDestacadas2';
 
 const Inicio = () => {
     return (
         <div>
-            <h1>Principal usuario</h1>
+            <NoticiasDestacadas2></NoticiasDestacadas2>
+            <section className="container">
+                
+            </section>
         </div>
     );
 };
