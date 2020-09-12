@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -15,6 +15,22 @@ import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
 import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
 
 function App() {
+  const [noticias, setNoticias] = useState([]);
+
+  useEffect(() => {
+    consultarAPI();
+  },[]);
+
+  const consultarAPI = async () => {
+    try {
+      const respuesta = await fetch("http://localhost:4000/noticias");
+      const resultado = await respuesta.json();
+      console.log(resultado);
+      setNoticias(resultado); //Quitar despues para usar bd
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Router>
@@ -39,7 +55,7 @@ function App() {
           <ListaCategorias></ListaCategorias>
         </Route>
         <Route exact path="/adm-inicio/listanoticias">
-          <ListaNoticias></ListaNoticias>
+          <ListaNoticias noticias={noticias}></ListaNoticias>
         </Route>
         <Route exact path="/adm-inicio/listacategoria/nueva">
           <NuevaCategoria></NuevaCategoria>
