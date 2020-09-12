@@ -1,0 +1,190 @@
+[
+    {
+       "titulo": "Tucumán tuvo el peor día desde que comenzó la pandemia: sumó 480 casos de covid-19",
+       "texto": "Tucumán sumó 480 nuevos contagios de covid-19 en las ultimas 24 horas, la cifra más alta desde que comenzó la pandemia, y llegó a los 5.820 casos confirmados, informó el Ministerio de Salud de la Provincia.",
+       "categoria": "actualidad",
+       "img":"https://img.lagaceta.com.ar/fotos/notas/2020/09/10/la-gaceta-foto-de-anala-jaramillo-859955-185429.jpg",
+        "id":"01"
+
+    },
+
+    {
+        "titulo": "Manzur y otros 18 gobernadores respaldaron la decisión del Presidente sobre la coparticipación",
+        "texto": "Necesitamos reabrir el diálogo sobre la distribución de recursos para evitar cualquier tipo de favoritismo en distribución de fondos o proyectos",
+        "categoria": "politica",
+        "img":"https://img.lagaceta.com.ar/fotos/notas/2020/09/09/presidencia-de-la-nacin-859809-195240.jpg",
+        "id":"02"
+ 
+ 
+     },
+
+    { "titulo": " Julio Buffarini le avisó a Boca que no renovará su contrato: ¿crece la chance de sumar a Fabricio Bustos?",
+     "texto": "El lateral cordobés tendría decidido no extender su vínculo en la Ribera y se mantiene latente la posibilidad del trueque con Independiente con Agustín Rossi y Marcone involucrados ",
+     "categoria": "deportes",
+     "img":"https://www.infobae.com/new-resizer/PC2Jq8Ld9cSa3LM7ohNrHOntLUQ=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/IYAA7AJOANHKRFTSR36E43AGMM.jpg ",
+     "id":"03" 
+
+    },
+
+    { "titulo": " Exclusivo: cuáles son las proyecciones del borrador del Presupuesto 2021 para crecimiento, inflación y cotización del dólar",
+        "texto": "El Gobierno enviará el martes próximo el proyecto de ley al Congreso. Las principales estimaciones del gobierno, según un documento de trabajo al que accedió Infobae ",
+        "categoria": "economia",
+        "img":"https://www.infobae.com/new-resizer/GVSCX3D10xycaOcXy8fgw15WRBg=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/P46MBKQGPBHP7ISLFR4IGONWJY.jpg ",
+        "id":"04" 
+   
+       },
+
+       { "titulo": "Rodríguez Larreta afina la estrategia judicial de cara a la Corte y el vínculo con la Casa Rosada pende de un hilo ",
+        "texto": "Fue Emiliano Yacobitti, que participó del almuerzo convocado de urgencia en la sede de Uspallata, ayer al mediodía, uno de los más vehementes. ",
+        "categoria": "politica",
+        "img":"https://www.infobae.com/new-resizer/J0crunzsxYl-IKfwcowSEsnY77Q=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/S6PQQMFIVBAL7LLVN5KYARKFQM.jpg",
+        "id":"05" 
+    },
+
+    { "titulo": " El Turismo Carretera vuelve a las pistas y por partida doble: los protocolos y todo lo que hay que saber del operativo retorno",
+        "texto": " El automovilismo nacional volverá a encender sus motores en medio de la pandemia de coronavirus. La primera categoría en retornar es el Turismo Carretera. Sale a pista a partir de hoy en el Autódromo de San Nicolás, en la Provincia de Buenos Aires.",
+        "categoria": "deportes",
+        "img":"https://www.infobae.com/new-resizer/tU3gDe9YZUQ4T9GvINVRLfdRCxY=/768x512/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/BFSRREQAQRDW5FJQ6XGV4ZI2DA.jpg",
+        "id":"06" 
+    },
+
+    { "titulo": "El enigma de Hamilton, la chance de Mick Schumacher y quién acompañará a Verstappen: así está el mercado de pases de la Fórmula 1  ",
+        "texto": "El 2021 se avecina con muchas modificaciones en el Fórmula 1. Dos escuderías cambiarán su nombre y habrá un profundo movimiento de pilotos. El mercado de pases todavía tiene nueve butacas disponibles y los rumores se disparan a toda velocidad. ",
+        "categoria": "deportes",
+        "img":"https://www.infobae.com/new-resizer/dWtVJTLVNA9GuwXg1UzURgEsXGI=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/JG4ANMJXPNCQFLNBA22LU5IOLI.jpg",
+        "id":"07" 
+    },
+
+    { "titulo": "La regla del silencio incómodo que aplican y aconsejan seguir mentes brillantes como Tim Cook y Jeff Bezos ",
+        "texto": "La práctica también es empleada por el CEO de Tesla y SpaceX, Elon Musk (que en los últimos meses trepó al podio de los más ricos del mundo), y era aplicada por el fallecido Steve Jobs, aclamado ex líder de Apple ",
+        "categoria": "tecnologia",
+        "img":"https://www.infobae.com/new-resizer/C7LX_10xc8CtzgeaA3Yer5xTdL0=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/3WYB2VAZNRE7NFX5HXMY6UW4SA.jpg",
+        "id":"08" 
+    },
+
+    { "titulo": "El primer video que muestra cómo son los enfrentamientos entre India y China en el Himalaya ",
+        "texto": " Golpes de puño, palazos, empujones. Pese a que ambos bandos estaban armados con sus respectivos rifles, uno de los primeros choques que tuvieron fuerzas militares indias y chinas en el disputado borde que separa ambas naciones",
+        "categoria": "actualidad",
+        "img":"https://www.infobae.com/new-resizer/n-rKCknqY5YHwyzSibyAzBNwlvY=/768x512/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/WSCZGVOACJFXTEJOF6VBITTGSU.jpg",
+        "id":"09" 
+    },
+
+    { "titulo": " El “error” de un comandante impidió la captura del “Elvis”, presunto líder de la Unión Tepito",
+        "texto": "Para detener a una cabecilla del narcotráfico, las autoridades mexicanas se pueden llevar meses, incluso años, en encontrar el momento exacto en el que este se encuentre vulnerable. ",
+        "categoria": "actualidad",
+        "img":"https://www.infobae.com/new-resizer/Fju-RgpN99s6L37qQvkhKwgEnXI=/768x512/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/GQCCAKR4NFDGTKZJFPXIQYXFF4.jpg",
+        "id":"10" 
+    },
+
+    { "titulo": "Una tribu asesinó de un flechazo a un funcionario brasileño en el Amazonas: era un defensor de la causa indígena ",
+        "texto": " Un reconocido indigenista brasileño murió al ser alcanzado por una flecha aparentemente disparada por una tribu aislada de la selva amazónica, informaron el jueves funcionarios y un periodista de la región",
+        "categoria": "actualidad",
+        "img":"https://www.infobae.com/new-resizer/TZkt2WlqQBrms3JALAFAbP7NZV0=/768x512/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/JZB5HPGHB4XNUWQPNINZPCPB5E.jpg",
+        "id":"11" 
+    },
+
+    { "titulo": "Lo que los gatos quieren”: el libro del veterinario estrella de Japón que explica por qué maúllan y mucho más ",
+        "texto": " En 2019 unos 16.000 gatos visitaron el Centro Médico Felino de Tokio, que fundó y dirige Yuki Hattori, para una consulta; muchas personas llegaban también desde el extranjero",
+        "categoria": "actualidad",
+        "img":"https://www.infobae.com/new-resizer/fKnKdE6EY8W3UekVzzGuX5KIH1M=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/BGEUBV4UJVCYBH2CWLN6KKJK3E.jpg",
+        "id":"12" 
+    },
+
+    { "titulo": "Leonardo DiCaprio con su novia argentina en la playa, Sarah Jessica Parker de compras",
+        "texto": "Leonardo DiCaprio y su novia argentina, Camila Morrone, disfrutan de sus vacaciones en las playas de Malibú, California.",
+        "categoria": "espectaculos",
+        "img":"https://www.infobae.com/new-resizer/F7olTI2tI9GuNYLjlptg9mVqpy0=/768x768/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/TN6D72JZTBCFNKIY52ERXNZPOQ.jpg",
+        "id":"13" 
+    },
+
+    { "titulo": "VF7, a solas con Teleshow: su relación con la fama a sus 13 años, sus ídolos y el regalo más caro que le hicieron ",
+        "texto": " Valeria escribe sus canciones, cuenta sus historias, las de una preadolescente que puede poner en música lo que le pasa a ella, lo que le pasa por al lado. Con ese repertorio llegó hace dos meses a tocar en El Coliseo de Puerto Rico",
+        "categoria": "espectaculos",
+        "img":"https://www.infobae.com/new-resizer/fOtl9Kg7IJ9aQRixDXq5G8GRp7o=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/DWP6GETLNFFAZOUAMFHHA52RLE.jpg",
+        "id":"14" 
+    },
+
+    { "titulo": "Tom Hanks regresó a Australia seis meses después de haberse contagiado de COVID-19 ",
+        "texto": "Tom Hanks retomará la aventura que hace meses tuvo que poner en pausa. Después de seis meses de haber dado positivo a la prueba de coronavirus, el actor regresó a Australia ",
+        "categoria": "espectaculos",
+        "img":"https://www.infobae.com/new-resizer/ULutmLYmxFSrHza0KkRfiAmS41Y=/768x512/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/TIHPPHBZHFEBROGSRFEMTACCCA.jpg",
+        "id":"15" 
+    },
+
+    { "titulo": "La madre de Luis Miguel está viva y tiene dos hijos más: ex director de la Interpol México ",
+        "texto": "La vida de Luis Miguel esconde muchos enigmas: entre ellos, lo que ocurrió con el paradero de su madre, Marcela Basteri, pues desde 1986 no se le ve, al menos dando alguna muestra de su existencia ante la prensa ",
+        "categoria": "espectaculos",
+        "img":"https://www.infobae.com/new-resizer/Pdq7VpvEUypwBk_ljHxqBily1os=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/SFGJLGEG2VCZPG52YCIHOP2YVI.jpg",
+        "id":"16" 
+    },
+
+    { "titulo": "Zac Efron tiene novia y podría ahora mudarse a Australia ",
+        "texto": " Parece ser un gran año para Zac Efron. Primero, el actor estrenó en julio su serie documental “Con los pies sobre la tierra”, y, ahora, parece que su vida personal ha ido floreciendo muy bien",
+        "categoria": "espectaculos",
+        "img":"https://www.infobae.com/new-resizer/-7IQbvC8Mv9FDaghzmZNTW7ll-g=/768x341/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/J7ATLYTU4ZCHFBVD5MXWAXI464.jpg",
+        "id":"17" 
+    },
+
+    { "titulo": "Cuáles son los celulares que se actualizarán a Android 11 ",
+        "texto": "Android 11, la última versión del sistema operativo para móviles de Google, ya está disponible",
+        "categoria": "tecnologia",
+        "img":"https://www.infobae.com/new-resizer/18NNxST6TydBN9ZddFu7yK8BXy0=/768x512/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/2JSDDDUB3VE3DMNVV3MLXQA6PA.jpg",
+        "id":"18" 
+    },
+
+    { "titulo": "Crearon un barbijo electrónico inteligente que purifica el aire ",
+        "texto": "Se trata de un barbijo electrónico que tiene como función bloquear la mayoría de la materia dañina en el aire, incluidos virus, bacterias y alérgenos comunes como el polen ",
+        "categoria": "tecnologia",
+        "img":"https://www.infobae.com/new-resizer/-vHvHUUJnFzqlnxyuuHrO4lrlOQ=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/BDISGCHG7RG4BFBNEVZQSN3LDA.jpg",
+        "id":"19" 
+    },
+
+    { "titulo": "El asombroso artículo que escribió un robot en un diario británico para llevar tranquilidad a los humanos ",
+        "texto": "A finales de julio, la compañía especializada en inteligencia artificial OpenAI lanzó GPT-3",
+        "categoria": "tecnologia",
+        "img":"https://www.infobae.com/new-resizer/svvGi1tnRTPj3pIk_elPbaYw7Ag=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OQ6IYZCYVNDTHBRYVMAG5DDDDA.jpg",
+        "id":"20" 
+    },
+
+    { "titulo": "US Open: Azarenka dejó sin récord a Serena Williams y jugará la final ante Naomi Osaka ",
+        "texto": "Victoria Azarenka dejó sin récord a Serena Williams, 23 veces ganadora de un Grand Slam, y avanzó a la final del US Open. La bielorrusa, que se ha coronado en dos ocasiones en majors, ",
+        "categoria": "deportes",
+        "img":"https://www.infobae.com/new-resizer/XRBro50bKBhXuBx8DIfmF2wvoLA=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/RGNI5M5NAFFRRH3QJDFBZGOHPI.jpg",
+        "id":"21" 
+    },
+
+    { "titulo": "Santiago Cafiero: Hace mucho que no hablábamos con el gobierno porteño sobre la coparticipación ",
+        "texto": "El jefe de Gabinete reconoció que avanzaron con la poda de recursos sin discutirlo con las autoridades de la Ciudad de Buenos Aires.",
+        "categoria": "politica",
+        "img":"https://www.infobae.com/new-resizer/M6Wps_XxtPpj87NmtMN-p8ua1Qo=/768x512/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/77NZQ2N6JBG7VAXRAHWL625HPM.jpg",
+        "id":"22" 
+    },
+
+    { "titulo": "El Gobierno desistió de la candidatura de Gustavo Béliz para el BID y se abstendrá en la votación que designará al estadounidense Mauricio Claver ",
+        "texto": "Será la primera vez que el organismo internacional será presidido por un norteamericano ",
+        "categoria": "politica",
+        "img":"https://www.infobae.com/new-resizer/YWSxYYWegvodo9G-XVd5WlHN4gY=/768x512/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/6X4ACETPNVF77GU3HZO2J6KKLI.jpg",
+        "id":"23" 
+    },
+
+    { "titulo": "El Gobierno anunció que regulará a las empresas de aplicaciones de delivery ",
+        "texto": "El ministro Matías Kulfas afirmó que buscan que cumplan con reglas de juego “equitativas” con los restaurantes y bares en todo el país ",
+        "categoria": "economia",
+        "img":"https://www.infobae.com/new-resizer/1M_agxKF2Jh5lazEtTjB7FG49x4=/768x512/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/VCVKMHVWMWKGMVAD7CUYWX3RKI.jpg",
+        "id":"24" 
+    },
+
+    { "titulo": "IFE Anses: quiénes cobran este viernes el bono de $ 10.000 ",
+        "texto": "También es día de pago de Asignación Universal por Hijo y por Embarazo, Asignaciones Familiares, jubilaciones, pensiones, Programa Hogar y Becas Progresar ",
+        "categoria": "economia",
+        "img":"https://www.infobae.com/new-resizer/sKnGsckOjoJNlXC7N4XPndKKoBU=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/SZ4SXBUUXNEP5ILKGL4XS3XSRY.jpg",
+        "id":"25" 
+    },
+
+    { "titulo": "Las 3 claves que tiene en cuenta Wall Street para que el riesgo país se ubique por debajo de los 1.000 puntos ",
+        "texto": "Analistas de bancos de inversión en Nueva York consideran que ese nivel es demasiado elevado para un país ",
+        "categoria": "economia",
+        "img":"https://www.infobae.com/new-resizer/StQdToAd4A6CATxzd-pPoNG9Sj0=/768x512/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/6WESKSBCYFETJL43PBEOA7C3KY.jpg",
+        "id":"26" 
+    }
+]
