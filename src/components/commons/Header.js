@@ -4,8 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 //import { Nav.Link } from "react-router-dom";
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -17,14 +17,11 @@ const Header = () => {
   return (
     <div className="">
       <Jumbotron fluid>
-  <Container>
-  <h1 className="text-center my-5">Rolling News</h1>
-    <p>
-     
-    </p>
-  </Container>
-</Jumbotron>
-     
+        <Container>
+          <h1 className="text-center my-5">Rolling News</h1>
+          <p></p>
+        </Container>
+      </Jumbotron>
 
       <Navbar bg="light" expand="lg" className=" ">
         <Navbar.Brand href="#home">Logo</Navbar.Brand>
@@ -51,7 +48,7 @@ const Header = () => {
             <Nav.Link className="">
               <FontAwesomeIcon icon={faUser} />
             </Nav.Link>
-            <Nav.Link  className="">
+            <Nav.Link className="">
               <Button variant="outline-dark">Suscribirse</Button>
             </Nav.Link>
           </Nav>
