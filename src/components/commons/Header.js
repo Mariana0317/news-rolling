@@ -24,11 +24,11 @@ const Header = () => {
       </Jumbotron>
 
       <Navbar bg="light" expand="lg" className=" ">
-        <Navbar.Brand href="#home">Logo</Navbar.Brand>
+        <Navbar.Brand>Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto w-100 d-flex justify-content-between ">
-            <Nav.Link className="">
+            <Nav.Link className="ml-5">
               <FontAwesomeIcon icon={faHome} />
             </Nav.Link>
             <Nav.Link className="">Actualidad</Nav.Link>
@@ -61,22 +61,28 @@ const Header = () => {
         variant="dark"
         className=" d-flex justify-content-center"
       >
-        <Navbar.Brand href="#home">Logo</Navbar.Brand>
+        <Navbar.Brand>Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto w-100 d-flex justify-content-around">
-            <Nav.Link href="#features" className="mx-5">
+            <Nav.Link href="#" className="mx-5">
               <FontAwesomeIcon icon={faHome} />
             </Nav.Link>
-            <Nav.Link href="#pricing" className="mx-5">
+            <Nav.Link href="#" className="mx-5">
               Lista de Noticias
             </Nav.Link>
-            <Nav.Link href="#pricing" className="mx-5">
+            <Nav.Link href="#" className="mx-5">
               Lista de Categorias
+            </Nav.Link>
+            <Nav.Link href="#" className="mx-5">
+              Nueva Categoria
+            </Nav.Link>
+            <Nav.Link href="#" className="mx-5">
+              Nueva Noticia
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link size="sm" href="#">
               <Button variant="success">Cerrar Sesion</Button>
             </Nav.Link>
           </Nav>
