@@ -111,10 +111,12 @@ const NuevaNoticia = (props) => {
           </Form.Group>
         </div>
         <div className="d-flex justify-content-center">
-          <Form.Group>
-            <Form.File
-              id="imgPrincipalNoticia"
-              label="Imagen Principal*"
+        <Form.Group controlId="imgPrincipalNoticia" className="w-50 text-center">
+            <Form.Label>Imagen Principal (URL)*</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="https://images.ole.com.ar/2020/09/08/iMGWVvyx0_320x210__1.jpg"
+              className="text-center"
               onChange={(e) => setImgPrincipalNoticia(e.target.value)}
             />
           </Form.Group>
