@@ -16,9 +16,9 @@ import {
 const Header = () => {
   return (
     <div className="">
-      <Jumbotron fluid>
+      <Jumbotron fluid className="mb-auto">
         <Container>
-          <h1 className="text-center my-5">Rolling News</h1>
+          <h1 className="text-center ">Rolling News</h1>
           <p></p>
         </Container>
       </Jumbotron>
