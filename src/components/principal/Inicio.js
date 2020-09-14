@@ -14,7 +14,6 @@ const Inicio = () => {
                     fsdfsfsdfsdfsdf
                 </div>
                 <div className="col-3 border border-dark">
-
                 </div>
             </section>
         </div>
