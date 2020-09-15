@@ -18,6 +18,7 @@ function App() {
   return (
     <Router>
       <Header></Header>
+      <DetalleNoticia></DetalleNoticia>
       <Switch>
         <Route exact path="/">
           <Inicio></Inicio>
