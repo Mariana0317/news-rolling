@@ -13,13 +13,18 @@ import ListaCategorias from "./components/adm-crud/ListaCategorias";
 import ListaNoticias from "./components/adm-crud/ListaNoticias";
 import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
 import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
+import EditarNoticias from "./components/adm-crud/EditarNoticias";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
+  const [actualizarNoticias, setActualizarNoticias] = useState(true);
 
   useEffect(() => {
-    consultarAPI();
-  },[]);
+    if (actualizarNoticias) {
+      consultarAPI();
+      setActualizarNoticias(false);
+    }
+  }, [actualizarNoticias]);
 
   const consultarAPI = async () => {
     try {
@@ -55,14 +60,36 @@ function App() {
           <ListaCategorias></ListaCategorias>
         </Route>
         <Route exact path="/adm-inicio/listanoticias">
-          <ListaNoticias noticias={noticias}></ListaNoticias>
+          <ListaNoticias
+            noticias={noticias}
+            setActualizarNoticias={setActualizarNoticias}
+          ></ListaNoticias>
         </Route>
         <Route exact path="/adm-inicio/listacategoria/nueva">
           <NuevaCategoria></NuevaCategoria>
         </Route>
         <Route exact path="/adm-inicio/listanoticias/nuevanoticia">
-          <NuevaNoticia></NuevaNoticia>
+          <NuevaNoticia
+            setActualizarNoticias={setActualizarNoticias}
+          ></NuevaNoticia>
         </Route>
+        <Route
+          exact
+          path="/adm-inicio/listanoticias/editarnoticia/:id"
+          render={(props) => {
+            //tomo el id de la url
+            const idNoticia = parseInt(props.match.params.id);
+            //filtro el arreglo y busco el producto
+            const noticiaEncontrada = noticias.find(
+              (noticia) => noticia.id === idNoticia
+            );
+            return (
+              <EditarNoticias
+                noticiaEncontrada={noticiaEncontrada}
+              ></EditarNoticias>
+            );
+          }}
+        ></Route>
       </Switch>
       <Footer></Footer>
     </Router>

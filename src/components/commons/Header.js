@@ -3,7 +3,9 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
-//import { Nav.Link } from "react-router-dom";
+import {NavLink} from 'react-router-dom';
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -14,20 +16,25 @@ import {
 const Header = () => {
   return (
     <div className="">
-      <h1 className="text-center my-5">Rolling News</h1>
+      <Jumbotron fluid>
+        <Container>
+          <h1 className="text-center my-5">Rolling News</h1>
+          <p></p>
+        </Container>
+      </Jumbotron>
 
-      <Navbar bg="light" expand="lg" className="d-flex justify-content-around py-3">
-        <Navbar.Brand href="#home">Logo</Navbar.Brand>
+      <Navbar bg="light" expand="lg" className=" ">
+        <Navbar.Brand>Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto ">
-            <Nav.Link className="mx-4">
+          <Nav className="mr-auto w-100 d-flex justify-content-between ">
+            <Nav.Link className="ml-5">
               <FontAwesomeIcon icon={faHome} />
             </Nav.Link>
-            <Nav.Link className="mx-5">Actualidad</Nav.Link>
-            <Nav.Link className="mx-5">Espectaculos</Nav.Link>
-            <Nav.Link className="mx-5">Tecnologia</Nav.Link>
-            <Nav.Link className="mx-5">Deportes</Nav.Link>
+            <Nav.Link className="">Actualidad</Nav.Link>
+            <Nav.Link className="">Espectaculos</Nav.Link>
+            <Nav.Link className="">Tecnologia</Nav.Link>
+            <Nav.Link className="">Deportes</Nav.Link>
             <NavDropdown title="+ Noticias" id="categoria">
               <NavDropdown.Item>Politica</NavDropdown.Item>
               <NavDropdown.Item>Economia</NavDropdown.Item>
@@ -38,10 +45,10 @@ const Header = () => {
                 <FontAwesomeIcon icon={faCameraRetro} />
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link className="mx-5">
+            <Nav.Link className="">
               <FontAwesomeIcon icon={faUser} />
             </Nav.Link>
-            <Nav.Link  className="mx-5">
+            <Nav.Link className="">
               <Button variant="outline-dark">Suscribirse</Button>
             </Nav.Link>
           </Nav>
@@ -54,22 +61,28 @@ const Header = () => {
         variant="dark"
         className=" d-flex justify-content-center"
       >
-        <Navbar.Brand href="#home">Logo</Navbar.Brand>
+        <Navbar.Brand>Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#features" className="mx-5">
+          <Nav className="mr-auto w-100 d-flex justify-content-around">
+            <Nav.Link className="mx-5">
               <FontAwesomeIcon icon={faHome} />
             </Nav.Link>
-            <Nav.Link href="#pricing" className="mx-5">
+            <NavLink exact={true} to="/adm-inicio/listanoticias" className="mx-5 nav-link" activeClassName="active">
               Lista de Noticias
-            </Nav.Link>
-            <Nav.Link href="#pricing" className="mx-5">
+            </NavLink>
+            <NavLink exact={true} to="/adm-inicio/listacategoria" className="mx-5 nav-link" activeClassName="active">
               Lista de Categorias
-            </Nav.Link>
+            </NavLink>
+            <NavLink exact={true} to="/adm-inicio/listanoticias/nuevanoticia" className="mx-5 nav-link" activeClassName="active">
+              Nueva Noticia
+            </NavLink>
+            <NavLink exact={true} to="/adm-inicio/listacategoria/nueva" className="mx-5 nav-link" activeClassName="active">
+            Nueva Categoria
+            </NavLink>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link size="sm" href="#">
               <Button variant="success">Cerrar Sesion</Button>
             </Nav.Link>
           </Nav>

@@ -8,7 +8,7 @@ const ListaNoticias = (props) => {
         <h1 className="text-center display-4 mb-5">Lista de noticias</h1>
         <ListGroup>
             {
-                props.noticias.map((noticia) => <CardsNoticias key={noticia.id} noticia={noticia}></CardsNoticias>)
+                props.noticias.map((noticia) => <CardsNoticias key={noticia.id} noticia={noticia} setActualizarNoticias={props.setActualizarNoticias}></CardsNoticias>)
             }
         </ListGroup>
     </div>

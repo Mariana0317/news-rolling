@@ -67,13 +67,16 @@ const NuevaNoticia = (props) => {
           "success"
         );
       }
+
+      props.setActualizarNoticias(true);
+
+      props.history.push("/adm-inicio/listanoticias");
+
     } catch (error) {
       console.log(error);
     }
 
     console.log(datos);
-
-    // props.history.push("/adm-inicio/listanoticias");
   };
 
   return (
