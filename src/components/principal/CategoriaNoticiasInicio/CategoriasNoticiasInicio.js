@@ -6,7 +6,7 @@ const CategoriaNoticias = () => {
   return (
     <div className="p-0 w-100">
       <ListGroup variant="flush">
-        <ListGroup.Item>
+        <ListGroup.Item className="mb-2">
             <h1>Politica</h1>
         </ListGroup.Item>
         <CategoriaNoticiaInicio></CategoriaNoticiaInicio>

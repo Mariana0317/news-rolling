@@ -2,20 +2,16 @@ import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 const CategoriaNoticiaInicio = () => {
   return (
-    <ListGroup.Item action>
+    <ListGroup.Item action className="border rounded my-2 shadow-sm">
       <div className="d-flex justify-content-between">
         <div className="col-7 p-0">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">
-              El Partido Comunista de Venezuela denunció que está recibiendo
-              “ataques desproporcionados" del régimen de Nicolás Maduro
+            “Personas, no números”: las vidas argentinas truncadas por la covid-19
             </h5>
           </div>
           <p className="mb-1">
-            Sus líderes acusan al dictador de llevar adelante una política
-            “liberal y entreguista” y se unieron a los partidos rebeldes del
-            chavismo que armaron la lista Alternativa Popular Revolucionaria
-            para las elecciones parlamentarias
+          Una serie de microdocumentales homenajea a las primeras víctimas de la pandemia en el país sudamericano
           </p>
           <small>Fecha de Publicacion: 11/8/2020</small>
         </div>
