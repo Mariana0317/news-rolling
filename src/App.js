@@ -86,6 +86,7 @@ function App() {
             return (
               <EditarNoticias
                 noticiaEncontrada={noticiaEncontrada}
+                setActualizarNoticias={setActualizarNoticias}
               ></EditarNoticias>
             );
           }}

@@ -12,10 +12,8 @@ const NuevaNoticia = (props) => {
   const [tituloNoticia, setTituloNoticia] = useState("");
   const [descripcionBreveNoticia, setDescripcionBreveNoticia] = useState("");
   const [imgPrincipalNoticia, setImgPrincipalNoticia] = useState("");
-  const [
-    descripcionDetalladaNoticia,
-    setDescripcionDetalladaNoticia,
-  ] = useState("");
+  const [descripcionDetalladaNoticia, setDescripcionDetalladaNoticia] = useState("");
+  const [imgSecundariaNoticia, setImgSecundariaNoticia] = useState("");
   const [categoriaNoticia, setCategoriaNoticia] = useState("");
   const [autorNoticia, setAutorNoticia] = useState("");
   const [fechaNoticia, setFechaNoticia] = useState("");
@@ -27,7 +25,7 @@ const NuevaNoticia = (props) => {
     if (
       tituloNoticia.trim() === "" ||
       descripcionBreveNoticia.trim() === "" ||
-      imgPrincipalNoticia === "" ||
+      imgPrincipalNoticia.trim() === "" ||
       descripcionDetalladaNoticia.trim() === "" ||
       categoriaNoticia === "" ||
       autorNoticia.trim() === "" ||
@@ -39,11 +37,12 @@ const NuevaNoticia = (props) => {
     }
     setError(false);
 
-    const datos = {
+    const noticia = {
       tituloNoticia,
       descripcionBreveNoticia,
       imgPrincipalNoticia,
       descripcionDetalladaNoticia,
+      imgSecundariaNoticia,
       categoriaNoticia,
       autorNoticia,
       fechaNoticia,
@@ -55,7 +54,7 @@ const NuevaNoticia = (props) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(datos),
+        body: JSON.stringify(noticia),
       };
 
       const resultado = await fetch("http://localhost:4000/noticias", cabecera);
@@ -76,7 +75,7 @@ const NuevaNoticia = (props) => {
       console.log(error);
     }
 
-    console.log(datos);
+    console.log(noticia);
   };
 
   return (
@@ -94,7 +93,7 @@ const NuevaNoticia = (props) => {
             <Form.Label>Titulo*</Form.Label>
             <Form.Control
               type="text"
-              placeholder="500 nuevos casos de Covid"
+              placeholder="Ingrese aqui el titulo de su noticia"
               className="text-center"
               onChange={(e) => setTituloNoticia(e.target.value)}
             />
@@ -109,6 +108,7 @@ const NuevaNoticia = (props) => {
             <Form.Control
               as="textarea"
               rows="4"
+              placeholder="Ingrese aqui una breve descripcion de su noticia" className="text-center"
               onChange={(e) => setDescripcionBreveNoticia(e.target.value)}
             />
           </Form.Group>
@@ -118,7 +118,7 @@ const NuevaNoticia = (props) => {
             <Form.Label>Imagen Principal (URL)*</Form.Label>
             <Form.Control
               type="text"
-              placeholder="https://images.ole.com.ar/2020/09/08/iMGWVvyx0_320x210__1.jpg"
+              placeholder="Ej: https://images.ole.com.ar/2020/09/08/iMGWVvyx0_320x210__1.jpg"
               className="text-center"
               onChange={(e) => setImgPrincipalNoticia(e.target.value)}
             />
@@ -132,9 +132,19 @@ const NuevaNoticia = (props) => {
           <Form.Control
             as="textarea"
             rows="7"
+            placeholder="Ingrese aqui todos los detalles de su noticia"
             onChange={(e) => setDescripcionDetalladaNoticia(e.target.value)}
           />
         </Form.Group>
+        <Form.Group controlId="imgSecundariaNoticia" className="w-50 text-center">
+            <Form.Label>Imagen Secundaria (URL)</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Ej: https://images.ole.com.ar/2020/09/15/11o2w01An_320x210__1.jpg"
+              className="text-center"
+              onChange={(e) => setImgSecundariaNoticia(e.target.value)}
+            />
+          </Form.Group>
         <Form.Group controlId="categoriaNoticia" className="w-25">
           <Form.Label>Categoria*</Form.Label>
           <Form.Control
@@ -142,14 +152,14 @@ const NuevaNoticia = (props) => {
             onChange={(e) => setCategoriaNoticia(e.target.value)}
           >
             <option>Seleccione una..</option>
-            <option>Actualidad</option>
-            <option>Espectáculos</option>
-            <option>Tecnología</option>
-            <option>Deportes</option>
-            <option>Política</option>
-            <option>Economía</option>
-            <option>Salud</option>
-            <option>Fotografía</option>
+            <option value="actualidad">Actualidad</option>
+            <option value="espectaculos">Espectáculos</option>
+            <option value="tecnologia">Tecnología</option>
+            <option value="deportes">Deportes</option>
+            <option value="politica">Política</option>
+            <option value="economia">Economía</option>
+            <option value="salud">Salud</option>
+            <option value="fotografia">Fotografía</option>
           </Form.Control>
         </Form.Group>
         <Row>
