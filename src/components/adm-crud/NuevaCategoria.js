@@ -59,14 +59,14 @@ const NuevaCategoria = (props) => {
 
   return (
     <Container className="my-4">
-      <div className="d-flex justify-content-center">
-        {validated ? (
-          <Alert variant={"danger"} className="w-75">
-            Complete los campos que son obligatorios
-          </Alert>
-        ) : null}
-      </div>
       <Form onSubmit={handleSubmit} noValidate validated={validated}>
+        <div className="d-flex justify-content-center">
+          {validated ? (
+            <Alert variant={"danger"} className="w-75">
+              Complete los campos que son obligatorios
+            </Alert>
+          ) : null}
+        </div>
         <Form.Group controlId="nombreCategoria">
           <Form.Label>Nombre*</Form.Label>
           <Form.Control

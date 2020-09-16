@@ -44,7 +44,7 @@ const LineaCategoria = (props) => {
     <ListGroup.Item>
         <h3>{props.categoria.tituloCategoria}</h3>
         <Button variant="primary">Ver categoria</Button>
-        <Link className="btn btn-success" to={`/adm-inicio/listanoticias/editarcategoria/${props.categoria.id}`}>Editar</Link>
+        <Link className="btn btn-success" to={`/adm-inicio/listacategoria/editarcategoria/${props.categoria.id}`}>Editar</Link>
         <Button
           variant="danger"
           onClick={() => eliminarCategoria(props.categoria.id)}
