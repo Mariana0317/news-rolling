@@ -1,0 +1,8 @@
+.card-clima {
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    width: 380px;
+    height: 110px;
+    border-radius: 15px;
+}
