@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
-//import { Nav.Link } from "react-router-dom";
+//import { NavLink } from "react-router-dom";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -61,13 +61,9 @@ const Header = () => {
         variant="dark"
         className=" d-flex justify-content-center"
       >
-        <Navbar.Brand>Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto w-100 d-flex justify-content-around">
-            <Nav.Link href="#" className="mx-5">
-              <FontAwesomeIcon icon={faHome} />
-            </Nav.Link>
             <Nav.Link href="#" className="mx-5">
               Lista de Noticias
             </Nav.Link>

@@ -13,6 +13,7 @@ import ListaCategorias from "./components/adm-crud/ListaCategorias";
 import ListaNoticias from "./components/adm-crud/ListaNoticias";
 import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
 import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
+import Error404 from "./components/error404/Error404";
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
         </Route>
         <Route exact path="/adm-inicio/listanoticias/nuevanoticia">
           <NuevaNoticia></NuevaNoticia>
+        </Route>
+        <Route exact path='*'>
+          <Error404></Error404>
         </Route>
       </Switch>
       <Footer></Footer>
