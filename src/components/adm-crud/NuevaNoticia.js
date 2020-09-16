@@ -70,7 +70,7 @@ const NuevaNoticia = (props) => {
   };
 
   return (
-    <Container className="bg-dark text-white my-4 py-4">
+    <Container className="bg-dark text-white my-4 py-4 rounded">
       <div className="d-flex justify-content-center">
         {validated ? (
           <Alert variant={"danger"} className="w-75">
@@ -79,71 +79,9 @@ const NuevaNoticia = (props) => {
         ) : null}
       </div>
       <Form onSubmit={handleSubmit} noValidate validated={validated}>
-        <div className="d-flex justify-content-center">
-          <Form.Group controlId="tituloNoticia" className="w-50 text-center">
-            <Form.Label>Titulo*</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Ingrese aqui el titulo de su noticia"
-              className="text-center"
-              required
-              onChange={(e) => setTituloNoticia(e.target.value)}
-            />
-          </Form.Group>
-        </div>
-        <div className="d-flex justify-content-center">
-          <Form.Group
-            controlId="descripcionBreveNoticia"
-            className="w-50 text-center"
-          >
-            <Form.Label>Descripción breve*</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows="4"
-              placeholder="Ingrese aqui una breve descripcion de su noticia" 
-              className="text-center"
-              required
-              onChange={(e) => setDescripcionBreveNoticia(e.target.value)}
-            />
-          </Form.Group>
-        </div>
-        <div className="d-flex justify-content-center">
-        <Form.Group controlId="imgPrincipalNoticia" className="w-50 text-center">
-            <Form.Label>Imagen Principal (URL)*</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Ej: https://images.ole.com.ar/2020/09/08/iMGWVvyx0_320x210__1.jpg"
-              className="text-center"
-              required
-              onChange={(e) => setImgPrincipalNoticia(e.target.value)}
-            />
-          </Form.Group>
-        </div>
-        <Form.Group
-          controlId="descripcionDetalladaNoticia"
-          className="text-center"
-        >
-          <Form.Label>Descripción detallada*</Form.Label>
-          <Form.Control
-            as="textarea"
-            rows="7"
-            placeholder="Ingrese aqui todos los detalles de su noticia"
-            required
-            onChange={(e) => setDescripcionDetalladaNoticia(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group controlId="imgSecundariaNoticia" className="w-50 text-center">
-            <Form.Label>Imagen Secundaria (URL)</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Ej: https://images.ole.com.ar/2020/09/15/11o2w01An_320x210__1.jpg"
-              className="text-center"
-              onChange={(e) => setImgSecundariaNoticia(e.target.value)}
-            />
-          </Form.Group>
-        <Form.Group controlId="categoriaNoticia" className="w-25">
+        <Form.Group controlId="categoriaNoticia" className="">
           <Form.Label>Categoria*</Form.Label>
-          <Form.Control
+            <Form.Control
             as="select"
             required
             onChange={(e) => setCategoriaNoticia(e.target.value)}
@@ -159,6 +97,62 @@ const NuevaNoticia = (props) => {
             <option value="fotografia">Fotografía</option>
           </Form.Control>
         </Form.Group>
+          <Form.Group controlId="tituloNoticia" className="text-center">
+            <Form.Label>Titulo*</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Ingrese aqui el titulo de su noticia"
+              className="text-center"
+              required
+              onChange={(e) => setTituloNoticia(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group
+            controlId="descripcionBreveNoticia"
+            className="text-center"
+          >
+            <Form.Label>Descripción breve*</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows="4"
+              placeholder="Ingrese aqui una breve descripcion de su noticia" 
+              className="text-center"
+              required
+              onChange={(e) => setDescripcionBreveNoticia(e.target.value)}
+            />
+          </Form.Group>
+        <Form.Group controlId="imgPrincipalNoticia" className="text-center">
+            <Form.Label>Imagen Principal (URL)*</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Ej: https://images.ole.com.ar/2020/09/08/iMGWVvyx0_320x210__1.jpg"
+              className="text-center"
+              required
+              onChange={(e) => setImgPrincipalNoticia(e.target.value)}
+            />
+          </Form.Group>
+        <Form.Group
+          controlId="descripcionDetalladaNoticia"
+          className="text-center"
+        >
+          <Form.Label>Descripción detallada*</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows="7"
+            placeholder="Ingrese aqui todos los detalles de su noticia"
+            required
+            onChange={(e) => setDescripcionDetalladaNoticia(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group controlId="imgSecundariaNoticia" className="text-center">
+            <Form.Label>Imagen Secundaria (URL)</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Ej: https://images.ole.com.ar/2020/09/15/11o2w01An_320x210__1.jpg"
+              className="text-center"
+              onChange={(e) => setImgSecundariaNoticia(e.target.value)}
+            />
+          </Form.Group>
         <Row>
           <Col>
             <Form.Group controlId="autorNoticia" className="w-75">
@@ -185,7 +179,7 @@ const NuevaNoticia = (props) => {
         </Row>
         <div className="d-flex justify-content-center pt-5">
           <Button variant="light" type="submit" size="lg">
-            Subir noticia
+             Enviar Noticia
           </Button>
         </div>
       </Form>
