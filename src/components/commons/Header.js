@@ -24,11 +24,11 @@ const Header = () => {
       </Jumbotron>
 
       <Navbar bg="light" expand="lg" className=" ">
-        <Navbar.Brand>Logo</Navbar.Brand>
+        <Navbar.Brand href="#">Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto w-100 d-flex justify-content-between ">
-            <Nav.Link className="ml-5">
+          <Nav className="mr-auto w-100 d-flex justify-content-between">
+            <Nav.Link className="ml-3">
               <FontAwesomeIcon icon={faHome} />
             </Nav.Link>
             <Nav.Link className="">Actualidad</Nav.Link>
@@ -49,29 +49,23 @@ const Header = () => {
               <FontAwesomeIcon icon={faUser} />
             </Nav.Link>
             <Nav.Link className="">
-              <Button variant="outline-dark">Suscribirse</Button>
+              <Button size="sm" variant="outline-dark">Suscribirse</Button>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        bg="dark"
-        variant="dark"
-        className=" d-flex justify-content-center"
-      >
-        <Navbar.Brand>Logo</Navbar.Brand>
+      <Navbar expand="lg" bg="dark" variant="dark" className=" ">
+        <Navbar.Brand href="#">Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto w-100 d-flex justify-content-around">
-            <Nav.Link href="#" className="mx-5">
+            <Nav.Link href="#" className="">
               <FontAwesomeIcon icon={faHome} />
             </Nav.Link>
-            <Nav.Link href="#" className="mx-5">
+            <Nav.Link href="#pricing" className="">
               Lista de Noticias
             </Nav.Link>
-            <Nav.Link href="#" className="mx-5">
+            <Nav.Link href="#pricing" className="">
               Lista de Categorias
             </Nav.Link>
             <Nav.Link href="#" className="mx-5">
@@ -82,8 +76,10 @@ const Header = () => {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link size="sm" href="#">
-              <Button variant="success">Cerrar Sesion</Button>
+            <Nav.Link href="#">
+              <Button variant="success" size="sm">
+                Cerrar Sesion
+              </Button>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
