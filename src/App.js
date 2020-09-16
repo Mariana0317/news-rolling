@@ -14,24 +14,43 @@ import ListaNoticias from "./components/adm-crud/ListaNoticias";
 import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
 import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
 import EditarNoticias from "./components/adm-crud/EditarNoticias";
+import EditarCategorias from "./components/adm-crud/EditarCategorias";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
   const [actualizarNoticias, setActualizarNoticias] = useState(true);
+  const [categorias, setCategorias] = useState([]);
+  const [actualizarCategorias, setActualizarCategorias] = useState(true);
 
   useEffect(() => {
     if (actualizarNoticias) {
-      consultarAPI();
+      consultarNoticias();
       setActualizarNoticias(false);
     }
   }, [actualizarNoticias]);
 
-  const consultarAPI = async () => {
+  const consultarNoticias = async () => {
     try {
       const respuesta = await fetch("http://localhost:4000/noticias");
       const resultado = await respuesta.json();
-      console.log(resultado);
       setNoticias(resultado); //Quitar despues para usar bd
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (actualizarCategorias) {
+      consultarCategorias();
+      setActualizarCategorias(false);
+    }
+  }, [actualizarCategorias]);
+
+  const consultarCategorias = async () => {
+    try {
+      const respuesta = await fetch("http://localhost:4000/categorias");
+      const resultado = await respuesta.json();
+      setCategorias(resultado); //Quitar despues para usar bd
     } catch (error) {
       console.log(error);
     }
@@ -57,7 +76,10 @@ function App() {
           <InicioAdm></InicioAdm>
         </Route>
         <Route exact path="/adm-inicio/listacategoria">
-          <ListaCategorias></ListaCategorias>
+          <ListaCategorias
+            categorias={categorias}
+            setActualizarCategorias={setActualizarCategorias}
+          ></ListaCategorias>
         </Route>
         <Route exact path="/adm-inicio/listanoticias">
           <ListaNoticias
@@ -66,7 +88,9 @@ function App() {
           ></ListaNoticias>
         </Route>
         <Route exact path="/adm-inicio/listacategoria/nueva">
-          <NuevaCategoria></NuevaCategoria>
+          <NuevaCategoria
+            setActualizarCategorias={setActualizarCategorias}
+          ></NuevaCategoria>
         </Route>
         <Route exact path="/adm-inicio/listanoticias/nuevanoticia">
           <NuevaNoticia
@@ -88,6 +112,24 @@ function App() {
                 noticiaEncontrada={noticiaEncontrada}
                 setActualizarNoticias={setActualizarNoticias}
               ></EditarNoticias>
+            );
+          }}
+        ></Route>
+        <Route
+          exact
+          path="/adm-inicio/listacategoria/editarcategoria/:id"
+          render={(props) => {
+            //tomo el id de la url
+            const idCategoria = parseInt(props.match.params.id);
+            //filtro el arreglo y busco el producto
+            const categoriaEncontrada = categorias.find(
+              (categoria) => categoria.id === idCategoria
+            );
+            return (
+              <EditarCategorias
+                categoriaEncontrada={categoriaEncontrada}
+                setActualizarCategorias={setActualizarCategorias}
+              ></EditarCategorias>
             );
           }}
         ></Route>

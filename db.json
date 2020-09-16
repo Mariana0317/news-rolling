@@ -11,5 +11,17 @@
       "fechaNoticia": "9 de Septiembre del 2020",
       "id": 1
     }
+  ],
+  "categorias": [
+    {
+      "tituloCategoria": "Covid19",
+      "descripcionCategoria": "Categoria para hablar del covid",
+      "id": 1
+    },
+    {
+      "tituloCategoria": "josesito",
+      "descripcionCategoria": "se habla de el",
+      "id": 2
+    }
   ]
 }
