@@ -17,25 +17,16 @@ const EditarNoticias = (props) => {
   const categoriaNoticiaRef = useRef("");
   const autorNoticiaRef = useRef("");
   const fechaNoticiaRef = useRef("");
-
-  const [error, setError] = useState(false);
+  const [validated, setValidated] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (
-      tituloNoticiaRef.current.value.trim() === "" ||
-      descripcionBreveNoticiaRef.current.value.trim() === "" ||
-      imgPrincipalNoticiaRef.current.value.trim() === "" ||
-      descripcionDetalladaNoticiaRef.current.value.trim() === "" ||
-      categoriaNoticiaRef.current.value === "" ||
-      autorNoticiaRef.current.value.trim() === "" ||
-      fechaNoticiaRef.current.value.trim() === ""
-    ) {
-      setError(true);
+    const form = e.currentTarget;
+    if (form.checkValidity() === false){
+      setValidated(true);
       return;
     }
-    setError(false);
+    setValidated(false);
 
     const noticiaEditada = {
       tituloNoticia: tituloNoticiaRef.current.value,
@@ -69,7 +60,7 @@ const EditarNoticias = (props) => {
         props.setActualizarNoticias(true);
 
         props.history.push("/adm-inicio/listanoticias");
-        
+
       }
     } catch (error) {
       console.log(error);
@@ -78,9 +69,9 @@ const EditarNoticias = (props) => {
 
   return (
     <Container className="bg-dark text-white my-4 py-4">
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} noValidate validated={validated}>
         <div className="d-flex justify-content-center">
-          {error ? (
+          {validated ? (
             <Alert variant={"danger"} className="w-75">
               Complete los campos que son obligatorios
             </Alert>
@@ -93,6 +84,7 @@ const EditarNoticias = (props) => {
               type="text"
               className="text-center"
               placeholder="Ingrese aqui el titulo de su noticia"
+              required
               ref={tituloNoticiaRef}
               defaultValue={props.noticiaEncontrada.tituloNoticia}
             />
@@ -109,6 +101,7 @@ const EditarNoticias = (props) => {
               rows="4"
               placeholder="Ingrese aqui una breve descripcion de su noticia"
               className="text-center"
+              required
               ref={descripcionBreveNoticiaRef}
               defaultValue={props.noticiaEncontrada.descripcionBreveNoticia}
             />
@@ -124,6 +117,7 @@ const EditarNoticias = (props) => {
               type="text"
               className="text-center"
               placeholder="Ej: https://images.ole.com.ar/2020/09/08/iMGWVvyx0_320x210__1.jpg"
+              required
               ref={imgPrincipalNoticiaRef}
               defaultValue={props.noticiaEncontrada.imgPrincipalNoticia}
             />
@@ -138,6 +132,7 @@ const EditarNoticias = (props) => {
             as="textarea"
             rows="7"
             placeholder="Ingrese aqui todos los detalles de su noticia"
+            required
             ref={descripcionDetalladaNoticiaRef}
             defaultValue={props.noticiaEncontrada.descripcionDetalladaNoticia}
           />
@@ -159,18 +154,19 @@ const EditarNoticias = (props) => {
           <Form.Label>Categoria*</Form.Label>
           <Form.Control
             as="select"
+            required
             ref={categoriaNoticiaRef}
             defaultValue={props.noticiaEncontrada.categoriaNoticia}
           >
-            <option>Seleccione una..</option>
-            <option>Actualidad</option>
-            <option>Espectáculos</option>
-            <option>Tecnología</option>
-            <option>Deportes</option>
-            <option>Política</option>
-            <option>Economía</option>
-            <option>Salud</option>
-            <option>Fotografía</option>
+            <option value="">Seleccione una..</option>
+            <option value="actualidad">Actualidad</option>
+            <option value="espectaculos">Espectáculos</option>
+            <option value="tecnologia">Tecnología</option>
+            <option value="deportes">Deportes</option>
+            <option value="politica">Política</option>
+            <option value="economia">Economía</option>
+            <option value="salud">Salud</option>
+            <option value="fotografia">Fotografía</option>
           </Form.Control>
         </Form.Group>
         <Row>
@@ -180,6 +176,7 @@ const EditarNoticias = (props) => {
               <Form.Control
                 type="text"
                 placeholder="Juanito Barrientos"
+                required
                 ref={autorNoticiaRef}
                 defaultValue={props.noticiaEncontrada.autorNoticia}
               />
@@ -191,6 +188,7 @@ const EditarNoticias = (props) => {
               <Form.Control
                 type="text"
                 placeholder="27 de Septiembre de 2020"
+                required
                 ref={fechaNoticiaRef}
                 defaultValue={props.noticiaEncontrada.fechaNoticia}
               />

@@ -17,25 +17,16 @@ const NuevaNoticia = (props) => {
   const [categoriaNoticia, setCategoriaNoticia] = useState("");
   const [autorNoticia, setAutorNoticia] = useState("");
   const [fechaNoticia, setFechaNoticia] = useState("");
-  const [error, setError] = useState(false);
+  const [validated, setValidated] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //Validar los campos
-    if (
-      tituloNoticia.trim() === "" ||
-      descripcionBreveNoticia.trim() === "" ||
-      imgPrincipalNoticia.trim() === "" ||
-      descripcionDetalladaNoticia.trim() === "" ||
-      categoriaNoticia === "" ||
-      autorNoticia.trim() === "" ||
-      fechaNoticia.trim() === ""
-    ) {
-      //Mostrar cartel de error
-      setError(true);
+    const form = e.currentTarget;
+    if (form.checkValidity() === false){
+      setValidated(true);
       return;
     }
-    setError(false);
+    setValidated(false);
 
     const noticia = {
       tituloNoticia,
@@ -81,13 +72,13 @@ const NuevaNoticia = (props) => {
   return (
     <Container className="bg-dark text-white my-4 py-4">
       <div className="d-flex justify-content-center">
-        {error ? (
+        {validated ? (
           <Alert variant={"danger"} className="w-75">
             Complete los campos que son obligatorios
           </Alert>
         ) : null}
       </div>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} noValidate validated={validated}>
         <div className="d-flex justify-content-center">
           <Form.Group controlId="tituloNoticia" className="w-50 text-center">
             <Form.Label>Titulo*</Form.Label>
@@ -95,6 +86,7 @@ const NuevaNoticia = (props) => {
               type="text"
               placeholder="Ingrese aqui el titulo de su noticia"
               className="text-center"
+              required
               onChange={(e) => setTituloNoticia(e.target.value)}
             />
           </Form.Group>
@@ -108,7 +100,9 @@ const NuevaNoticia = (props) => {
             <Form.Control
               as="textarea"
               rows="4"
-              placeholder="Ingrese aqui una breve descripcion de su noticia" className="text-center"
+              placeholder="Ingrese aqui una breve descripcion de su noticia" 
+              className="text-center"
+              required
               onChange={(e) => setDescripcionBreveNoticia(e.target.value)}
             />
           </Form.Group>
@@ -120,6 +114,7 @@ const NuevaNoticia = (props) => {
               type="text"
               placeholder="Ej: https://images.ole.com.ar/2020/09/08/iMGWVvyx0_320x210__1.jpg"
               className="text-center"
+              required
               onChange={(e) => setImgPrincipalNoticia(e.target.value)}
             />
           </Form.Group>
@@ -133,6 +128,7 @@ const NuevaNoticia = (props) => {
             as="textarea"
             rows="7"
             placeholder="Ingrese aqui todos los detalles de su noticia"
+            required
             onChange={(e) => setDescripcionDetalladaNoticia(e.target.value)}
           />
         </Form.Group>
@@ -149,9 +145,10 @@ const NuevaNoticia = (props) => {
           <Form.Label>Categoria*</Form.Label>
           <Form.Control
             as="select"
+            required
             onChange={(e) => setCategoriaNoticia(e.target.value)}
           >
-            <option>Seleccione una..</option>
+            <option value="">Seleccione una..</option>
             <option value="actualidad">Actualidad</option>
             <option value="espectaculos">Espectáculos</option>
             <option value="tecnologia">Tecnología</option>
@@ -169,6 +166,7 @@ const NuevaNoticia = (props) => {
               <Form.Control
                 type="text"
                 placeholder="Juanito Barrientos"
+                required
                 onChange={(e) => setAutorNoticia(e.target.value)}
               />
             </Form.Group>
@@ -179,6 +177,7 @@ const NuevaNoticia = (props) => {
               <Form.Control
                 type="text"
                 placeholder="27 de Septiembre de 2020"
+                required
                 onChange={(e) => setFechaNoticia(e.target.value)}
               />
             </Form.Group>
