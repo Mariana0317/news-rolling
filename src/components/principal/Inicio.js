@@ -9,12 +9,17 @@ const Inicio = () => {
     <div>
       <CardClima></CardClima>
       <MonedasValores></MonedasValores>
-      <NoticiasDestacadas></NoticiasDestacadas>
+      <section className="container mt-md-2 mt-3">
+        <h2 className="text-center">Noticias Destacadas</h2>
+        <hr />
+        <NoticiasDestacadas></NoticiasDestacadas>
+      </section>
+
       <section className="container d-flex">
-        <div className="col-8 px-1">
+        <div className="col-lg-8 col-12 px-1">
           <CategoriasNoticiasInicio></CategoriasNoticiasInicio>
         </div>
-        <div className="col-4 border border-dark"></div>
+        <div className="col-4 border border-dark d-none d-lg-block"></div>
       </section>
     </div>
   );

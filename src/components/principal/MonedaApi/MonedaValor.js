@@ -3,7 +3,7 @@ import React from "react";
 const MonedaValor = (props) => {
   console.log(props.moneda);
   return (
-    <div className="d-flex flex-column px-2 py-1 col-3">
+    <div className="d-md-flex flex-column px-2 py-1 col-3 d-none">
       <div className="border border-dark">
         <div className="text-center border-bottom border-dark w-100">
           <h4>{props.moneda.nombre}</h4>

@@ -41,7 +41,7 @@ const CardClima = () => {
   }, 1000);
 
   return (
-    <div className="card-clima border border-dark col-4 p-0 my-3">
+    <div className="card-clima border border-dark col-4 p-0 my-3 d-none d-lg-block">
       <div className="w-100 h-100 d-flex">
         <div className="col-5 d-flex justify-content-center align-items-center">
           <h2 className="my-auto display-4" id="hours"></h2>

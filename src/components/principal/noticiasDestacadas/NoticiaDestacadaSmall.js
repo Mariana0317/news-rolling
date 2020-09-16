@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 
 const NoticiaDestacadaSmall = () => {
   return (
-    <div className="col h-100 px-md-0 px-2 mb-2 rounded">
+    <div className="col h-100 px-md-0 px-0 mb-0 mb-lg-2 rounded">
       <Card className="text-light h-100 m-0 text-md-left text-justify">
         <Card.Body
           className="d-flex p-3 flex-column justify-content-between rounded shadow"

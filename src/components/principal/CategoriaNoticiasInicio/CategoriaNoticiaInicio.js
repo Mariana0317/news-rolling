@@ -4,7 +4,7 @@ const CategoriaNoticiaInicio = () => {
   return (
     <ListGroup.Item action className="border rounded my-2 shadow-sm">
       <div className="d-flex justify-content-between">
-        <div className="col-7 p-0">
+        <div className="col-md-7 col-12 p-0">
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">
             “Personas, no números”: las vidas argentinas truncadas por la covid-19
@@ -15,7 +15,7 @@ const CategoriaNoticiaInicio = () => {
           </p>
           <small>Fecha de Publicacion: 11/8/2020</small>
         </div>
-        <div className="col-4 p-0 h-100 my-auto">
+        <div className="col-md-4 d-none d-md-block p-0 h-100 my-auto">
           <img
             src={process.env.PUBLIC_URL + "/img/noticia1.jpg"}
             alt="noticia1"
