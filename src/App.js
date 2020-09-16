@@ -14,9 +14,9 @@ import ListaNoticias from "./components/adm-crud/ListaNoticias";
 import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
 import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
 import HeaderAdm from "./components/commons/HeaderAdm";
-
+import Sections from './components/Sections/Sections';
+import Notice from "./components/Notice/Notice";
 function App() {
-
   const [loader, setLoader] = useState(true);
 
   const cargarHeader = loader ? <Header></Header> : <HeaderAdm></HeaderAdm>;
@@ -24,6 +24,12 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path={"/sections/:category"}>
+          <Sections />
+        </Route>
+        <Route exact path={"/sections/:category/:id"}>
+          <Notice />
+        </Route>
         <Route exact path="/">
           {cargarHeader}
           <Inicio></Inicio>

@@ -13,7 +13,7 @@ import {
 
 const Footer = () => {
   return (
-    <Card className="w-100 text-center">
+    <Card className="w-100 text-center footer">
       <Card.Body className=" w-100 d-flex justify-content-around">
         <section className="w-25 align-self-center">
           <h1 className="">Rolling News</h1>

@@ -1,8 +1,8 @@
-span{
+.footer span{
     /*font-size: 35px;*/
     color: darkblue;
 }
-h5{
+.footer h5{
     font-size: small;
 }
 

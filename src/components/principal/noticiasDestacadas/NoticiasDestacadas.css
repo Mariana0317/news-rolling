@@ -1,4 +1,6 @@
-
+.noticias-destacadas{
+    height: 400px;
+}
 /*Extra small devices (portrait phones, less than 576px) */
 
 @media (max-width: 575.98px) {
@@ -23,17 +25,7 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .noticia-destacada {
-        height: 300px;
-    }
-
-    .noticia-destacada .card-title {
-        font-size: 15px;
-    }
-
-    .noticia-destacada .card-footer {
-        font-size: 13px;
-    }
+    
 }
 
 /* Large devices (desktops, 992px and up) */
