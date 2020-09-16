@@ -35,6 +35,7 @@ const CardClima = () => {
       (new Date().getMinutes() < 10
         ? "0" + new Date().getMinutes()
         : new Date().getMinutes());
+        
 
     ReactDOM.render(hoursCall, document.getElementById("hours"));
     ReactDOM.render(dateCall, document.getElementById("date"));
@@ -44,11 +45,11 @@ const CardClima = () => {
     <div className="card-clima border border-dark col-4 p-0 my-3 d-none d-lg-block">
       <div className="w-100 h-100 d-flex">
         <div className="col-5 d-flex justify-content-center align-items-center">
-          <h2 className="my-auto display-4" id="hours"></h2>
+          <h2 className="my-auto display-4" id="hours">...</h2>
         </div>
         <div className="col-4 d-flex flex-column justify-content-center align-items-center">
           <p className="m-0 h4">{located.city}</p>
-          <p className="m-0 h6" id="date"></p>
+          <p className="m-0 h6" id="date">Cargando...</p>
         </div>
         <div className="col-3 d-flex flex-column justify-content-center align-items-center">
           {weather.weather ? (

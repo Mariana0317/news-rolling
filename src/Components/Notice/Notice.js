@@ -11,14 +11,12 @@ const Notice = () => {
 
   const notice = () => {
     return (
-      <>
         <div>
           <h1 className="text-center my-5">{renderNotice.titulo}</h1>
           <h3 className="ml-5 my-4"></h3>
-          <img src={renderNotice.img} className="img-fluid"></img>
+          <img src={renderNotice.img} alt={renderNotice.titulo} className="img-fluid"></img>
           <p className="ml-5 my-4">{renderNotice.texto}</p>
         </div>
-      </>
     );
   };
 

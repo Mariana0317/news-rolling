@@ -17,6 +17,7 @@ import HeaderAdm from "./components/commons/HeaderAdm";
 import Sections from './components/Sections/Sections';
 import Notice from "./components/Notice/Notice";
 import Login from "./components/principal/Login";
+import CardClima from "./components/principal/CardClima/CardClima";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <Router>
+      <CardClima></CardClima>
       <Switch>
         <Route exact path={"/sections/:category"}>
           <Sections />
