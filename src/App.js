@@ -16,6 +16,8 @@ import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
 import HeaderAdm from "./components/commons/HeaderAdm";
 import Sections from './components/Sections/Sections';
 import Notice from "./components/Notice/Notice";
+import Login from "./components/principal/Login";
+
 function App() {
   const [loader, setLoader] = useState(true);
 
@@ -45,6 +47,9 @@ function App() {
         <Route exact path="/suscripcion-form">
           {cargarHeader}
           <FormSuscripcion></FormSuscripcion>
+        </Route>
+        <Route exact path="/login">
+          <Login></Login>
         </Route>
         <Route exact path="/adm-inicio">
           {cargarHeader}
