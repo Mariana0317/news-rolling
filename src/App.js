@@ -20,6 +20,7 @@ import Login from "./components/principal/Login";
 import CardClima from "./components/principal/CardClima/CardClima";
 import EditarNoticias from "./components/adm-crud/EditarNoticias";
 import EditarCategorias from "./components/adm-crud/EditarCategorias";
+import Error404 from "./components/error404/Error404";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -148,6 +149,9 @@ function App() {
             );
           }}
         ></Route>
+        <Route exact path='*'>
+          <Error404></Error404>
+        </Route>
       </Switch>
       <Footer></Footer>
     </Router>
