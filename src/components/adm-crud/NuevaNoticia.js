@@ -57,7 +57,7 @@ const NuevaNoticia = (props) => {
           "success"
         );
       }
-
+git 
       props.setActualizarNoticias(true);
 
       props.history.push("/adm-inicio/listanoticias");
