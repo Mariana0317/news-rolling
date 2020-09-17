@@ -17,10 +17,10 @@ import HeaderAdm from "./components/commons/HeaderAdm";
 import Sections from './components/Sections/Sections';
 import Notice from "./components/Notice/Notice";
 import Login from "./components/principal/Login";
-import CardClima from "./components/principal/CardClima/CardClima";
 import EditarNoticias from "./components/adm-crud/EditarNoticias";
 import EditarCategorias from "./components/adm-crud/EditarCategorias";
 import Error404 from "./components/error404/Error404";
+import PaginaAcercaDeNosotros from "./components/AcercaDeNosotros/AcercaDeNosotros";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -87,6 +87,9 @@ function App() {
         </Route>
         <Route exact path="/login">
           <Login></Login>
+        </Route>
+        <Route exact path="/about-us">
+          <PaginaAcercaDeNosotros></PaginaAcercaDeNosotros>
         </Route>
         <Route exact path="/adm-inicio">
           <InicioAdm></InicioAdm>
