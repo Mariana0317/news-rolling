@@ -1,5 +1,6 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
+
 const CategoriaNoticiaInicio = () => {
   return (
     <ListGroup.Item action className="border rounded my-2 shadow-sm">

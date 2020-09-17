@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import {NavLink} from 'react-router-dom';
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
+import CardClima from "../principal/CardClima/CardClima";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -16,6 +17,7 @@ import {
 const Header = () => {
   return (
     <div className="">
+      <CardClima></CardClima>
       <Jumbotron fluid className="mb-auto">
         <Container>
           <h1 className="text-center ">Rolling News</h1>
