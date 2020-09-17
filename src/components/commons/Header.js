@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
-//import { Nav.Link } from "react-router-dom";
+import {NavLink} from 'react-router-dom';
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,7 +12,6 @@ import {
   faCameraRetro,
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -25,11 +24,11 @@ const Header = () => {
       </Jumbotron>
 
       <Navbar bg="light" expand="lg" className=" ">
-        <Navbar.Brand href="#">Logo</Navbar.Brand>
+        <Navbar.Brand>Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto w-100 d-flex justify-content-between">
-            <Nav.Link className="ml-3">
+          <Nav className="mr-auto w-100 d-flex justify-content-between ">
+            <Nav.Link className="ml-5">
               <FontAwesomeIcon icon={faHome} />
             </Nav.Link>
             <Nav.Link className="">Actualidad</Nav.Link>
@@ -46,41 +45,11 @@ const Header = () => {
                 <FontAwesomeIcon icon={faCameraRetro} />
               </NavDropdown.Item>
             </NavDropdown>
-            <NavLink className="mx-5" exact={true} to="/login" variant="dark" className="nav-link" activeClassName="active">
+            <Nav.Link className="">
               <FontAwesomeIcon icon={faUser} />
-            </NavLink>
-            <NavLink  className="mx-5" exact={true} to="/suscripcion-form" variant="secondary" className="nav-link" activeClassName="active">
+            </Nav.Link>
+            <Nav.Link className="">
               <Button variant="outline-dark">Suscribirse</Button>
-            </NavLink>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      <Navbar expand="lg" bg="dark" variant="dark" className=" ">
-        <Navbar.Brand href="#">Logo</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto w-100 d-flex justify-content-around">
-            <Nav.Link href="#" className="">
-              <FontAwesomeIcon icon={faHome} />
-            </Nav.Link>
-            <Nav.Link href="#pricing" className="">
-              Lista de Noticias
-            </Nav.Link>
-            <Nav.Link href="#pricing" className="">
-              Lista de Categorias
-            </Nav.Link>
-            <Nav.Link href="#" className="mx-5">
-              Nueva Categoria
-            </Nav.Link>
-            <Nav.Link href="#" className="mx-5">
-              Nueva Noticia
-            </Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#">
-              <Button variant="success" size="sm">
-                Cerrar Sesion
-              </Button>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
