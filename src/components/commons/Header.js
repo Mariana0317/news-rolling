@@ -13,10 +13,12 @@ import {
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from 'react-router-dom';
+import CardClima from "../principal/CardClima/CardClima";
 
 const Header = () => {
   return (
     <div className="">
+      <CardClima></CardClima>
       <Jumbotron fluid>
         <Container>
           <h1 className="text-center my-5">Rolling News</h1>
