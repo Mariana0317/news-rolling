@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/commons/Header";
+import JumboHeader from "./components/commons/JumboHeader";
 import Footer from "./components/commons/Footer";
 import Inicio from "./components/principal/Inicio";
 import CategoriasNoticias from "./components/noticias/CategoriasNoticias";
@@ -17,16 +17,16 @@ import HeaderAdm from "./components/commons/HeaderAdm";
 import Sections from './components/Sections/Sections';
 import Notice from "./components/Notice/Notice";
 import Login from "./components/principal/Login";
-import CardClima from "./components/principal/CardClima/CardClima";
+
 
 function App() {
   const [loader, setLoader] = useState(true);
 
-  const cargarHeader = loader ? <Header></Header> : <HeaderAdm></HeaderAdm>;
+  const cargarHeader = loader ? <JumboHeader></JumboHeader> : <HeaderAdm></HeaderAdm>;
 
   return (
     <Router>
-      <CardClima></CardClima>
+      
       <Switch>
         <Route exact path={"/sections/:category"}>
           <Sections />

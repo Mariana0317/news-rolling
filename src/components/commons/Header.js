@@ -3,88 +3,65 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
-//import { Nav.Link } from "react-router-dom";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
-  faCameraRetro,
+  
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+
+
 
 const Header = () => {
   return (
     <div className="">
-      <Jumbotron fluid className="mb-auto">
-        <Container>
-          <h1 className="text-center ">Rolling News</h1>
-          <p></p>
-        </Container>
-      </Jumbotron>
-
-      <Navbar bg="light" expand="lg" className=" ">
-        <Navbar.Brand href="#">Logo</Navbar.Brand>
+      
+      <Navbar bg="dark" expand="lg" className=" " fixed="top" variant="dark">
+        <Navbar.Brand href="#" className="mx-3">Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto w-100 d-flex justify-content-between">
-            <Nav.Link className="ml-3">
+            <Nav.Link className="ml-5">
               <FontAwesomeIcon icon={faHome} />
             </Nav.Link>
-            <Nav.Link className="">Actualidad</Nav.Link>
-            <Nav.Link className="">Espectaculos</Nav.Link>
-            <Nav.Link className="">Tecnologia</Nav.Link>
-            <Nav.Link className="">Deportes</Nav.Link>
-            <NavDropdown title="+ Noticias" id="categoria">
+            <Nav.Link className="mx-3">Actualidad</Nav.Link>
+            <Nav.Link className="mx-3">Espectaculos</Nav.Link>
+            <Nav.Link className="mx-3">Tecnologia</Nav.Link>
+            <Nav.Link className="mx-3">Deportes</Nav.Link>
+            <NavDropdown title="Categorias" id="categoria">
               <NavDropdown.Item>Politica</NavDropdown.Item>
               <NavDropdown.Item>Economia</NavDropdown.Item>
               <NavDropdown.Item>Salud</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
                 Fotos
-                <FontAwesomeIcon icon={faCameraRetro} />
+               
               </NavDropdown.Item>
             </NavDropdown>
-            <NavLink className="mx-5" exact={true} to="/login" variant="dark"  activeClassName="active">
-              <FontAwesomeIcon icon={faUser} />
+            <NavLink
+              className="mx-5 btn btn-light"
+              exact={true}
+              to="/login"
+              variant="dark"
+              activeClassName="active"
+            > Ingresar  
+              <FontAwesomeIcon icon={faUser} className="pl-1" />
             </NavLink>
-            <NavLink  className="mx-5" exact={true} to="/suscripcion-form" variant="secondary"  activeClassName="active">
-              <Button variant="outline-dark">Suscribirse</Button>
+            <NavLink
+              className="mx-3 my-auto"
+              exact={true}
+              to="/suscripcion-form"
+              variant="Dark"
+              activeClassName="active"
+            >
+              <Button variant="outline-light">Suscribirse</Button>
             </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Navbar expand="lg" bg="dark" variant="dark" className=" ">
-        <Navbar.Brand href="#">Logo</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto w-100 d-flex justify-content-around">
-            <Nav.Link href="#" className="">
-              <FontAwesomeIcon icon={faHome} />
-            </Nav.Link>
-            <Nav.Link href="#pricing" className="">
-              Lista de Noticias
-            </Nav.Link>
-            <Nav.Link href="#pricing" className="">
-              Lista de Categorias
-            </Nav.Link>
-            <Nav.Link href="#" className="mx-5">
-              Nueva Categoria
-            </Nav.Link>
-            <Nav.Link href="#" className="mx-5">
-              Nueva Noticia
-            </Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#">
-              <Button variant="success" size="sm">
-                Cerrar Sesion
-              </Button>
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+     
     </div>
   );
 };

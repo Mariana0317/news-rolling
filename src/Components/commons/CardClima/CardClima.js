@@ -42,14 +42,14 @@ const CardClima = () => {
   }, 1000);
 
   return (
-    <div className="card-clima border border-dark col-4 p-0 my-3 d-none d-lg-block">
+    <div className="card-clima border border-dark col-4 p-0 my-5 d-none d-lg-block">
       <div className="w-100 h-100 d-flex">
         <div className="col-5 d-flex justify-content-center align-items-center">
-          <h2 className="my-auto display-4" id="hours">...</h2>
+          <h5 className="my-auto display-4" size ="sm" id="hours">...</h5>
         </div>
         <div className="col-4 d-flex flex-column justify-content-center align-items-center">
-          <p className="m-0 h4">{located.city}</p>
-          <p className="m-0 h6" id="date">Cargando...</p>
+          <p className="m-0 " size="sm">{located.city}</p>
+          <p className="m-0 " id="date">Cargando...</p>
         </div>
         <div className="col-3 d-flex flex-column justify-content-center align-items-center">
           {weather.weather ? (
