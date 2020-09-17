@@ -46,10 +46,10 @@ const Header = () => {
                 <FontAwesomeIcon icon={faCameraRetro} />
               </NavDropdown.Item>
             </NavDropdown>
-            <NavLink className="mx-5" exact={true} to="/login" variant="dark" className="nav-link" activeClassName="active">
+            <NavLink className="mx-5" exact={true} to="/login" variant="dark"  activeClassName="active">
               <FontAwesomeIcon icon={faUser} />
             </NavLink>
-            <NavLink  className="mx-5" exact={true} to="/suscripcion-form" variant="secondary" className="nav-link" activeClassName="active">
+            <NavLink  className="mx-5" exact={true} to="/suscripcion-form" variant="secondary"  activeClassName="active">
               <Button variant="outline-dark">Suscribirse</Button>
             </NavLink>
           </Nav>
