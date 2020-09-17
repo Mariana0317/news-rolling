@@ -42,7 +42,7 @@ const NuevaCategoria = (props) => {
       if (resultado.status === 201) {
         Swal.fire(
           "Categoria enviada!",
-          "Se lo reenviara a la seccion de categorias",
+          "Se lo reenviara a la lista de categorias",
           "success"
         );
       }
@@ -58,40 +58,59 @@ const NuevaCategoria = (props) => {
   };
 
   return (
-    <Container className="my-4">
-      <Form onSubmit={handleSubmit} noValidate validated={validated}>
-        <div className="d-flex justify-content-center">
-          {validated ? (
-            <Alert variant={"danger"} className="w-75">
-              Complete los campos que son obligatorios
-            </Alert>
-          ) : null}
-        </div>
-        <Form.Group controlId="nombreCategoria">
-          <Form.Label>Nombre*</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Deporte, Politica, etc"
-            required
-            onChange={(e) => setTituloCategoria(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group controlId="descripcionCategoria">
-          <Form.Label>Descripción*</Form.Label>
-          <Form.Control
-            as="textarea"
-            rows="4"
-            placeholder=""
-            className=""
-            required
-            onChange={(e) => setDescripcionCategoria(e.target.value)}
-          />
-        </Form.Group>
-        <Button variant="dark" type="submit">
-          Enviar categoria
-        </Button>
-      </Form>
-    </Container>
+    <div className="formularios">
+      <Container className="text-dark py-5 rounded">
+        <h1 className="text-center display-4 pb-5">Nueva Categoria</h1>
+        <Form onSubmit={handleSubmit} noValidate validated={validated}>
+          <Form.Group controlId="nombreCategoria" className="text-center">
+            <Form.Label className="formLetraCategoria">
+              <strong>Nombre*</strong>
+            </Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Deporte, Politica, etc"
+              className="text-center border border-dark"
+              maxLength="30"
+              required
+              onChange={(e) => setTituloCategoria(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group
+            controlId="descripcionCategoria"
+            className="text-center pt-4"
+          >
+            <Form.Label className="formLetraCategoria">
+              <strong>Descripción*</strong>
+            </Form.Label>
+            <Form.Control
+              as="textarea"
+              rows="4"
+              placeholder="Ingrese aqui una breve descripcion de la categoria"
+              className="text-center border border-dark"
+              maxLength="150"
+              required
+              onChange={(e) => setDescripcionCategoria(e.target.value)}
+            />
+          </Form.Group>
+          <div className="d-flex justify-content-center py-3">
+            {validated ? (
+              <Alert variant={"danger"} className="w-75">
+                Complete los campos que son obligatorios
+              </Alert>
+            ) : null}
+          </div>
+          <div className="d-flex justify-content-center">
+            <Button
+              variant="light"
+              type="submit"
+              className="border border-dark"
+            >
+              <strong>Enviar Categoría</strong>
+            </Button>
+          </div>
+        </Form>
+      </Container>
+    </div>
   );
 };
 

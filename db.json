@@ -4,12 +4,27 @@
       "tituloNoticia": "500 nuevos casos de Covid",
       "descripcionBreveNoticia": "Se encontraron 500 nuevos casos en Tucuman, una locura!!",
       "imgPrincipalNoticia": "https://comunicaciontucuman.gob.ar/wp-content/uploads/2020/08/coronavirus4.jpg",
+      "pieImgPrincipalNoticia": "jijijiji",
       "descripcionDetalladaNoticia": "HOY 65465161 CASOS!!!!!!!!!!!!!!!!!",
       "imgSecundariaNoticia": "",
-      "categoriaNoticia": "tecnologia",
+      "pieImgSecundariaNoticia": "",
+      "categoriaNoticia": "politica",
       "autorNoticia": "Luna Franco",
       "fechaNoticia": "9 de Septiembre del 2020",
       "id": 1
+    },
+    {
+      "tituloNoticia": "Graciela Alfano reveló sus \"romances\" con ex presidentes y desató una polémica",
+      "descripcionBreveNoticia": "\"Era la mujer más bella de la Argentina\", afirmó la vedette sobre aquellas épocas.",
+      "imgPrincipalNoticia": "https://img.lagaceta.com.ar/fotos/notas/2020/09/17/graciela-alfano-vedette-actriz-esta-vigente-desde-1970-foto-twitter-iconoalfano-860929-110935.jpeg",
+      "pieImgPrincipalNoticia": "GRACIELA ALFANO. La vedette y actriz está vigente desde 1970. Foto Twitter @iconoalfano",
+      "descripcionDetalladaNoticia": "Capítulo 1\n[1] En el principio creó Dios los cielos y la tierra. [2] La tierra era caos y confusión y oscuridad por encima del abismo, y un viento de Dios aleteaba por encima de las aguas. [3] Dijo Dios: «Haya luz», y hubo luz. [4] Vio Dios que la luz estaba bien, y apartó Dios la luz de la oscuridad; [5] y llamó Dios a la luz día, y a la oscuridad la llamó noche. Y atardeció y amaneció: día primero.\n\n[6] Dijo Dios: «Haya un firmamento por en medio de las aguas que las aparte unas de otras.» [7] E hizo Dios el firmamento; y apartó las aguas de por debajo del firmamento, de las aguas de por encima del firmamento. Y así fue. [8] Y llamó Dios al firmamento cielos. Y atardeció y amaneció: día segundo. [9] Dijo Dios: «Acumúlense las aguas de por debajo del firmamento en un solo conjunto, déjese ver lo seco»; y así fue. [10] Y llamó Dios a lo seco tierra, y al conjunto de las aguas lo llamó mares; y vio Dios que estaba bien.\n\n[11] Dijo Dios: «Produzca la tierra vegetación: hierbas que den semillas, árboles frutales que den fruto de su especie con su semilla dentro sobre la tierra.» Y así fue. [12] La tierra produjo vegetación: hierbas que dan semilla, por sus especies, y árboles que dan fruto con la semilla dentro, por sus especies; y vio Dios que estaban bien. [13] Y atardeció y amaneció: día tercero. [14] Dijo Dios: «Haya luceros en el firmamento celeste para apartar el día de la noche, valgan de señales para solemnidades días, años; [15] y valgan de luceros en el firmamento celeste para alumbrar sobre la tierra.» Y así fue.",
+      "imgSecundariaNoticia": "",
+      "pieImgSecundariaNoticia": "",
+      "categoriaNoticia": "espectaculos",
+      "autorNoticia": "Julito Torres",
+      "fechaNoticia": "17 de Septiembre de 2020",
+      "id": 2
     }
   ],
   "categorias": [
@@ -19,14 +34,9 @@
       "id": 1
     },
     {
-      "tituloCategoria": "josesito2",
-      "descripcionCategoria": "okokok",
+      "tituloCategoria": "Juegos",
+      "descripcionCategoria": "Se trata de juegos",
       "id": 2
-    },
-    {
-      "tituloCategoria": "leito",
-      "descripcionCategoria": "kjjiji",
-      "id": 3
     }
   ]
 }

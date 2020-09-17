@@ -14,7 +14,7 @@ import ListaNoticias from "./components/adm-crud/ListaNoticias";
 import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
 import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
 import EditarNoticias from "./components/adm-crud/EditarNoticias";
-import EditarCategorias from "./components/adm-crud/EditarCategorias";
+import EditarCategoria from "./components/adm-crud/EditarCategoria";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -126,10 +126,10 @@ function App() {
               (categoria) => categoria.id === idCategoria
             );
             return (
-              <EditarCategorias
+              <EditarCategoria
                 categoriaEncontrada={categoriaEncontrada}
                 setActualizarCategorias={setActualizarCategorias}
-              ></EditarCategorias>
+              ></EditarCategoria>
             );
           }}
         ></Route>
