@@ -8,7 +8,7 @@
       "descripcionDetalladaNoticia": "HOY 65465161 CASOS!!!!!!!!!!!!!!!!!",
       "imgSecundariaNoticia": "",
       "pieImgSecundariaNoticia": "",
-      "categoriaNoticia": "Salud",
+      "categoriaNoticia": "Espectaculos",
       "autorNoticia": "Luna Franco",
       "fechaNoticia": "9 de Septiembre del 2020",
       "id": 1
@@ -76,11 +76,6 @@
       "tituloCategoria": "Juegos",
       "descripcionCategoria": "Se trata de juegos",
       "id": 2
-    },
-    {
-      "tituloCategoria": "Deportes",
-      "descripcionCategoria": "jiji",
-      "id": 3
     },
     {
       "tituloCategoria": "Murcielagos",
