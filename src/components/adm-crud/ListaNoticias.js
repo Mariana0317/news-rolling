@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react";
+import ListGroup from "react-bootstrap/ListGroup";
+import CardsNoticias from "./CardsNoticias";
 
-const ListaNoticias = () => {
-    return (
-        <div>
-            <h1>Lista Noticias</h1>
-        </div>
-    );
+const ListaNoticias = (props) => {
+  return (
+    <div className="container my-5">
+        <h1 className="text-center display-4 mb-5">Lista de noticias</h1>
+        <ListGroup>
+            {
+                props.noticias.map((noticia) => <CardsNoticias key={noticia.id} noticia={noticia} setActualizarNoticias={props.setActualizarNoticias}></CardsNoticias>)
+            }
+        </ListGroup>
+    </div>
+  );
 };
 
 export default ListaNoticias;

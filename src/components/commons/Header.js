@@ -3,7 +3,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -19,17 +18,17 @@ const Header = () => {
     <div className="">
       
       <Navbar bg="dark" expand="lg" className=" " fixed="top" variant="dark">
-        <Navbar.Brand href="#" className="mx-3">Logo</Navbar.Brand>
+        <Navbar.Brand href="#" className="px-3">Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto w-100 d-flex justify-content-between">
-            <Nav.Link className="ml-5">
+            <Nav.Link className="pl-5">
               <FontAwesomeIcon icon={faHome} />
             </Nav.Link>
-            <Nav.Link className="mx-3">Actualidad</Nav.Link>
-            <Nav.Link className="mx-3">Espectaculos</Nav.Link>
-            <Nav.Link className="mx-3">Tecnologia</Nav.Link>
-            <Nav.Link className="mx-3">Deportes</Nav.Link>
+            <Nav.Link className="px-3">Actualidad</Nav.Link>
+            <Nav.Link className="px-3">Espectaculos</Nav.Link>
+            <Nav.Link className="px-3">Tecnologia</Nav.Link>
+            <Nav.Link className="px-3">Deportes</Nav.Link>
             <NavDropdown title="Categorias" id="categoria">
               <NavDropdown.Item>Politica</NavDropdown.Item>
               <NavDropdown.Item>Economia</NavDropdown.Item>
@@ -50,7 +49,7 @@ const Header = () => {
               <FontAwesomeIcon icon={faUser} className="pl-1" />
             </NavLink>
             <NavLink
-              className="mx-3 my-auto"
+              className="px-3 my-auto"
               exact={true}
               to="/suscripcion-form"
               variant="Dark"

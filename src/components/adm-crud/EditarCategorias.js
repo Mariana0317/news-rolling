@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -6,9 +6,9 @@ import Alert from "react-bootstrap/Alert";
 import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
 
-const NuevaCategoria = (props) => {
-  const [tituloCategoria, setTituloCategoria] = useState("");
-  const [descripcionCategoria, setDescripcionCategoria] = useState("");
+const EditarCategoria = (props) => {
+  const tituloCategoriaRef = useRef("");
+  const descripcionCategoriaRef = useRef("");
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -20,41 +20,36 @@ const NuevaCategoria = (props) => {
     }
     setValidated(false);
 
-    const categoria = {
-      tituloCategoria,
-      descripcionCategoria,
+    const categoriaEditada = {
+      tituloCategoria: tituloCategoriaRef.current.value,
+      descripcionCategoria: descripcionCategoriaRef.current.value,
     };
 
     try {
-      const cabecera = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(categoria),
-      };
-
-      const resultado = await fetch(
-        "http://localhost:4000/categorias",
-        cabecera
+      const consulta = await fetch(
+        `http://localhost:4000/categorias/${props.categoriaEncontrada.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(categoriaEditada),
+        }
       );
-      console.log(resultado);
-      if (resultado.status === 201) {
+
+      if (consulta.status === 200) {
         Swal.fire(
-          "Categoria enviada!",
+          "Categoria modificada",
           "Se lo reenviara a la seccion de categorias",
           "success"
         );
+        props.setActualizarCategorias(true);
+
+        props.history.push("/adm-inicio/listacategoria");
       }
-
-      props.setActualizarCategorias(true);
-
-      props.history.push("/adm-inicio/listacategoria");
     } catch (error) {
       console.log(error);
     }
-
-    console.log(categoria);
   };
 
   return (
@@ -73,7 +68,8 @@ const NuevaCategoria = (props) => {
             type="text"
             placeholder="Deporte, Politica, etc"
             required
-            onChange={(e) => setTituloCategoria(e.target.value)}
+            ref={tituloCategoriaRef}
+            defaultValue={props.categoriaEncontrada.tituloCategoria}
           />
         </Form.Group>
         <Form.Group controlId="descripcionCategoria">
@@ -84,7 +80,8 @@ const NuevaCategoria = (props) => {
             placeholder=""
             className=""
             required
-            onChange={(e) => setDescripcionCategoria(e.target.value)}
+            ref={descripcionCategoriaRef}
+            defaultValue={props.categoriaEncontrada.descripcionCategoria}
           />
         </Form.Group>
         <Button variant="dark" type="submit">
@@ -95,4 +92,4 @@ const NuevaCategoria = (props) => {
   );
 };
 
-export default withRouter(NuevaCategoria);
+export default withRouter(EditarCategoria);

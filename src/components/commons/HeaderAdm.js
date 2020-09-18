@@ -11,18 +11,18 @@ const HeaderAdm = () => {
       <Navbar expand="lg" bg="dark" variant="dark" className=" ">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="my-auto  w-100 d-flex justify-content-around">
+          <Nav className="py-auto  w-100 d-flex justify-content-around">
             
             <Nav.Link href="#pricing" className="">
               Lista de Noticias
             </Nav.Link>
-            <Nav.Link href="#pricing" className="mx-5">
+            <Nav.Link href="#pricing" className="px-5">
               Lista de Categorias
             </Nav.Link>
-            <Nav.Link href="#" className="mx-5">
+            <Nav.Link href="#" className="px-5">
               Nueva Categoria
             </Nav.Link>
-            <Nav.Link href="#" className="mx-5">
+            <Nav.Link href="#" className="px-5">
               Nueva Noticia
             </Nav.Link>
           </Nav>
