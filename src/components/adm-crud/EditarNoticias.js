@@ -231,14 +231,14 @@ const EditarNoticias = (props) => {
                   defaultValue={props.noticiaEncontrada.categoriaNoticia}
                 >
                   <option value="">Seleccione una..</option>
-                  <option value="actualidad">Actualidad</option>
-                  <option value="espectaculos">Espectáculos</option>
-                  <option value="tecnologia">Tecnología</option>
-                  <option value="deportes">Deportes</option>
-                  <option value="politica">Política</option>
-                  <option value="economia">Economía</option>
-                  <option value="salud">Salud</option>
-                  <option value="fotografia">Fotografía</option>
+                  <option value="Actualidad">Actualidad</option>
+                  <option value="Espectaculos">Espectáculos</option>
+                  <option value="Tecnologia">Tecnología</option>
+                  <option value="Deportes">Deportes</option>
+                  <option value="Politica">Política</option>
+                  <option value="Economia">Economía</option>
+                  <option value="Salud">Salud</option>
+                  <option value="Fotografia">Fotografía</option>
                 </Form.Control>
               </Form.Group>
             </Col>
