@@ -1,7 +1,7 @@
 {
   "noticias": [
     {
-      "tituloNoticia": "500 nuevos casos de Covid",
+      "tituloNoticia": "500 Nuevos Casos de Covid en la Ciudad de Tucuman jeje",
       "descripcionBreveNoticia": "Se encontraron 500 nuevos casos en Tucuman, una locura!!",
       "imgPrincipalNoticia": "https://comunicaciontucuman.gob.ar/wp-content/uploads/2020/08/coronavirus4.jpg",
       "pieImgPrincipalNoticia": "jijijiji",
@@ -51,6 +51,19 @@
       "autorNoticia": "Estaban Quito",
       "fechaNoticia": "20 de Septiembre de 2020",
       "id": 5
+    },
+    {
+      "tituloNoticia": "Así serán los controles de la Policía este fin de semana y el Día del Estudiante",
+      "descripcionBreveNoticia": "La fuerza provincial anunció que todos los efectivos disponibles en las reparticiones se verán afectados.",
+      "imgPrincipalNoticia": "https://img.lagaceta.com.ar/fotos/notas/2020/09/18/controles-nocturnos-policia-recorre-bares-restaurantes-ante-restricciones-pandemia-foto-ministerio-seguridad-861128-132734.jpeg",
+      "pieImgPrincipalNoticia": "CONTROLES NOCTURNOS. La Policía recorre bares y restaurantes ante las restricciones por la pandemia.",
+      "descripcionDetalladaNoticia": "Así serán los controles de la Policía este fin de semana y el Día del Estudiante - Nota de la LA GACETA https://www.lagaceta.com.ar/nota/861128/actualidad/asi-seran-controles-policia-este-fin-semana-dia-estudiante.html",
+      "imgSecundariaNoticia": "",
+      "pieImgSecundariaNoticia": "",
+      "categoriaNoticia": "Actualidad",
+      "autorNoticia": "Tucan Gutierrez",
+      "fechaNoticia": "18 de Septiembre de 2020",
+      "id": 6
     }
   ],
   "categorias": [
