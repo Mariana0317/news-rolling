@@ -66,7 +66,8 @@ const EditarCategoria = (props) => {
           <Form.Label>Nombre*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Deporte, Politica, etc"
+            placeholder="Máximo 15 caracteres"
+            maxLength="15"
             required
             ref={tituloCategoriaRef}
             defaultValue={props.categoriaEncontrada.tituloCategoria}

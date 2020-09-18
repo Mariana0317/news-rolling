@@ -76,6 +76,16 @@
       "tituloCategoria": "Juegos",
       "descripcionCategoria": "Se trata de juegos",
       "id": 2
+    },
+    {
+      "tituloCategoria": "Deportes",
+      "descripcionCategoria": "jiji",
+      "id": 3
+    },
+    {
+      "tituloCategoria": "Murcielagos",
+      "descripcionCategoria": "culpables del covid",
+      "id": 4
     }
   ]
 }

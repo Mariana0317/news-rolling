@@ -60,7 +60,7 @@ const NuevaCategoria = (props) => {
   return (
     <div className="formularios">
       <Container className="text-dark py-5 rounded">
-        <h1 className="text-center display-4 pb-5">Nueva Categoria</h1>
+        <h1 className="text-center display-4 pb-5">Nueva categoria</h1>
         <Form onSubmit={handleSubmit} noValidate validated={validated}>
           <Form.Group controlId="nombreCategoria" className="text-center">
             <Form.Label className="formLetraCategoria">
@@ -68,9 +68,9 @@ const NuevaCategoria = (props) => {
             </Form.Label>
             <Form.Control
               type="text"
-              placeholder="Deporte, Politica, etc"
+              placeholder="Máximo 15 caracteres"
               className="text-center border border-dark"
-              maxLength="30"
+              maxLength="15"
               required
               onChange={(e) => setTituloCategoria(e.target.value)}
             />
