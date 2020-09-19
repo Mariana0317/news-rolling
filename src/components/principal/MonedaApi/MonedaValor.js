@@ -9,11 +9,11 @@ const MonedaValor = (props) => {
           <h5><strong>{props.moneda.nombre}</strong></h5>
         </div>
         <div className="d-flex justify-content-between">
-          <div className="text-center w-50">
+          <div className="text-center w-50 mb-2">
             <p><strong>Compra</strong></p>
             <span>$ {props.moneda.compra}</span>
           </div>
-          <div className="text-center w-50">
+          <div className="text-center w-50 mb-2">
             <p><strong>Venta</strong></p>
             <span>$ {props.moneda.venta}</span>
           </div>
