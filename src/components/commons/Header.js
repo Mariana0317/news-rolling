@@ -18,21 +18,20 @@ const Header = () => {
   return (
     <div className="">
       <CardClima></CardClima>
-      <Jumbotron fluid className="mb-auto">
-        <Container>
-          <h1 className="text-center ">Rolling News</h1>
-          <p></p>
-        </Container>
-      </Jumbotron>
+      <Container>
+        <div className="text-center">
+        <img
+          src={process.env.PUBLIC_URL + "img/rollingnews.png"}
+          className="mt-4 mb-4"
+          id="logo-header"
+        />
+        </div>
+      </Container>
 
-      <Navbar bg="light" expand="lg" className=" ">
-        <Navbar.Brand>Logo</Navbar.Brand>
+      <Navbar expand="lg" className="text-light">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto w-100 d-flex justify-content-between ">
-            <Nav.Link className="ml-5">
-              <FontAwesomeIcon icon={faHome} />
-            </Nav.Link>
             <Nav.Link className="">Actualidad</Nav.Link>
             <Nav.Link className="">Espectaculos</Nav.Link>
             <Nav.Link className="">Tecnologia</Nav.Link>

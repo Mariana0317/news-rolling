@@ -17,7 +17,7 @@ const NoticiaDestacada2 = () => {
             <span className="badge badge-primary"><h6 className="m-0">Informacion</h6></span>
           </div>
           <Card.Title>
-            <h2 className="m-0">
+            <h2 className="m-0 text-light">
               Tras los enfrentamientos con la Policía, ruralistas esperan
               señales de la Casa de Gobierno
             </h2>

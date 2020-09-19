@@ -42,26 +42,27 @@ const CardClima = () => {
   }, 1000);
 
   return (
-    <div className="card-clima border border-dark col-4 p-0 my-3 d-none d-lg-block">
+    <div id="top">
+    <div className="text-light card-clima col-12 justify-content-between d-none d-lg-block">
       <div className="w-100 h-100 d-flex">
-        <div className="col-5 d-flex justify-content-center align-items-center">
-          <h2 className="my-auto display-4" id="hours">...</h2>
+        <div className="col-4 d-column justify-content-start align-items-center">
+          <h2 className="display-5 text-center text-light" id="hours">...</h2>
+          <p className="text-center mb-1" id="date">Cargando...</p>
         </div>
-        <div className="col-4 d-flex flex-column justify-content-center align-items-center">
-          <p className="m-0 h4">{located.city}</p>
-          <p className="m-0 h6" id="date">Cargando...</p>
+        <div className="col-4 d-flex flex-column justify-content-around align-items-center">
+          <p className="m-0 mt-2">{located.city}</p>
         </div>
-        <div className="col-3 d-flex flex-column justify-content-center align-items-center">
+        <div className="wheather col-4 d-flex flex-column justify-content-start align-items-center">
           {weather.weather ? (
             <img
               src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
               alt="Wheather"
-              className="img-fluid w-75"
             ></img>
           ) : null}
-          {weather.weather ? weather.main.temp + " °C" : null}
+          <p>{weather.weather ? weather.main.temp + " °C" : null}</p>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,8 +1,25 @@
 .card-clima {
     position: absolute;
     top: 0px;
-    left: 15px;
-    width: 380px;
-    height: 110px;
-    border-radius: 15px;
+    height: 60px;
+}
+
+#date{
+    margin-top: -10px;
+    font-size: 12px;
+}
+
+.wheather img{
+    filter: invert(100%);
+    width: 16%;
+    margin-top: -14px;
+}
+
+#top{
+    background-color: black;
+}
+
+.wheather p{
+    margin-top: -20px;
+    font-size: 12px;
 }
