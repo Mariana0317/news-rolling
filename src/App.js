@@ -18,7 +18,7 @@ import Sections from './components/Sections/Sections';
 import Notice from "./components/Notice/Notice";
 import Login from "./components/principal/Login";
 import EditarNoticias from "./components/adm-crud/EditarNoticias";
-import EditarCategorias from "./components/adm-crud/EditarCategorias";
+import EditarCategoria from "./components/adm-crud/EditarCategoria";
 import Error404 from "./components/error404/Error404";
 import PaginaAcercaDeNosotros from "./components/AcercaDeNosotros/AcercaDeNosotros";
 
@@ -145,10 +145,10 @@ function App() {
               (categoria) => categoria.id === idCategoria
             );
             return (
-              <EditarCategorias
+              <EditarCategoria
                 categoriaEncontrada={categoriaEncontrada}
                 setActualizarCategorias={setActualizarCategorias}
-              ></EditarCategorias>
+              ></EditarCategoria>
             );
           }}
         ></Route>

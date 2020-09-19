@@ -1,0 +1,17 @@
+.formularios{
+    background-color: #E5E5E5;
+}
+
+.formLetraCategoria{
+    font-size: 20px;
+}
+
+.textoTitulo { 
+    height: 70px;
+    max-height: 70px;
+}
+
+.textoCuerpo { 
+    height: 100px;
+    max-height: 100px;
+}
