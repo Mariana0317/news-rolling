@@ -14,7 +14,7 @@ import ListaNoticias from "./components/adm-crud/ListaNoticias";
 import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
 import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
 import HeaderAdm from "./components/commons/HeaderAdm";
-import Sections from './components/Sections/Sections';
+import Sections from "./components/Sections/Sections";
 import Notice from "./components/Notice/Notice";
 import Login from "./components/principal/Login";
 import EditarNoticias from "./components/adm-crud/EditarNoticias";
@@ -27,6 +27,8 @@ function App() {
   const [actualizarNoticias, setActualizarNoticias] = useState(true);
   const [categorias, setCategorias] = useState([]);
   const [actualizarCategorias, setActualizarCategorias] = useState(true);
+  const [admin, setAdmin] = useState([]);
+  const [actualizarAdmin, setActualizarAdmin] = useState(true);
 
   useEffect(() => {
     if (actualizarNoticias) {
@@ -39,7 +41,7 @@ function App() {
     try {
       const respuesta = await fetch("http://localhost:4000/noticias");
       const resultado = await respuesta.json();
-      setNoticias(resultado); //Quitar despues para usar bd
+      setNoticias(resultado);
     } catch (error) {
       console.log(error);
     }
@@ -56,7 +58,25 @@ function App() {
     try {
       const respuesta = await fetch("http://localhost:4000/categorias");
       const resultado = await respuesta.json();
-      setCategorias(resultado); //Quitar despues para usar bd
+      setCategorias(resultado);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (actualizarAdmin) {
+      consultarAdmin();
+      setActualizarAdmin(false);
+    }
+  }, [actualizarAdmin]);
+
+  const consultarAdmin = async () => {
+    try {
+      const respuesta = await fetch("https://rolling-news.herokuapp.com/adm");
+      const resultado = await respuesta.json();
+      setAdmin(resultado[0]);
+      console.log(admin)
     } catch (error) {
       console.log(error);
     }
@@ -65,7 +85,7 @@ function App() {
   return (
     <Router>
       <Header></Header>
-      <HeaderAdm></HeaderAdm>
+      {admin.logueado === true ? <HeaderAdm></HeaderAdm> : null};
       <Switch>
         <Route exact path={"/sections/:category"}>
           <Sections />
@@ -152,7 +172,7 @@ function App() {
             );
           }}
         ></Route>
-        <Route exact path='*'>
+        <Route exact path="*">
           <Error404></Error404>
         </Route>
       </Switch>

@@ -30,9 +30,9 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto w-100 d-flex justify-content-between ">
-            <Nav.Link className="ml-5">
+            <NavLink className="ml-5" exact={true} to="/">
               <FontAwesomeIcon icon={faHome} />
-            </Nav.Link>
+            </NavLink>
             <Nav.Link className="">Actualidad</Nav.Link>
             <Nav.Link className="">Espectaculos</Nav.Link>
             <Nav.Link className="">Tecnologia</Nav.Link>
@@ -47,12 +47,12 @@ const Header = () => {
                 <FontAwesomeIcon icon={faCameraRetro} />
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link className="">
+            <NavLink className="" exact={true} to="/login">
               <FontAwesomeIcon icon={faUser} />
-            </Nav.Link>
-            <Nav.Link className="">
+            </NavLink>
+            <NavLink className="" exact={true} to="/suscripcion-form">
               <Button variant="outline-dark">Suscribirse</Button>
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
