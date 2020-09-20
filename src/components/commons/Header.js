@@ -18,17 +18,17 @@ const Header = () => {
     <div className="">
       
       <Navbar bg="dark" expand="lg" className=" " fixed="top" variant="dark">
-        <Navbar.Brand href="#" className="px-3">Logo</Navbar.Brand>
+        <Navbar.Brand href="#" className=" px-3">Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto w-100 d-flex justify-content-between">
-            <Nav.Link className="pl-5">
+            <NavLink exact={true} to="/" className="pl-5">
               <FontAwesomeIcon icon={faHome} />
-            </Nav.Link>
-            <Nav.Link className="px-3">Actualidad</Nav.Link>
-            <Nav.Link className="px-3">Espectaculos</Nav.Link>
-            <Nav.Link className="px-3">Tecnologia</Nav.Link>
-            <Nav.Link className="px-3">Deportes</Nav.Link>
+            </NavLink >
+            <NavLink exact={true} to="/seccionxCategoria" className="nav-link px-3">Actualidad</NavLink >
+            <NavLink exact={true} to="/seccionxCategoria" className="nav-link px-3">Espectaculos</NavLink >
+            <NavLink exact={true} to="/seccionxCategoria" className="nav-link px-3">Tecnologia</NavLink >
+            <NavLink exact={true} to="/seccionxCategoria" className="nav-link px-3">Deportes</NavLink>
             <NavDropdown title="Categorias" id="categoria">
               <NavDropdown.Item>Politica</NavDropdown.Item>
               <NavDropdown.Item>Economia</NavDropdown.Item>
@@ -49,7 +49,7 @@ const Header = () => {
               <FontAwesomeIcon icon={faUser} className="pl-1" />
             </NavLink>
             <NavLink
-              className="px-3 my-auto"
+              className="nav-link px-3 my-auto"
               exact={true}
               to="/suscripcion-form"
               variant="Dark"

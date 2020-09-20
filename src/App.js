@@ -13,7 +13,7 @@ import ListaCategorias from "./components/adm-crud/ListaCategorias";
 import ListaNoticias from "./components/adm-crud/ListaNoticias";
 import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
 import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
-import HeaderAdm from "./components/commons/HeaderAdm";
+//import HeaderAdm from "./components/commons/HeaderAdm";
 import Sections from './components/Sections/Sections';
 import Notice from "./components/Notice/Notice";
 import Login from "./components/principal/Login";
@@ -21,6 +21,8 @@ import EditarNoticias from "./components/adm-crud/EditarNoticias";
 import EditarCategorias from "./components/adm-crud/EditarCategorias";
 import Error404 from "./components/error404/Error404";
 import PaginaAcercaDeNosotros from "./components/AcercaDeNosotros/AcercaDeNosotros";
+import SeccionxCategoria from "./components/Sections/SeccionxCategoria";
+
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -110,6 +112,10 @@ function App() {
           <NuevaCategoria
             setActualizarCategorias={setActualizarCategorias}
           ></NuevaCategoria>
+          <Route exact path ="/seccionxCategoria">
+          <SeccionxCategoria></SeccionxCategoria>
+          </Route>
+        
         </Route>
         <Route exact path="/adm-inicio/listanoticias/nuevanoticia">
           <NuevaNoticia
