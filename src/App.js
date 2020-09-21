@@ -117,7 +117,7 @@ function App() {
           <Inicio
             noticiasDestacadas={noticiasDestacadas}
             noticias={noticias}
-            ></Inicio>
+          ></Inicio>
         </Route>
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>
@@ -129,7 +129,9 @@ function App() {
           <FormSuscripcion></FormSuscripcion>
         </Route>
         <Route exact path="/login">
-          <Login></Login>
+          <Login setAdmin={setAdmin}
+                  setActualizarAdmin={setActualizarAdmin}
+            admin={admin}></Login>
         </Route>
         <Route exact path="/about-us">
           <PaginaAcercaDeNosotros></PaginaAcercaDeNosotros>

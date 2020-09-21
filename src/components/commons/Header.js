@@ -49,9 +49,9 @@ const Header = () => {
             <NavLink className="" exact={true} to="/login">
               <FontAwesomeIcon icon={faUser} />
             </NavLink>
-            <Nav.Link>
+            <NavLink exact={true} to="/suscripcion-form">
               <Button variant="outline-dark" id="opciones">Suscribirse</Button>
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
