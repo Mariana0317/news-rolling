@@ -1,17 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
 import './DetalleNoticia.css'
-// import {
-//     EmailShareButton,
-//     FacebookShareButton,
-//     InstapaperShareButton,
-//     LinkedinShareButton,
-//     RedditShareButton,
-//     TelegramShareButton,
-//     TwitterShareButton,
-//     ViberShareButton,
-//     WhatsappShareButton,
-//   } from "react-share";
 
 const DetalleNoticia = (props) => {
     return (

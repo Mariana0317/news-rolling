@@ -20,7 +20,9 @@ const Inicio = (props) => {
         <div className="col-lg-8 col-12 px-1">
           <CategoriasNoticiasInicio noticias={props.noticias} categoria={"cine"}></CategoriasNoticiasInicio>
         </div>
-        <div className="col-4 border border-dark d-none d-lg-block"></div>
+        <div className="col-4 border border-dark d-none d-lg-block">
+
+        </div>
       </section>
     </div>
   );

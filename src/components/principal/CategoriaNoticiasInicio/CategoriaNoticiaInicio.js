@@ -2,7 +2,6 @@ import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
 const CategoriaNoticiaInicio = (props) => {
-  console.log(props.noticia);
   return (
     <ListGroup.Item action className="border rounded my-2 shadow-sm">
       <div className="d-flex justify-content-between">

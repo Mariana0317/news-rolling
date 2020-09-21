@@ -21,6 +21,7 @@ import EditarNoticias from "./components/adm-crud/EditarNoticias";
 import EditarCategoria from "./components/adm-crud/EditarCategoria";
 import Error404 from "./components/error404/Error404";
 import PaginaAcercaDeNosotros from "./components/AcercaDeNosotros/AcercaDeNosotros";
+import Fotos from "./components/fotos/Fotos";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -58,7 +59,7 @@ function App() {
 
   const consultarCategorias = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4001/categorias");
+      const respuesta = await fetch("https://rolling-news.herokuapp.com/categorias");
       const resultado = await respuesta.json();
       setCategorias(resultado);
     } catch (error) {
@@ -104,10 +105,10 @@ function App() {
 
   return (
     <Router>
-      <Header></Header>
-      {admin.logueado === true ? <HeaderAdm></HeaderAdm> : null};
+      <Header categorias={categorias}></Header>
+      {admin.logueado === true ? <HeaderAdm></HeaderAdm> : null}
       <Switch>
-        <Route exact path={"/sections/:category"}>
+        <Route exact path={"/sections"}>
           <Sections />
         </Route>
         <Route exact path={"/sections/:category/:id"}>
@@ -122,8 +123,11 @@ function App() {
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>
         </Route>
-        <Route exact path="/detalle-noticia">
+        <Route exact path="/detalle-noticia/:id">
           <DetalleNoticia></DetalleNoticia>
+        </Route>
+        <Route exact path="/fotos">
+          <Fotos noticias={noticias}></Fotos>
         </Route>
         <Route exact path="/suscripcion-form">
           <FormSuscripcion></FormSuscripcion>
