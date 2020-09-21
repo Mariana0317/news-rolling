@@ -27,6 +27,8 @@ function App() {
   const [actualizarNoticias, setActualizarNoticias] = useState(true);
   const [categorias, setCategorias] = useState([]);
   const [actualizarCategorias, setActualizarCategorias] = useState(true);
+  const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
+  const [actualizarNoticiasDestacadas, setActualizarNoticiasDestacadas] = useState(true);
 
   useEffect(() => {
     if (actualizarNoticias) {
@@ -37,7 +39,7 @@ function App() {
 
   const consultarNoticias = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4000/noticias");
+      const respuesta = await fetch("https://rolling-news.herokuapp.com/news");
       const resultado = await respuesta.json();
       setNoticias(resultado); //Quitar despues para usar bd
     } catch (error) {
@@ -54,13 +56,31 @@ function App() {
 
   const consultarCategorias = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4000/categorias");
+      const respuesta = await fetch("http://localhost:4001/categorias");
       const resultado = await respuesta.json();
       setCategorias(resultado); //Quitar despues para usar bd
     } catch (error) {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (actualizarNoticiasDestacadas) {
+      consultarNoticiasDestacadas();
+      setActualizarNoticiasDestacadas(false);
+    }
+  }, [actualizarNoticiasDestacadas]);
+
+  const consultarNoticiasDestacadas = async () => {
+    try {
+      const respuesta = await fetch("https://rolling-news.herokuapp.com/highlights");
+      const resultado = await respuesta.json();
+      setNoticiasDestacadas(resultado); //Quitar despues para usar bd
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  console.log(noticiasDestacadas);
 
   return (
     <Router>
@@ -74,7 +94,10 @@ function App() {
           <Notice />
         </Route>
         <Route exact path="/">
-          <Inicio></Inicio>
+          <Inicio
+            noticiasDestacadas={noticiasDestacadas}
+            noticias={noticias}
+            ></Inicio>
         </Route>
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>
