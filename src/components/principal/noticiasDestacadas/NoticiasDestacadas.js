@@ -8,7 +8,7 @@ const NoticiasDestacadas = (props) => {
   return (
 
     <div className="d-flex flex-column flex-lg-row noticias-destacadas mb-3 px-1 px-md-0">
-      <div className="col-lg-8 col-12 p-0 m-0 mr-lg-2 rounded shadow">
+      <div className="col-lg-8 col-12 mb-2 mb-lg-0 p-0 m-0 mr-lg-2 rounded shadow">
         <NoticiaDestacada
           noticiasDestacadas={props.noticiasDestacadas[0]}
         ></NoticiaDestacada>

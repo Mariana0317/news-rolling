@@ -8,7 +8,7 @@ const NoticiaDestacada2 = (props) => {
   console.log(props.noticiasDestacadas !== undefined ? props.noticiasDestacadas : null)  
 
   return (
-    <div className="col h-100 px-md-0 px-lg-0 p-0 mb-2">
+    <div className="col px-md-0 px-lg-0 p-0" style={{height:"400px"}}>
       <Card className="text-light h-100 m-0 text-md-left text-justify">
         <Card.Body
           className="d-flex p-3 flex-column justify-content-end w-100 h-100 rounded"
