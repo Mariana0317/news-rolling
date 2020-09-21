@@ -11,7 +11,8 @@ const ListaCategorias = (props) => {
         <ListGroup>
           {props.categorias.map((categoria) => (
             <LineasCategorias
-              key={categoria.id}
+              key={categoria._id}
+              id={categoria._id}
               categoria={categoria}
               setActualizarCategorias={props.setActualizarCategorias}
             ></LineasCategorias>

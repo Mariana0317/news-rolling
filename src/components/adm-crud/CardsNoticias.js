@@ -23,7 +23,7 @@ const CardsNoticias = (props) => {
       if (result.isConfirmed) {
         try {
           const resultado = await fetch(
-            `http://localhost:4000/noticias/${id}`,
+            `https://rolling-news.herokuapp.com/news/${id}`,
             {
               method: "DELETE",
               headers: {
@@ -50,23 +50,23 @@ const CardsNoticias = (props) => {
       <Card className="border border-dark">
         <Card.Img
           variant="top"
-          src={props.noticia.imgPrincipalNoticia}
+          src={props.noticia.imgPrincipal}
           height="200"
         />
         <Card.Body>
-          <Card.Title className="textoTitulo">{props.noticia.tituloNoticia}</Card.Title>
+          <Card.Title className="textoTitulo">{props.noticia.titulo}</Card.Title>
           <Card.Text className="textoCuerpo">
-            {props.noticia.descripcionBreveNoticia}
+            {props.noticia.descripcion}
             <br />
             <br />
           </Card.Text>
           <Card.Text>  
             <strong>Categoria: </strong>
-            {props.noticia.categoriaNoticia}
+            {props.noticia.categoria}
             <br />
             <br />
             <strong>Fecha: </strong>
-            {props.noticia.fechaNoticia}
+            {props.noticia.fecha}
           </Card.Text>
         </Card.Body>
         <Card.Footer>
@@ -74,7 +74,7 @@ const CardsNoticias = (props) => {
             <Col>
               <Link
                 className="btn btn-info w-100 p-2"
-                to={`/adm-inicio/listanoticias/editarnoticia/${props.noticia.id}`}
+                to={`/adm-inicio/listanoticias/editarnoticia/${props.noticia._id}`}
               >
                 <FontAwesomeIcon icon={faEdit} />
               </Link>
@@ -87,7 +87,7 @@ const CardsNoticias = (props) => {
             <Col>
               <Button
                 className="btn btn-danger w-100 p-2"
-                onClick={() => eliminarNoticia(props.noticia.id)}
+                onClick={() => eliminarNoticia(props.noticia._id)}
               >
                 <FontAwesomeIcon icon={faTrashAlt} />
               </Button>

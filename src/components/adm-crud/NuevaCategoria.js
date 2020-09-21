@@ -7,8 +7,8 @@ import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
 
 const NuevaCategoria = (props) => {
-  const [tituloCategoria, setTituloCategoria] = useState("");
-  const [descripcionCategoria, setDescripcionCategoria] = useState("");
+  const [titulo, setTitulo] = useState("");
+  const [descripcion, setDescripcion] = useState("");
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -21,8 +21,8 @@ const NuevaCategoria = (props) => {
     setValidated(false);
 
     const categoria = {
-      tituloCategoria,
-      descripcionCategoria,
+      titulo,
+      descripcion,
     };
 
     try {
@@ -35,7 +35,7 @@ const NuevaCategoria = (props) => {
       };
 
       const resultado = await fetch(
-        "http://localhost:4000/categorias",
+        "https://rolling-news.herokuapp.com/categorias",
         cabecera
       );
       console.log(resultado);
@@ -62,7 +62,7 @@ const NuevaCategoria = (props) => {
       <Container className="text-dark py-5 rounded">
         <h1 className="text-center display-4 pb-5">Nueva categoria</h1>
         <Form onSubmit={handleSubmit} noValidate validated={validated}>
-          <Form.Group controlId="nombreCategoria" className="text-center">
+          <Form.Group controlId="nombre" className="text-center">
             <Form.Label className="formLetraCategoria">
               <strong>Nombre*</strong>
             </Form.Label>
@@ -72,11 +72,11 @@ const NuevaCategoria = (props) => {
               className="text-center border border-dark"
               maxLength="15"
               required
-              onChange={(e) => setTituloCategoria(e.target.value)}
+              onChange={(e) => setTitulo(e.target.value)}
             />
           </Form.Group>
           <Form.Group
-            controlId="descripcionCategoria"
+            controlId="descripcion"
             className="text-center pt-4"
           >
             <Form.Label className="formLetraCategoria">
@@ -89,7 +89,7 @@ const NuevaCategoria = (props) => {
               className="text-center border border-dark"
               maxLength="150"
               required
-              onChange={(e) => setDescripcionCategoria(e.target.value)}
+              onChange={(e) => setDescripcion(e.target.value)}
             />
           </Form.Group>
           <div className="d-flex justify-content-center py-3">

@@ -21,7 +21,7 @@ const LineaCategoria = (props) => {
       if (result.isConfirmed) {
         try {
           const resultado = await fetch(
-            `http://localhost:4000/categorias/${id}`,
+            `https://rolling-news.herokuapp.com/categorias/${id}`,
             {
               method: "DELETE",
               headers: {
@@ -45,20 +45,20 @@ const LineaCategoria = (props) => {
 
   return (
     <ListGroup.Item className="border-bottom border-dark d-flex justify-content-between">
-      <h4>{props.categoria.tituloCategoria}</h4>
+      <h4>{props.categoria.titulo}</h4>
       <div>
         <Button className="btn btn-dark py-1 px-2 mx-1">
           <FontAwesomeIcon icon={faEye} />
         </Button>
         <Link
           className="btn btn-info py-1 px-2 mx-1"
-          to={`/adm-inicio/listacategoria/editarcategoria/${props.categoria.id}`}
+          to={`/adm-inicio/listacategoria/editarcategoria/${props.categoria._id}`}
         >
           <FontAwesomeIcon icon={faEdit} />
         </Link>
         <Button
           className="btn btn-danger py-1 px-2 mx-1"
-          onClick={() => eliminarCategoria(props.categoria.id)}
+          onClick={() => eliminarCategoria(props.categoria._id)}
         >
           <FontAwesomeIcon icon={faTrashAlt} />
         </Button>

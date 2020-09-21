@@ -9,19 +9,16 @@ import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
 
 const NuevaNoticia = (props) => {
-  const [tituloNoticia, setTituloNoticia] = useState("");
-  const [descripcionBreveNoticia, setDescripcionBreveNoticia] = useState("");
-  const [imgPrincipalNoticia, setImgPrincipalNoticia] = useState("");
-  const [pieImgPrincipalNoticia, setPieImgPrincipalNoticia] = useState("");
-  const [
-    descripcionDetalladaNoticia,
-    setDescripcionDetalladaNoticia,
-  ] = useState("");
-  const [imgSecundariaNoticia, setImgSecundariaNoticia] = useState("");
-  const [pieImgSecundariaNoticia, setPieImgSecundariaNoticia] = useState("");
-  const [categoriaNoticia, setCategoriaNoticia] = useState("");
-  const [autorNoticia, setAutorNoticia] = useState("");
-  const [fechaNoticia, setFechaNoticia] = useState("");
+  const [titulo, setTitulo] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [imgPrincipal, setImgPrincipal] = useState("");
+  const [pieDeImgPrincipal, setPieDeImgPrincipal] = useState("");
+  const [contenido, setContenido] = useState("");
+  const [imgSecundaria, setImgSecundaria] = useState("");
+  const [pieDeImgSecundaria, setPieDeImgSecundaria] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [autor, setAutor] = useState("");
+  const [fecha, setFecha] = useState("");
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -34,16 +31,16 @@ const NuevaNoticia = (props) => {
     setValidated(false);
 
     const noticia = {
-      tituloNoticia,
-      descripcionBreveNoticia,
-      imgPrincipalNoticia,
-      pieImgPrincipalNoticia,
-      descripcionDetalladaNoticia,
-      imgSecundariaNoticia,
-      pieImgSecundariaNoticia,
-      categoriaNoticia,
-      autorNoticia,
-      fechaNoticia,
+      titulo,
+      descripcion,
+      imgPrincipal,
+      pieDeImgPrincipal,
+      contenido,
+      imgSecundaria,
+      pieDeImgSecundaria,
+      categoria,
+      autor,
+      fecha,
     };
 
     try {
@@ -55,7 +52,7 @@ const NuevaNoticia = (props) => {
         body: JSON.stringify(noticia),
       };
 
-      const resultado = await fetch("http://localhost:4000/noticias", cabecera);
+      const resultado = await fetch("https://rolling-news.herokuapp.com/news", cabecera);
       console.log(resultado);
       if (resultado.status === 201) {
         Swal.fire(
@@ -75,14 +72,12 @@ const NuevaNoticia = (props) => {
     console.log(noticia);
   };
 
-  // let expresion = // 
-
   return (
     <div className="formularios">
       <Container className="text-dark py-5 rounded">
         <h1 className="text-center display-4 pb-5">Nueva noticia</h1>
         <Form onSubmit={handleSubmit} noValidate validated={validated}>
-          <Form.Group controlId="tituloNoticia" className="text-center">
+          <Form.Group controlId="titulo" className="text-center">
             <Form.Label className="formLetraCategoria">
               <strong>Titulo*</strong>
             </Form.Label>
@@ -91,15 +86,12 @@ const NuevaNoticia = (props) => {
               placeholder="Ingrese aqui el titulo de su noticia"
               className="text-center border border-dark"
               minLength="40"
-              maxLength="100"
+              maxLength="90"
               required
-              onChange={(e) => setTituloNoticia(e.target.value)}
+              onChange={(e) => setTitulo(e.target.value)}
             />
           </Form.Group>
-          <Form.Group
-            controlId="descripcionBreveNoticia"
-            className="text-center pt-4"
-          >
+          <Form.Group controlId="descripcion" className="text-center pt-4">
             <Form.Label className="formLetraCategoria">
               <strong>Descripción breve*</strong>
             </Form.Label>
@@ -110,15 +102,12 @@ const NuevaNoticia = (props) => {
               className="text-center border border-dark"
               maxLength="150"
               required
-              onChange={(e) => setDescripcionBreveNoticia(e.target.value)}
+              onChange={(e) => setDescripcion(e.target.value)}
             />
           </Form.Group>
           <Row>
             <Col className="col-12 col-md-6">
-              <Form.Group
-                controlId="imgPrincipalNoticia"
-                className="text-center pt-4"
-              >
+              <Form.Group controlId="imgPrincipal" className="text-center pt-4">
                 <Form.Label className="formLetraCategoria">
                   <strong>Imagen principal (URL)*</strong>
                 </Form.Label>
@@ -127,13 +116,13 @@ const NuevaNoticia = (props) => {
                   placeholder="https://images.ole.com.ar/2020/09/08/iMGWVvyx0_320x210__1.jpg"
                   className="text-center border border-dark"
                   required
-                  onChange={(e) => setImgPrincipalNoticia(e.target.value)}
+                  onChange={(e) => setImgPrincipal(e.target.value)}
                 />
               </Form.Group>
             </Col>
             <Col className="col-12 col-md-6">
               <Form.Group
-                controlId="pieImgPrincipalNoticia"
+                controlId="pieDeImgPrincipal"
                 className="text-center pt-4"
               >
                 <Form.Label className="formLetraCategoria">
@@ -145,15 +134,12 @@ const NuevaNoticia = (props) => {
                   className="text-center border border-dark"
                   maxLength="100"
                   required
-                  onChange={(e) => setPieImgPrincipalNoticia(e.target.value)}
+                  onChange={(e) => setPieDeImgPrincipal(e.target.value)}
                 />
               </Form.Group>
             </Col>
           </Row>
-          <Form.Group
-            controlId="descripcionDetalladaNoticia"
-            className="text-center pt-4"
-          >
+          <Form.Group controlId="contenido" className="text-center pt-4">
             <Form.Label className="formLetraCategoria">
               <strong>Descripción detallada*</strong>
             </Form.Label>
@@ -163,13 +149,13 @@ const NuevaNoticia = (props) => {
               placeholder="Ingrese aqui todos los detalles de su noticia"
               className="text-center border border-dark"
               required
-              onChange={(e) => setDescripcionDetalladaNoticia(e.target.value)}
+              onChange={(e) => setContenido(e.target.value)}
             />
           </Form.Group>
           <Row>
             <Col className="col-12 col-md-6">
               <Form.Group
-                controlId="imgSecundariaNoticia"
+                controlId="imgSecundaria"
                 className="text-center pt-4"
               >
                 <Form.Label className="formLetraCategoria">
@@ -179,13 +165,13 @@ const NuevaNoticia = (props) => {
                   type="text"
                   placeholder="https://images.ole.com.ar/2020/09/15/11o2w01An_320x210__1.jpg"
                   className="text-center border border-dark"
-                  onChange={(e) => setImgSecundariaNoticia(e.target.value)}
+                  onChange={(e) => setImgSecundaria(e.target.value)}
                 />
               </Form.Group>
             </Col>
             <Col className="col-12 col-md-6">
               <Form.Group
-                controlId="pieImgSecundariaNoticia"
+                controlId="pieDeImgSecundaria"
                 className="text-center pt-4"
               >
                 <Form.Label className="formLetraCategoria">
@@ -196,14 +182,14 @@ const NuevaNoticia = (props) => {
                   placeholder="Detalle lo que muestra la imagen secundaria"
                   className="text-center border border-dark"
                   maxLength="100"
-                  onChange={(e) => setPieImgSecundariaNoticia(e.target.value)}
+                  onChange={(e) => setPieDeImgSecundaria(e.target.value)}
                 />
               </Form.Group>
             </Col>
           </Row>
           <Row>
             <Col className="col-12 col-md-4">
-              <Form.Group controlId="autorNoticia" className="text-center pt-4">
+              <Form.Group controlId="autor" className="text-center pt-4">
                 <Form.Label className="formLetraCategoria">
                   <strong>Autor*</strong>
                 </Form.Label>
@@ -213,12 +199,12 @@ const NuevaNoticia = (props) => {
                   className="text-center border border-dark"
                   required
                   maxLength="30"
-                  onChange={(e) => setAutorNoticia(e.target.value)}
+                  onChange={(e) => setAutor(e.target.value)}
                 />
               </Form.Group>
             </Col>
             <Col className="col-12 col-md-4">
-              <Form.Group controlId="categoriaNoticia" className="text-center pt-4">
+              <Form.Group controlId="categoria" className="text-center pt-4">
                 <Form.Label className="formLetraCategoria">
                   <strong>Categoria*</strong>
                 </Form.Label>
@@ -226,7 +212,7 @@ const NuevaNoticia = (props) => {
                   as="select"
                   className="border border-dark"
                   required
-                  onChange={(e) => setCategoriaNoticia(e.target.value)}
+                  onChange={(e) => setCategoria(e.target.value)}
                 >
                   <option value="">Seleccione una..</option>
                   <option value="Actualidad">Actualidad</option>
@@ -241,7 +227,7 @@ const NuevaNoticia = (props) => {
               </Form.Group>
             </Col>
             <Col className="col-12 col-md-4">
-              <Form.Group controlId="fechaNoticia" className="text-center pt-4">
+              <Form.Group controlId="fecha" className="text-center pt-4">
                 <Form.Label className="formLetraCategoria">
                   <strong>Fecha*</strong>
                 </Form.Label>
@@ -251,7 +237,7 @@ const NuevaNoticia = (props) => {
                   className="text-center border border-dark"
                   maxLength="30"
                   required
-                  onChange={(e) => setFechaNoticia(e.target.value)}
+                  onChange={(e) => setFecha(e.target.value)}
                 />
               </Form.Group>
             </Col>
@@ -264,7 +250,11 @@ const NuevaNoticia = (props) => {
             ) : null}
           </div>
           <div className="d-flex justify-content-center">
-            <Button variant="light" type="submit" className="border border-dark">
+            <Button
+              variant="light"
+              type="submit"
+              className="border border-dark"
+            >
               <strong>Enviar Noticia</strong>
             </Button>
           </div>

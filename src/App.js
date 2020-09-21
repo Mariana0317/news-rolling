@@ -8,7 +8,6 @@ import Inicio from "./components/principal/Inicio";
 import CategoriasNoticias from "./components/noticias/CategoriasNoticias";
 import DetalleNoticia from "./components/noticias/DetalleNoticia";
 import FormSuscripcion from "./components/principal/FormSuscripcion";
-import InicioAdm from "./components/principal/InicioAdm";
 import ListaCategorias from "./components/adm-crud/ListaCategorias";
 import ListaNoticias from "./components/adm-crud/ListaNoticias";
 import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
@@ -30,7 +29,10 @@ function App() {
   const [admin, setAdmin] = useState([]);
   const [actualizarAdmin, setActualizarAdmin] = useState(true);
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
-  const [actualizarNoticiasDestacadas, setActualizarNoticiasDestacadas] = useState(true);
+  const [
+    actualizarNoticiasDestacadas,
+    setActualizarNoticiasDestacadas,
+  ] = useState(true);
 
   useEffect(() => {
     if (actualizarNoticias) {
@@ -58,7 +60,7 @@ function App() {
 
   const consultarCategorias = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4001/categorias");
+      const respuesta = await fetch("https://rolling-news.herokuapp.com/categorias");
       const resultado = await respuesta.json();
       setCategorias(resultado);
     } catch (error) {
@@ -78,7 +80,7 @@ function App() {
       const respuesta = await fetch("https://rolling-news.herokuapp.com/adm");
       const resultado = await respuesta.json();
       setAdmin(resultado[0]);
-      console.log(admin)
+      console.log(admin);
     } catch (error) {
       console.log(error);
     }
@@ -93,7 +95,9 @@ function App() {
 
   const consultarNoticiasDestacadas = async () => {
     try {
-      const respuesta = await fetch("https://rolling-news.herokuapp.com/highlights");
+      const respuesta = await fetch(
+        "https://rolling-news.herokuapp.com/highlights"
+      );
       const resultado = await respuesta.json();
       setNoticiasDestacadas(resultado); //Quitar despues para usar bd
     } catch (error) {
@@ -117,7 +121,7 @@ function App() {
           <Inicio
             noticiasDestacadas={noticiasDestacadas}
             noticias={noticias}
-            ></Inicio>
+          ></Inicio>
         </Route>
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>
@@ -135,7 +139,10 @@ function App() {
           <PaginaAcercaDeNosotros></PaginaAcercaDeNosotros>
         </Route>
         <Route exact path="/adm-inicio">
-          <InicioAdm></InicioAdm>
+          <Inicio
+            noticiasDestacadas={noticiasDestacadas}
+            noticias={noticias}
+          ></Inicio>
         </Route>
         <Route exact path="/adm-inicio/listacategoria">
           <ListaCategorias
@@ -163,11 +170,9 @@ function App() {
           exact
           path="/adm-inicio/listanoticias/editarnoticia/:id"
           render={(props) => {
-            //tomo el id de la url
-            const idNoticia = parseInt(props.match.params.id);
-            //filtro el arreglo y busco el producto
+            const idNoticia = props.match.params.id;
             const noticiaEncontrada = noticias.find(
-              (noticia) => noticia.id === idNoticia
+              (noticia) => noticia._id === idNoticia
             );
             return (
               <EditarNoticias
@@ -181,11 +186,9 @@ function App() {
           exact
           path="/adm-inicio/listacategoria/editarcategoria/:id"
           render={(props) => {
-            //tomo el id de la url
-            const idCategoria = parseInt(props.match.params.id);
-            //filtro el arreglo y busco el producto
+            const idCategoria = props.match.params.id;
             const categoriaEncontrada = categorias.find(
-              (categoria) => categoria.id === idCategoria
+              (categoria) => categoria._id === idCategoria
             );
             return (
               <EditarCategoria
