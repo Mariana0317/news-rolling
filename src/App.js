@@ -128,7 +128,7 @@ function App() {
           console.log(idNoticia);
           const noticiaEncontrada = noticias.find((noticia)=> noticia._id === idNoticia);
           return(
-            <DetalleNoticia noticia={noticiaEncontrada}></DetalleNoticia>
+            <DetalleNoticia noticias={noticias} noticia={noticiaEncontrada}></DetalleNoticia>
           )
         }}>
         </Route>
