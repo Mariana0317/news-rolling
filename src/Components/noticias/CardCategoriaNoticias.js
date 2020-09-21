@@ -12,9 +12,9 @@ const CardCategoriaNoticias = (props) => {
             src="https://www.infobae.com/new-resizer/GVSCX3D10xycaOcXy8fgw15WRBg=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/P46MBKQGPBHP7ISLFR4IGONWJY.jpg"
           />
           <Card.Body>
-            <Card.Title>{props.noticiasxSeccion.tituloNoticia}   </Card.Title>
+            <Card.Title>{props.categoriaEncontrada.titulo} </Card.Title>
             <Card.Text>
-              {props.noticiasxSeccion.descripcionBreveNoticia}
+              {props.noticiasxSeccion}
             </Card.Text>
           </Card.Body>
           <Card.Footer>

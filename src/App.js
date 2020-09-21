@@ -38,7 +38,7 @@ function App() {
 
   const consultarNoticias = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4000/noticias");
+      const respuesta = await fetch("https://rolling-news.herokuapp.com/news");
       const resultado = await respuesta.json();
       setNoticias(resultado); //Quitar despues para usar bd
     } catch (error) {
@@ -78,12 +78,26 @@ function App() {
         <Route exact path="/">
           <Inicio></Inicio>
         </Route>
-        <Route exact path="/categoria-noticias/" render={(props) => {
-          const lasNoticias = (props.match.params.id)
-          console.log("parametro de la url" + lasNoticias);
-        }}>
-          <CategoriasNoticias noticiasEnviadas={noticias}></CategoriasNoticias>
-        </Route>
+        <Route
+          exact
+          path="/categoria-noticias/:noticiasxCategoria"
+          render={(props) => {
+            //quiero tomar el parametro de la url
+            const parametroCategoria = props.match.params.noticiasxCategoria;
+            console.log("parametro de la url" +  parametroCategoria);
+            //filtro el arreglo noticias (el state) y buscar la categoria
+            const categoriaEncontrada = noticias.filter(
+              (unaCategoria) =>
+                unaCategoria.categoria === parametroCategoria
+            );
+            console.log(categoriaEncontrada);
+            return (
+              <CategoriasNoticias
+                 categoriaEncontrada ={categoriaEncontrada}
+              ></CategoriasNoticias>
+            );
+          }}
+        ></Route>
         <Route exact path="/detalle-noticia">
           <DetalleNoticia></DetalleNoticia>
         </Route>

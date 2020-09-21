@@ -1,28 +1,31 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { withRouter } from "react-router-dom";
 import CardCategoriaNoticias from "./CardCategoriaNoticias";
-import CardGrandeNotDest from "./CardGrandeNotDest";
+//import CardGrandeNotDest from "./CardGrandeNotDest";
 
 const CategoriasNoticias = (props) => {
+  console.log(props.categoriaEncontrada)
   return (
-    <Container className="d-flex flex-row">
+    <Container className="container-fluid ">
+      <h1>{
+        props.categoriaEncontrada[0].titulo 
+        }</h1>
+
+      <Row>
         
-  <Row  >
-    <Col sm={10}>
-        <CardGrandeNotDest>  </CardGrandeNotDest>
+
+        <Col sm={3}>
+          
+            <CardCategoriaNoticias
+              
+            ></CardCategoriaNoticias>
+          
         </Col>
-       
-    <Col sm={3} >
-        {props.noticiasEnviadas.map((noticias) => <CardCategoriaNoticias key={noticias.id} noticiasxSeccion={noticias}></CardCategoriaNoticias>)}
-        
-        </Col>
-        
-  </Row>
-  
-  </Container>
+      </Row>
+    </Container>
   );
 };
 

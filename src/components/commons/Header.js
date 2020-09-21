@@ -10,9 +10,7 @@ import { Link } from "react-router-dom";
 
 const Header = (props) => {
 
-  const categoriaSeleccionada = (categoriaNoticia) => {
-    console.log(categoriaNoticia);
-  }
+  
   return (
     <div className="">
       <Navbar bg="dark" expand="lg" className=" " fixed="top" variant="dark">
