@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 import { withRouter } from 'react-router-dom';
+import "./Login.css";
 
 
 const Login = (props) => {
@@ -42,26 +43,26 @@ const Login = (props) => {
 
     return (
         <Container>
-            <h1 className="display-3 text-center my-3">Iniciar sesión</h1>
+            <h2 className="text-center mt-5">Iniciar sesión</h2>
             {error ? (<Alert variant={'danger'}>
                 Todos los campos son obligatorios
             </Alert>) : null}
             <Form className="my-4" onSubmit={handleSubmit}>
                 <Form.Group controlId="email">
-                    <Form.Label>Correo electrónico</Form.Label>
+                    <Form.Label className="labels">Correo electrónico</Form.Label>
                     <Form.Control type="email" placeholder="Ingresa tu correo electrónico" onChange={(e) => setEmail(e.target.value)} />
                 </Form.Group>
 
                 <Form.Group controlId="contrasenia">
-                    <Form.Label>Contraseña</Form.Label>
+                    <Form.Label className="labels">Contraseña</Form.Label>
                     <Form.Control type="password" placeholder="Ingresa tu contraseña" onChange={(e) => setContrasenia(e.target.value)} />
                 </Form.Group>
                 <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Recordarme" />
                 </Form.Group>
-                <Button variant="success" type="submit">
+                <Button type="submit">
                     Ingresar
-            </Button>
+                </Button>
             </Form>
         </Container>
     );

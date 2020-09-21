@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Swal from "sweetalert2";
 import Alert from "react-bootstrap/Alert";
 import { withRouter } from "react-router-dom";
+import "./Login.css";
 
 const FormSuscripcion = (props) => {
   const [nombreYApellido, setNombreYApellido] = useState("");
@@ -50,14 +51,14 @@ const FormSuscripcion = (props) => {
 
   return (
     <div className="container">
-      <h1 className="display-3 text-center my-3">Formulario de suscripción</h1>
+      <h2 className="text-center mt-5">Formulario de suscripción</h2>
       {error ? (
         <Alert variant={"danger"}>Todos los campos son obligatorios</Alert>
       ) : null}
       <Form className="my-4" onSubmit={handleSubmit}>
         <Form.Row>
           <Form.Group as={Col} controlId="nombreYApellido">
-            <Form.Label>Nombre completo *</Form.Label>
+            <Form.Label className="labels">Nombre completo *</Form.Label>
             <Form.Control
               type="text"
               placeholder="Ingresa tu apellido y nombre"
@@ -104,7 +105,7 @@ const FormSuscripcion = (props) => {
           </Form.Group>
         </Form.Row>
 
-        <Button variant="success" type="submit">
+        <Button variant="danger" type="submit" className="botonbt">
           Enviar
         </Button>
       </Form>

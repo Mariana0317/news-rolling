@@ -8,7 +8,7 @@ const Inicio = (props) => {
     <div>
       <MonedasValores></MonedasValores>
       <section className="container mt-md-2 mt-3">
-        <h2 className="text-center">Noticias Destacadas</h2>
+        <h2 className="text-center mt-5">Noticias Destacadas</h2>
         <hr />
         <NoticiasDestacadas
           noticiasDestacadas={props.noticiasDestacadas}

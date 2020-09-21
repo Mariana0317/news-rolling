@@ -79,8 +79,8 @@ const NuevaNoticia = (props) => {
 
   return (
     <div className="formularios">
-      <Container className="text-dark py-5 rounded">
-        <h1 className="text-center display-4 pb-5">Nueva noticia</h1>
+      <Container className="text-dark rounded">
+      <h2 className="text-center mb-5">Nueva Noticia</h2>
         <Form onSubmit={handleSubmit} noValidate validated={validated}>
           <Form.Group controlId="tituloNoticia" className="text-center">
             <Form.Label className="formLetraCategoria">
@@ -264,7 +264,7 @@ const NuevaNoticia = (props) => {
             ) : null}
           </div>
           <div className="d-flex justify-content-center">
-            <Button variant="light" type="submit" className="border border-dark">
+            <Button variant="danger" type="submit" className="border border-dark">
               <strong>Enviar Noticia</strong>
             </Button>
           </div>

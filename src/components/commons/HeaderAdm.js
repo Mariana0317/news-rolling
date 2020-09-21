@@ -18,7 +18,7 @@ const HeaderAdm = () => {
         expand="lg"
         bg="dark"
         variant="dark"
-        className=" d-flex justify-content-center"
+        className="d-flex justify-content-center"
       >
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

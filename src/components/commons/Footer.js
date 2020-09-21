@@ -14,7 +14,7 @@ import {
 const Footer = () => {
   return (
     <Card className="footer mt-5">
-      <Card.Body className="container-fluid">
+      <Card.Body>
         <div className="row">
           <div className="col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center mb-4">
           <img
@@ -22,7 +22,7 @@ const Footer = () => {
             id="logo_text"
           />
           </div>
-          <section className="col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center">
+          <section className="col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center about">
             <p>
             Somos buscadores de la verdad y contadores de historias.
             Somos testigos de la historia a medida que se desarrolla y explicamos no solo lo que sucedió, sino por qué y lo que significa para usted.
@@ -53,7 +53,7 @@ const Footer = () => {
                 © 2020 Rolling News
               </Nav.Link>
               <Nav.Link href="#" className="col-sm-12 col-md-3 col-lg-3 text-center text-light">
-                Bases Leagles
+                Bases Legales
               </Nav.Link>
               <Nav.Link href="#" className="col-sm-12 col-md-3 col-lg-3 text-center text-light">
                 Politicas de privacidad

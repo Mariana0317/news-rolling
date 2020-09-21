@@ -20,7 +20,7 @@ const CategoriaNoticias = (props) => {
       <ListGroup variant="flush">
         <ListGroup.Item className="mb-2">
           <h1>
-            {props.Categoria}
+            {props.categoria}
           </h1>
         </ListGroup.Item>
         <CategoriaNoticiaInicio

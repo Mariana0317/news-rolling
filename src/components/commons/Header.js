@@ -28,8 +28,8 @@ const Header = () => {
         </div>
       </Container>
 
-      <Navbar expand="lg" className="text-light">
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar expand="lg" className="d-flex justify-content-center text-light">
+        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="container d-flex justify-content-between">
             <Nav.Link className="" id="opciones">Actualidad</Nav.Link>
@@ -55,6 +55,7 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      <hr></hr>
     </div>
   );
 };

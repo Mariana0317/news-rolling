@@ -14,10 +14,10 @@ const NoticiaDestacadaSmall = (props) => {
           }}
         >
           <div>
-            <span className="badge badge-primary">{props.noticiasDestacadas !== undefined ? props.noticiasDestacadas.categoria : null}</span>
+            <span className="badge badge-danger">{props.noticiasDestacadas !== undefined ? props.noticiasDestacadas.categoria : null}</span>
           </div>
           <Card.Title className="m-0">
-            <h5 className="m-0">
+            <h5 className="notdes m-0 text-light">
             {props.noticiasDestacadas !== undefined ? props.noticiasDestacadas.titulo : null}
             </h5>
           </Card.Title>
