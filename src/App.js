@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/commons/Header";
 import Footer from "./components/commons/Footer";
@@ -29,6 +29,8 @@ function App() {
   const [actualizarCategorias, setActualizarCategorias] = useState(true);
   const [admin, setAdmin] = useState([]);
   const [actualizarAdmin, setActualizarAdmin] = useState(true);
+  const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
+  const [actualizarNoticiasDestacadas, setActualizarNoticiasDestacadas] = useState(true);
 
   useEffect(() => {
     if (actualizarNoticias) {
@@ -39,7 +41,7 @@ function App() {
 
   const consultarNoticias = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4000/noticias");
+      const respuesta = await fetch("https://rolling-news.herokuapp.com/news");
       const resultado = await respuesta.json();
       setNoticias(resultado);
     } catch (error) {
@@ -56,7 +58,7 @@ function App() {
 
   const consultarCategorias = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4000/categorias");
+      const respuesta = await fetch("http://localhost:4001/categorias");
       const resultado = await respuesta.json();
       setCategorias(resultado);
     } catch (error) {
@@ -82,6 +84,24 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    if (actualizarNoticiasDestacadas) {
+      consultarNoticiasDestacadas();
+      setActualizarNoticiasDestacadas(false);
+    }
+  }, [actualizarNoticiasDestacadas]);
+
+  const consultarNoticiasDestacadas = async () => {
+    try {
+      const respuesta = await fetch("https://rolling-news.herokuapp.com/highlights");
+      const resultado = await respuesta.json();
+      setNoticiasDestacadas(resultado); //Quitar despues para usar bd
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  console.log(noticiasDestacadas);
+
   return (
     <Router>
       <Header></Header>
@@ -94,7 +114,10 @@ function App() {
           <Notice />
         </Route>
         <Route exact path="/">
-          <Inicio></Inicio>
+          <Inicio
+            noticiasDestacadas={noticiasDestacadas}
+            noticias={noticias}
+            ></Inicio>
         </Route>
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>

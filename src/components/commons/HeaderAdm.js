@@ -3,6 +3,11 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import {NavLink} from 'react-router-dom';
+import {
+  faUser,
+  faCameraRetro,
+  faHome,
+} from "@fortawesome/free-solid-svg-icons";
 
 const HeaderAdm = () => {
 
@@ -32,7 +37,7 @@ const HeaderAdm = () => {
             </NavLink>
           </Nav>
           <Nav>
-            <Nav.Link size="sm" href="#">
+            <Nav.Link>
               <Button variant="success">Cerrar Sesion</Button>
             </Nav.Link>
           </Nav>
