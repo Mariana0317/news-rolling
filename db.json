@@ -10,6 +10,41 @@
       "autorNoticia": "Luna Franco",
       "fechaNoticia": "9 de Septiembre del 2020",
       "id": 1
+    },
+    {
+      "tituloNoticia": "Dirty John volvió a Netflix, con el conmocionante caso de Betty Broderick",
+      "descripcionBreveNoticia": "Fue uno de los crímenes que más sacudió a los medios de los Estados Unidos. En la primera temporada, la serie se ocupó del caso de Debra Newell, y ahora se mete con Dan Broderick y su esposa.",
+      "imgPrincipalNoticia": "https://images.clarin.com/2020/08/16/christian-slater-y-amanda-peet___B8NjhKtmC_720x0__1.jpg",
+      "descripcionDetalladaNoticia": "Hay crímenes que se vuelven ultra mediáticos por la sorpresa de quien los ejecuta. Y no hay lugar en el mundo que le saque más provecho a esas historias que los Estados Unidos. En la larga lista de casos policiales que escandalizaron a la sociedad norteamericana, y que por ello se volvieron serie o película, faltaba el de Betty Broderick.",
+      "imgSecundariaNoticia": "",
+      "categoriaNoticia": "espectaculos",
+      "autorNoticia": "Luna Franco",
+      "fechaNoticia": "9 de Septiembre del 2020",
+      "id": 1
+
+
+    },
+    {
+      "tituloNoticia": "500 nuevos casos de Covid",
+      "descripcionBreveNoticia": "Se encontraron 500 nuevos casos en Tucuman, una locura!!",
+      "imgPrincipalNoticia": "https://comunicaciontucuman.gob.ar/wp-content/uploads/2020/08/coronavirus4.jpg",
+      "descripcionDetalladaNoticia": "HOY 65465161 CASOS!!!!!!!!!!!!!!!!!",
+      "imgSecundariaNoticia": "",
+      "categoriaNoticia": "tecnologia",
+      "autorNoticia": "Luna Franco",
+      "fechaNoticia": "9 de Septiembre del 2020",
+      "id": 1
+    },
+    {
+      "tituloNoticia": "500 nuevos casos de Covid",
+      "descripcionBreveNoticia": "Se encontraron 500 nuevos casos en Tucuman, una locura!!",
+      "imgPrincipalNoticia": "https://comunicaciontucuman.gob.ar/wp-content/uploads/2020/08/coronavirus4.jpg",
+      "descripcionDetalladaNoticia": "HOY 65465161 CASOS!!!!!!!!!!!!!!!!!",
+      "imgSecundariaNoticia": "",
+      "categoriaNoticia": "tecnologia",
+      "autorNoticia": "Luna Franco",
+      "fechaNoticia": "9 de Septiembre del 2020",
+      "id": 1
     }
   ],
   "categorias": [

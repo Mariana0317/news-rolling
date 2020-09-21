@@ -1,5 +1,6 @@
-[
-  {
+{
+ "Noticias": 
+[ {
     "titulo": "Tucumán tuvo el peor día desde que comenzó la pandemia: sumó 480 casos de covid-19",
     "texto": "Tucumán sumó 480 nuevos contagios de covid-19 en las ultimas 24 horas, la cifra más alta desde que comenzó la pandemia, y llegó a los 5.820 casos confirmados, informó el Ministerio de Salud de la Provincia.",
     "categoria": "actualidad",
@@ -205,5 +206,5 @@
     "categoria": "economia",
     "img": "https://www.infobae.com/new-resizer/StQdToAd4A6CATxzd-pPoNG9Sj0=/768x512/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/6WESKSBCYFETJL43PBEOA7C3KY.jpg",
     "id": "26"
+  }]
   }
-]

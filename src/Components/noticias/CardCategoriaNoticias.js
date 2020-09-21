@@ -2,21 +2,19 @@ import React from 'react';
 
 import Card from "react-bootstrap/Card";
 
-const CardCategoriaNoticias = () => {
+const CardCategoriaNoticias = (props) => {
     return (
         
      
-        <Card className="mx-auto mt-3 ">
+        <Card className=" mt-3 ">
           <Card.Img
             variant="top"
             src="https://www.infobae.com/new-resizer/GVSCX3D10xycaOcXy8fgw15WRBg=/768x432/filters:format(jpg):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/P46MBKQGPBHP7ISLFR4IGONWJY.jpg"
           />
           <Card.Body>
-            <Card.Title>Card title</Card.Title>
+            <Card.Title>{props.noticiasxSeccion.tituloNoticia}   </Card.Title>
             <Card.Text>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+              {props.noticiasxSeccion.descripcionBreveNoticia}
             </Card.Text>
           </Card.Body>
           <Card.Footer>

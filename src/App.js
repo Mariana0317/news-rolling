@@ -21,6 +21,7 @@ import EditarNoticias from "./components/adm-crud/EditarNoticias";
 import EditarCategorias from "./components/adm-crud/EditarCategorias";
 import Error404 from "./components/error404/Error404";
 import PaginaAcercaDeNosotros from "./components/AcercaDeNosotros/AcercaDeNosotros";
+import Header from "./components/commons/Header";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -64,6 +65,7 @@ function App() {
 
   return (
     <Router>
+      <Header noticiasEnviadas={noticias}></Header>
       <JumboHeader></JumboHeader>
 
       <Switch>
@@ -76,8 +78,11 @@ function App() {
         <Route exact path="/">
           <Inicio></Inicio>
         </Route>
-        <Route exact path="/categoria-noticias">
-          <CategoriasNoticias></CategoriasNoticias>
+        <Route exact path="/categoria-noticias/" render={(props) => {
+          const lasNoticias = (props.match.params.id)
+          console.log("parametro de la url" + lasNoticias);
+        }}>
+          <CategoriasNoticias noticiasEnviadas={noticias}></CategoriasNoticias>
         </Route>
         <Route exact path="/detalle-noticia">
           <DetalleNoticia></DetalleNoticia>

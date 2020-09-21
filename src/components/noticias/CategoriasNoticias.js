@@ -6,21 +6,20 @@ import { withRouter } from "react-router-dom";
 import CardCategoriaNoticias from "./CardCategoriaNoticias";
 import CardGrandeNotDest from "./CardGrandeNotDest";
 
-const CategoriasNoticias = () => {
+const CategoriasNoticias = (props) => {
   return (
-    <Container>
+    <Container className="d-flex flex-row">
         
-  <Row xs={1} >
-    <Col sm={6}>
-        <CardGrandeNotDest></CardGrandeNotDest>
+  <Row  >
+    <Col sm={10}>
+        <CardGrandeNotDest>  </CardGrandeNotDest>
         </Col>
        
     <Col sm={3} >
-        <CardCategoriaNoticias></CardCategoriaNoticias>
+        {props.noticiasEnviadas.map((noticias) => <CardCategoriaNoticias key={noticias.id} noticiasxSeccion={noticias}></CardCategoriaNoticias>)}
+        
         </Col>
-        <Col sm={3}>
-        <CardCategoriaNoticias></CardCategoriaNoticias>
-        </Col>
+        
   </Row>
   
   </Container>

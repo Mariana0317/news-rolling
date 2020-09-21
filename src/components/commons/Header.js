@@ -5,9 +5,14 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faHome } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+
+const Header = (props) => {
+
+  const categoriaSeleccionada = (categoriaNoticia) => {
+    console.log(categoriaNoticia);
+  }
   return (
     <div className="">
       <Navbar bg="dark" expand="lg" className=" " fixed="top" variant="dark">
@@ -17,53 +22,54 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto w-100 d-flex justify-content-between">
-            <NavLink exact={true} to="/" className="pl-5">
+            <Link exact={true} to="/" className="pl-5">
               <FontAwesomeIcon icon={faHome} />
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               exact={true}
-              to="/categoria-noticias"
+              to="/categoria-noticias/actualidad"
               className="nav-link px-3"
+             
             >
               Actualidad
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               exact={true}
-              to="/categoria-noticias"
+              to="/categoria-noticias/espectaculos"
               className="nav-link px-3"
             >
               Espectaculos
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               exact={true}
-              to="/categoria-noticias"
+              to="/categoria-noticias/tecnologia"
               className="nav-link px-3"
             >
               Tecnologia
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               exact={true}
-              to="/categoria-noticias"
+              to="/categoria-noticias/deportes"
               className="nav-link px-3"
             >
               Deportes
-            </NavLink>
+            </Link>
             <NavDropdown title="Categorias" id="categoria">
               <NavDropdown.Item>
-                <Link to="/categoria-noticias">Politica</Link>
+                <Link to="/categoria-noticias/politica">Politica</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link to="/categoria-noticias">Economia</Link>
+                <Link to="/categoria-noticias/economia">Economia</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link to="/categoria-noticias">Salud</Link>
+                <Link to="/categoria-noticias/salud">Salud</Link>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
-                <Link to="/categoria-noticias">Galeria de fotos</Link>
+                <Link to="/categoria-noticias/foto-galeria">Foto Galeria </Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <NavLink
+            <Link
               className="mx-5 btn btn-light"
               exact={true}
               to="/login"
@@ -73,8 +79,8 @@ const Header = () => {
               {" "}
               Ingresar
               <FontAwesomeIcon icon={faUser} className="pl-1" />
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               className="nav-link px-3 my-auto"
               exact={true}
               to="/suscripcion-form"
@@ -82,7 +88,7 @@ const Header = () => {
               activeClassName="active"
             >
               <Button variant="outline-light">Suscribirse</Button>
-            </NavLink>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
