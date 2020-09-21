@@ -38,3 +38,6 @@
     opacity: 0.6;
 }
 
+.text-none:hover{
+    text-decoration: none!important;
+}

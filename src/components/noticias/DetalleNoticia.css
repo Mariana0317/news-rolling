@@ -1,3 +1,8 @@
-p{
-    overflow-wrap: break-word;
+.parrafo{
+    font-size: 27px;
+    text-align: justify;
+}
+
+h5{
+    font-size: 15px!important;
 }

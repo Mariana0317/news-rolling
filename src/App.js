@@ -20,6 +20,7 @@ import EditarNoticias from "./components/adm-crud/EditarNoticias";
 import EditarCategoria from "./components/adm-crud/EditarCategoria";
 import Error404 from "./components/error404/Error404";
 import PaginaAcercaDeNosotros from "./components/AcercaDeNosotros/AcercaDeNosotros";
+import Fotos from "./components/fotos/Fotos";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -29,10 +30,7 @@ function App() {
   const [admin, setAdmin] = useState([]);
   const [actualizarAdmin, setActualizarAdmin] = useState(true);
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
-  const [
-    actualizarNoticiasDestacadas,
-    setActualizarNoticiasDestacadas,
-  ] = useState(true);
+  const [actualizarNoticiasDestacadas, setActualizarNoticiasDestacadas] = useState(true);
 
   useEffect(() => {
     if (actualizarNoticias) {
@@ -109,8 +107,8 @@ function App() {
 
   return (
     <Router>
-      <Header></Header>
-      {admin.logueado === true ? <HeaderAdm></HeaderAdm> : null};
+      <Header categorias={categorias}></Header>
+      {admin.logueado === true ? <HeaderAdm></HeaderAdm> : null}
       <Switch>
         <Route exact path="/">
           <Inicio
@@ -127,8 +125,23 @@ function App() {
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>
         </Route>
-        <Route exact path="/detalle-noticia/:id">
-            <DetalleNoticia></DetalleNoticia>
+        <Route exact path="/detalle-noticia/:id" render={(props)=>{
+          const idNoticia = props.match.params.id;
+          let noticia = {};
+          const noticiaEncontrada = noticias.find((noticia)=> noticia._id === idNoticia);
+          const noticiaDestacadaEncontrada = noticiasDestacadas.find((noticia)=> noticia._id === idNoticia);
+          if(noticiaEncontrada === undefined){
+            noticia = noticiaDestacadaEncontrada;
+          }else{
+            noticia = noticiaEncontrada;
+          }
+          return(
+            <DetalleNoticia noticias={noticias}  noticia={noticia}></DetalleNoticia>
+          )
+        }}>
+        </Route>
+        <Route exact path="/fotos">
+          <Fotos noticias={noticias}></Fotos>
         </Route>
         <Route exact path="/suscripcion-form">
           <FormSuscripcion></FormSuscripcion>
