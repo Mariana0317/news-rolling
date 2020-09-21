@@ -31,15 +31,15 @@ const Header = () => {
       <Navbar expand="lg" className="text-light">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto w-100 d-flex justify-content-between ">
-            <Nav.Link className="">Actualidad</Nav.Link>
-            <Nav.Link className="">Espectaculos</Nav.Link>
-            <Nav.Link className="">Tecnologia</Nav.Link>
-            <Nav.Link className="">Deportes</Nav.Link>
+          <Nav className="container d-flex justify-content-between">
+            <Nav.Link className="" id="opciones">Actualidad</Nav.Link>
+            <Nav.Link className="" id="opciones">Espectaculos</Nav.Link>
+            <Nav.Link className="" id="opciones">Tecnologia</Nav.Link>
+            <Nav.Link className="" id="opciones">Deportes</Nav.Link>
             <NavDropdown title="+ Noticias" id="categoria">
-              <NavDropdown.Item>Politica</NavDropdown.Item>
-              <NavDropdown.Item>Economia</NavDropdown.Item>
-              <NavDropdown.Item>Salud</NavDropdown.Item>
+              <NavDropdown.Item id="opciones">Politica</NavDropdown.Item>
+              <NavDropdown.Item id="opciones">Economia</NavDropdown.Item>
+              <NavDropdown.Item id="opciones">Salud</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
                 Fotos
@@ -49,8 +49,8 @@ const Header = () => {
             <Nav.Link className="">
               <FontAwesomeIcon icon={faUser} />
             </Nav.Link>
-            <Nav.Link className="">
-              <Button variant="outline-dark">Suscribirse</Button>
+            <Nav.Link>
+              <Button variant="outline-dark" id="opciones">Suscribirse</Button>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

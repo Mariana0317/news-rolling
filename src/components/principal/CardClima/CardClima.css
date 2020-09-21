@@ -10,7 +10,7 @@
 }
 
 .wheather img{
-    filter: invert(100%);
+    filter: invert(30%);
     width: 16%;
     margin-top: -14px;
 }
@@ -20,6 +20,6 @@
 }
 
 .wheather p{
-    margin-top: -20px;
+    margin-top: -16px;
     font-size: 12px;
 }

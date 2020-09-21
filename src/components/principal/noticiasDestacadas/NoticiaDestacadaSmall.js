@@ -14,7 +14,7 @@ const NoticiaDestacadaSmall = () => {
           }}
         >
           <div>
-            <span className="badge badge-primary">Informacion</span>
+            <span><strong>INFORMACION</strong></span>
           </div>
           <Card.Title className="m-0">
             <h5 className="m-0 text-light">

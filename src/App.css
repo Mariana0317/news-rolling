@@ -1,3 +1,23 @@
 #logo-header{
     width: 300px;
 }
+
+.encuadres{
+    background-color: #efa9a0;
+}
+
+.encuadres h5{
+    color: whitesmoke;
+}
+
+.encuadres p{
+    font-size: 14px;
+}
+  
+#opciones:hover{
+    background-color: rgb(222,83,64);
+    opacity: 1;
+    color: white;
+    opacity: 0.6;
+}
+

@@ -1,25 +1,12 @@
 .footer span{
     /*font-size: 35px;*/
-    color: darkblue;
-}
-.footer h5{
-    font-size: small;
+    color: rgb(222,83,64);
 }
 
-/*<div>
-      <Card>
-        <Container className="d-flex justify-content-between">
-          
-          <ListGroup horizontal>
-          <ListGroup.Item>© 2020 Rolling News</ListGroup.Item>
-          <ListGroup.Item>Bases Leagles</ListGroup.Item>
-          <ListGroup.Item>Politicas de privacidad</ListGroup.Item>
-          <ListGroup.Item>Politicas de cookies</ListGroup.Item>
-        </ListGroup>
-        </Container>
-        
-      </Card>
-      <Navbar bg="light">
-            <Navbar.Brand >Polling Nwes</Navbar.Brand>
-          </Navbar>
-    </div>*/
+#logo_text{
+  height: 120px;
+}
+
+p{
+  font-size: 12px;
+}

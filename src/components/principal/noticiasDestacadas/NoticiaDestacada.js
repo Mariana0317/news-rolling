@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import "./NoticiasDestacadas.css";
 
 const NoticiaDestacada2 = () => {
   return (
@@ -14,13 +15,13 @@ const NoticiaDestacada2 = () => {
           }}
         >
           <div>
-            <span className="badge badge-primary"><h6 className="m-0">Informacion</h6></span>
+            <span><h5 className="m-0">Informacion</h5></span>
           </div>
           <Card.Title>
-            <h2 className="m-0 text-light">
+            <h3 className="text-light">
               Tras los enfrentamientos con la Policía, ruralistas esperan
               señales de la Casa de Gobierno
-            </h2>
+            </h3>
           </Card.Title>
           <Card.Footer className="p-0">
             <small className="text-muted">La Gaceta - 10/09/2020</small>
