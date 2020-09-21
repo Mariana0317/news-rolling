@@ -60,11 +60,11 @@ const CardsNoticias = (props) => {
             <br />
             <br />
           </Card.Text>
-          <Card.Text>  
+          <Card.Text className="capitalize">  
             <strong>Categoria: </strong>
             {props.noticia.categoria}
-            <br />
-            <br />
+            <br/>
+            <br/>
             <strong>Fecha: </strong>
             {props.noticia.fecha}
           </Card.Text>

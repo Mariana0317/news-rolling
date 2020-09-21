@@ -221,7 +221,7 @@ const NuevaNoticia = (props) => {
                   {props.categorias.map((categoria, indice) => {
                     return (
                       <option value={categoria.titulo}
-                         key={indice}>
+                         key={indice} className="capitalize">
                         {categoria.titulo}
                       </option>
                     );

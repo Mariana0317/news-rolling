@@ -66,7 +66,8 @@ const EditarCategoria = (props) => {
           <Form.Label>Nombre*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Máximo 15 caracteres"
+            placeholder="15 caracteres"
+            className="lowercase"
             maxLength="15"
             required
             ref={tituloRef}

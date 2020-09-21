@@ -55,6 +55,25 @@ const DetalleNoticia = (props) => {
               {props.noticia !== undefined ? props.noticia.contenido : null}
             </p>
           </div>
+          {props.noticia !== undefined ? (props.noticia.imgSecundaria === "" ? null : <Card className="bg-dark text-white">
+              <Card.Img
+                src={
+                  props.noticia !== undefined
+                    ? props.noticia.imgSecundaria
+                    : null
+                }
+                alt={`${
+                  props.noticia !== undefined
+                    ? `img-secundaria${props.noticia._id}`
+                    : null
+                }`}
+              />
+            </Card>) : null}
+            <span>
+              {props.noticia !== undefined
+                ? props.noticia.pieDeImgSecundaria
+                : null}
+            </span>
         </div>
       </div>
       <div className="pl-3 pr-3 mt-5 mb-5 col-3">

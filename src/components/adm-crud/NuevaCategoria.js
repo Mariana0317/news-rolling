@@ -68,8 +68,8 @@ const NuevaCategoria = (props) => {
             </Form.Label>
             <Form.Control
               type="text"
-              placeholder="Máximo 15 caracteres"
-              className="text-center border border-dark"
+              placeholder="15 caracteres"
+              className="text-center border border-dark lowercase"
               maxLength="15"
               required
               onChange={(e) => setTitulo(e.target.value)}

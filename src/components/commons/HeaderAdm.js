@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 import {NavLink} from 'react-router-dom';
 
 const HeaderAdm = () => {
-
     return (
         <div>
             <Navbar
@@ -24,11 +23,11 @@ const HeaderAdm = () => {
             <NavLink exact={true} to="/adm-inicio/listacategoria" className="mx-5 nav-link" activeClassName="active">
               Lista de Categorias
             </NavLink>
-            <NavLink exact={true} to="/adm-inicio/listanoticias/nuevanoticia" className="mx-5 nav-link" activeClassName="active">
-              Nueva Noticia
-            </NavLink>
             <NavLink exact={true} to="/adm-inicio/listacategoria/nueva" className="mx-5 nav-link" activeClassName="active">
-            Nueva Categoria
+              Nueva Categoria
+            </NavLink>
+            <NavLink exact={true} to="/adm-inicio/listanoticias/nueva" className="mx-5 nav-link" activeClassName="active">
+              Nueva Noticia
             </NavLink>
           </Nav>
           <Nav>
@@ -39,7 +38,7 @@ const HeaderAdm = () => {
         </Navbar.Collapse>
       </Navbar>
     </div>
-    );
+  );
 };
 
 export default HeaderAdm;

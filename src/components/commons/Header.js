@@ -5,13 +5,9 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import { NavLink, Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import CardClima from "../principal/CardClima/CardClima";
+import CardClima from "../commons/CardClima/CardClima";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faCameraRetro,
-  faHome,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUser, faHome, faCameraRetro } from "@fortawesome/free-solid-svg-icons";
 
 const Header = (props) => {
   return (
@@ -48,11 +44,14 @@ const Header = (props) => {
               Deportes
             </Nav.Link>
             <NavDropdown title="+ Noticias" id="categoria">
+              <Link to="/sections" className="dropdown-item" id="opciones">Politica</Link>
+              <Link to="/sections" className="dropdown-item" id="opciones">Economia</Link>
+              <Link to="/sections" className="dropdown-item" id="opciones">Salud</Link>
               {props.categorias.map((categoria, indice) =>
                 categoria !== undefined ? (
                   <Link
                     to="/sections"
-                    className="dropdown-item"
+                    className="dropdown-item capitalize"
                     id="opciones"
                     key={indice}
                   >
