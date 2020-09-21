@@ -125,10 +125,16 @@ function App() {
         </Route>
         <Route exact path="/detalle-noticia/:id" render={(props)=>{
           const idNoticia = props.match.params.id;
-          console.log(idNoticia);
+          let noticia = {};
           const noticiaEncontrada = noticias.find((noticia)=> noticia._id === idNoticia);
+          const noticiaDestacadaEncontrada = noticiasDestacadas.find((noticia)=> noticia._id === idNoticia);
+          if(noticiaEncontrada === undefined){
+            noticia = noticiaDestacadaEncontrada;
+          }else{
+            noticia = noticiaEncontrada;
+          }
           return(
-            <DetalleNoticia noticias={noticias} noticia={noticiaEncontrada}></DetalleNoticia>
+            <DetalleNoticia noticias={noticias}  noticia={noticia}></DetalleNoticia>
           )
         }}>
         </Route>

@@ -5,9 +5,11 @@ import { withRouter } from "react-router-dom";
 import CategoriaNoticiaInicio from "../principal/CategoriaNoticiasInicio/CategoriaNoticiaInicio";
 
 const DetalleNoticia = (props) => {
-  const noticiaRecomendadas = props.noticias.filter(((noticias) => {
-    return noticias._id !== props.noticia._id;
-  }));
+  const noticiaRecomendadas = props.noticias.filter((noticias) => {
+    return props.noticias !== undefined
+      ? noticias._id !== props.noticia._id
+      : null
+  });
   console.log(noticiaRecomendadas);
   return (
     <section className="row m-0">
@@ -57,9 +59,15 @@ const DetalleNoticia = (props) => {
       </div>
       <div className="pl-3 pr-3 mt-5 mb-5 col-3">
         <h3>Noticias Recomendadas</h3>
-        <CategoriaNoticiaInicio noticia={noticiaRecomendadas[0]}></CategoriaNoticiaInicio>
-        <CategoriaNoticiaInicio noticia={noticiaRecomendadas[1]}></CategoriaNoticiaInicio>
-        <CategoriaNoticiaInicio noticia={noticiaRecomendadas[2]}></CategoriaNoticiaInicio>
+        <CategoriaNoticiaInicio
+          noticia={noticiaRecomendadas[0]}
+        ></CategoriaNoticiaInicio>
+        <CategoriaNoticiaInicio
+          noticia={noticiaRecomendadas[1]}
+        ></CategoriaNoticiaInicio>
+        <CategoriaNoticiaInicio
+          noticia={noticiaRecomendadas[2]}
+        ></CategoriaNoticiaInicio>
       </div>
     </section>
   );

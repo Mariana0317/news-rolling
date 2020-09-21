@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const CategoriaNoticiaInicio = (props) => {
   return (
-    <Link to={`/detalle-noticia/${props.noticia !== undefined ? props.noticia._id : null}`}>
+    <Link className="text-none" to={`/detalle-noticia/${props.noticia !== undefined ? props.noticia._id : null}`}>
       <ListGroup.Item action className="border rounded my-2 shadow-sm">
         <div className="d-flex justify-content-between">
           <div className="col-md-7 col-12 p-0">
