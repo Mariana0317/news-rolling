@@ -60,7 +60,9 @@ function App() {
 
   const consultarCategorias = async () => {
     try {
-      const respuesta = await fetch("https://rolling-news.herokuapp.com/categorias");
+      const respuesta = await fetch(
+        "https://rolling-news.herokuapp.com/categorias"
+      );
       const resultado = await respuesta.json();
       setCategorias(resultado);
     } catch (error) {
@@ -80,7 +82,6 @@ function App() {
       const respuesta = await fetch("https://rolling-news.herokuapp.com/adm");
       const resultado = await respuesta.json();
       setAdmin(resultado[0]);
-      console.log(admin);
     } catch (error) {
       console.log(error);
     }
@@ -111,17 +112,17 @@ function App() {
       <Header></Header>
       {admin.logueado === true ? <HeaderAdm></HeaderAdm> : null};
       <Switch>
-        <Route exact path={"/sections/:category"}>
-          <Sections />
-        </Route>
-        <Route exact path={"/sections/:category/:id"}>
-          <Notice />
-        </Route>
         <Route exact path="/">
           <Inicio
             noticiasDestacadas={noticiasDestacadas}
             noticias={noticias}
           ></Inicio>
+        </Route>
+        <Route exact path={"/secciones/:categoria"}>
+          <Sections />
+        </Route>
+        <Route exact path={"/secciones/:categoria/:id"}>
+          <Notice />
         </Route>
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>
@@ -135,7 +136,7 @@ function App() {
         <Route exact path="/login">
           <Login></Login>
         </Route>
-        <Route exact path="/about-us">
+        <Route exact path="/acercadenosotros">
           <PaginaAcercaDeNosotros></PaginaAcercaDeNosotros>
         </Route>
         <Route exact path="/adm-inicio">
@@ -163,6 +164,8 @@ function App() {
         </Route>
         <Route exact path="/adm-inicio/listanoticias/nuevanoticia">
           <NuevaNoticia
+            categorias={categorias}
+            setActualizarCategorias={setActualizarCategorias}
             setActualizarNoticias={setActualizarNoticias}
           ></NuevaNoticia>
         </Route>

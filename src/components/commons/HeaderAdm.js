@@ -3,11 +3,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import {NavLink} from 'react-router-dom';
-import {
-  faUser,
-  faCameraRetro,
-  faHome,
-} from "@fortawesome/free-solid-svg-icons";
 
 const HeaderAdm = () => {
 

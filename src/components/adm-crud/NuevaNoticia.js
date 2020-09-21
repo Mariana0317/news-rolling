@@ -215,14 +215,7 @@ const NuevaNoticia = (props) => {
                   onChange={(e) => setCategoria(e.target.value)}
                 >
                   <option value="">Seleccione una..</option>
-                  <option value="Actualidad">Actualidad</option>
-                  <option value="Espectaculos">Espectáculos</option>
-                  <option value="Tecnologia">Tecnología</option>
-                  <option value="Deportes">Deportes</option>
-                  <option value="Politica">Política</option>
-                  <option value="Economia">Economía</option>
-                  <option value="Salud">Salud</option>
-                  <option value="Fotografia">Fotografía</option>
+                  <option value=""></option>
                 </Form.Control>
               </Form.Group>
             </Col>
