@@ -11,7 +11,7 @@ const CategoriasNoticias = (props) => {
   return (
     <Container className="container-fluid ">
       <h1>{
-        props.categoriaEncontrada[0].titulo 
+        // props.categoriaEncontrada[0].titulo 
         }</h1>
 
       <Row>
