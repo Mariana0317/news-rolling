@@ -77,6 +77,8 @@ const NuevaNoticia = (props) => {
 
   // let expresion = // 
 
+  console.log(descripcionDetalladaNoticia);
+
   return (
     <div className="formularios">
       <Container className="text-dark py-5 rounded">

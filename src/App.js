@@ -123,8 +123,14 @@ function App() {
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>
         </Route>
-        <Route exact path="/detalle-noticia/:id">
-          <DetalleNoticia></DetalleNoticia>
+        <Route exact path="/detalle-noticia/:id" render={(props)=>{
+          const idNoticia = props.match.params.id;
+          console.log(idNoticia);
+          const noticiaEncontrada = noticias.find((noticia)=> noticia._id === idNoticia);
+          return(
+            <DetalleNoticia noticia={noticiaEncontrada}></DetalleNoticia>
+          )
+        }}>
         </Route>
         <Route exact path="/fotos">
           <Fotos noticias={noticias}></Fotos>

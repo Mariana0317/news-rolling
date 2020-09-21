@@ -19,11 +19,11 @@ const Header = (props) => {
       <CardClima></CardClima>
       <Container>
         <div className="text-center">
-          <img
+          <Link to="/"><img
             src={process.env.PUBLIC_URL + "img/rollingnews.png"}
             className="mt-4 mb-4"
             id="logo-header"
-          />
+          /></Link>
         </div>
       </Container>
 
