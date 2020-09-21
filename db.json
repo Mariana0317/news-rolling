@@ -12,6 +12,41 @@
       "id": 1
     }
   ],
+  "noticiasDestacadas": [
+    {
+      "tituloNoticia": "0 nuevos casos de Covid",
+      "descripcionBreveNoticia": "Se encontraron 500 nuevos casos en Tucuman, una locura!!",
+      "imgPrincipalNoticia": "https://comunicaciontucuman.gob.ar/wp-content/uploads/2020/08/coronavirus4.jpg",
+      "descripcionDetalladaNoticia": "HOY 65465161 CASOS!!!!!!!!!!!!!!!!!",
+      "imgSecundariaNoticia": "",
+      "categoriaNoticia": "tecnologia",
+      "autorNoticia": "Luna Franco",
+      "fechaNoticia": "9 de Septiembre del 2020",
+      "id": 0
+    },
+    {
+      "tituloNoticia": "1 nuevos casos de Covid",
+      "descripcionBreveNoticia": "Se encontraron 500 nuevos casos en Tucuman, una locura!!",
+      "imgPrincipalNoticia": "https://comunicaciontucuman.gob.ar/wp-content/uploads/2020/08/coronavirus4.jpg",
+      "descripcionDetalladaNoticia": "HOY 65465161 CASOS!!!!!!!!!!!!!!!!!",
+      "imgSecundariaNoticia": "",
+      "categoriaNoticia": "tecnologia",
+      "autorNoticia": "Luna Franco",
+      "fechaNoticia": "9 de Septiembre del 2020",
+      "id": 1
+    },
+    {
+      "tituloNoticia": "2 nuevos casos de Covid",
+      "descripcionBreveNoticia": "Se encontraron 500 nuevos casos en Tucuman, una locura!!",
+      "imgPrincipalNoticia": "https://comunicaciontucuman.gob.ar/wp-content/uploads/2020/08/coronavirus4.jpg",
+      "descripcionDetalladaNoticia": "HOY 65465161 CASOS!!!!!!!!!!!!!!!!!",
+      "imgSecundariaNoticia": "",
+      "categoriaNoticia": "tecnologia",
+      "autorNoticia": "Luna Franco",
+      "fechaNoticia": "9 de Septiembre del 2020",
+      "id": 2
+    }
+  ],
   "categorias": [
     {
       "tituloCategoria": "Covid19",
