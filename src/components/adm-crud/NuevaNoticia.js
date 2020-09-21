@@ -52,7 +52,10 @@ const NuevaNoticia = (props) => {
         body: JSON.stringify(noticia),
       };
 
-      const resultado = await fetch("https://rolling-news.herokuapp.com/news", cabecera);
+      const resultado = await fetch(
+        "https://rolling-news.herokuapp.com/news",
+        cabecera
+      );
       console.log(resultado);
       if (resultado.status === 201) {
         Swal.fire(
@@ -215,7 +218,14 @@ const NuevaNoticia = (props) => {
                   onChange={(e) => setCategoria(e.target.value)}
                 >
                   <option value="">Seleccione una..</option>
-                  <option value=""></option>
+                  {props.categorias.map((categoria, indice) => {
+                    return (
+                      <option value={categoria.titulo}
+                         key={indice}>
+                        {categoria.titulo}
+                      </option>
+                    );
+                  })}
                 </Form.Control>
               </Form.Group>
             </Col>

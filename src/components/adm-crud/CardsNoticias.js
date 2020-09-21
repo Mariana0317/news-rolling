@@ -80,7 +80,9 @@ const CardsNoticias = (props) => {
               </Link>
             </Col>
             <Col>
-              <Link className="btn btn-dark w-100 p-2">
+              <Link className="btn btn-dark w-100 p-2"
+                to={`/detalle-noticia/${props.noticia._id}`}
+              >
                 <FontAwesomeIcon icon={faEye} />
               </Link>
             </Col>

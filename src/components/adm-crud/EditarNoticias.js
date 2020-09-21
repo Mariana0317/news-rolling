@@ -232,14 +232,14 @@ const EditarNoticias = (props) => {
                   defaultValue={props.noticiaEncontrada.categoria}
                 >
                   <option value="">Seleccione una..</option>
-                  <option value="Actualidad">Actualidad</option>
-                  <option value="Espectaculos">Espectáculos</option>
-                  <option value="Tecnologia">Tecnología</option>
-                  <option value="Deportes">Deportes</option>
-                  <option value="Politica">Política</option>
-                  <option value="Economia">Economía</option>
-                  <option value="Salud">Salud</option>
-                  <option value="Fotografia">Fotografía</option>
+                  {props.categorias.map((categoria, indice) => {
+                    return (
+                      <option value={categoria.titulo}
+                         key={indice}>
+                        {categoria.titulo}
+                      </option>
+                    );
+                  })}
                 </Form.Control>
               </Form.Group>
             </Col>

@@ -31,8 +31,8 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="container d-flex justify-content-between">
-            <NavLink className="text-dark" exact={true} to="/">
-              <FontAwesomeIcon icon={faHome} />
+            <NavLink className="text-dark text-decoration-none" exact={true} to="/">
+              Inicio <FontAwesomeIcon icon={faHome} />
             </NavLink>
             <Nav.Link className="" id="opciones">
               Actualidad
@@ -56,8 +56,8 @@ const Header = () => {
                 <FontAwesomeIcon icon={faCameraRetro} />
               </NavDropdown.Item>
             </NavDropdown>
-            <NavLink className="text-dark" exact={true} to="/login">
-              <FontAwesomeIcon icon={faUser} />
+            <NavLink className="text-dark text-decoration-none" exact={true} to="/login">
+              Login <FontAwesomeIcon icon={faUser} />
             </NavLink>
             <NavLink exact={true} to="/suscripcion-form">
               <Button variant="outline-dark" id="opciones">

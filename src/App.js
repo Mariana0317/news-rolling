@@ -127,8 +127,8 @@ function App() {
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>
         </Route>
-        <Route exact path="/detalle-noticia">
-          <DetalleNoticia></DetalleNoticia>
+        <Route exact path="/detalle-noticia/:id">
+            <DetalleNoticia></DetalleNoticia>
         </Route>
         <Route exact path="/suscripcion-form">
           <FormSuscripcion></FormSuscripcion>
@@ -181,6 +181,8 @@ function App() {
               <EditarNoticias
                 noticiaEncontrada={noticiaEncontrada}
                 setActualizarNoticias={setActualizarNoticias}
+                categorias={categorias}
+                setActualizarCategorias={setActualizarCategorias}
               ></EditarNoticias>
             );
           }}
