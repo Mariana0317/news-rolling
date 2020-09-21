@@ -4,11 +4,6 @@ import MonedasValores from "./MonedaApi/MonedasValores";
 import NoticiasDestacadas from "./noticiasDestacadas/NoticiasDestacadas";
 
 const Inicio = (props) => {
-  console.log(props.noticias)
-  const cine = props.noticias.filter((noticias)=> {
-    return noticias.categoria === "cine";
-  })
-  console.log(cine)
   return (
     <div>
       <MonedasValores></MonedasValores>
@@ -23,7 +18,7 @@ const Inicio = (props) => {
 
       <section className="container d-flex">
         <div className="col-lg-8 col-12 px-1">
-          <CategoriasNoticiasInicio cine={cine}></CategoriasNoticiasInicio>
+          <CategoriasNoticiasInicio noticias={props.noticias} categoria={"cine"}></CategoriasNoticiasInicio>
         </div>
         <div className="col-4 border border-dark d-none d-lg-block"></div>
       </section>
