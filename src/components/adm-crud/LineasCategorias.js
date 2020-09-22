@@ -47,9 +47,11 @@ const LineaCategoria = (props) => {
     <ListGroup.Item className="border-bottom border-dark d-flex justify-content-between">
       <h4 className="listaCategorias">{props.categoria.titulo}</h4>
       <div>
-        <Button className="btn btn-dark py-1 px-2 mx-1">
-          <FontAwesomeIcon icon={faEye} />
-        </Button>
+        <Link  to={`/categoria-noticias/${props.categoria.titulo}`}>
+          <Button className="btn btn-dark py-1 px-2 mx-1">
+            <FontAwesomeIcon icon={faEye} />
+          </Button>
+        </Link>
         <Link
           className="btn btn-info py-1 px-2 mx-1"
           to={`/adm-inicio/listacategoria/editarcategoria/${props.categoria._id}`}
