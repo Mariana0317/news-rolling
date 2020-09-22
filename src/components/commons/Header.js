@@ -5,7 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import { NavLink, Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import CardClima from "../commons/CardClima/CardClima";
+import CardClima from "./CardClima/CardClima";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
