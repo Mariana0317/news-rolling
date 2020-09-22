@@ -3,10 +3,6 @@ import { Link, useParams } from "react-router-dom";
 const Sections = () => {
   let { category } = useParams();
 
-  const dbFilter = db.filter((item) => {
-    return item.categoria === category;
-  });
-
   const mapNotice = dbFilter.map((item) => {
     return (
       <div className="col-4 mb-4">
@@ -42,5 +38,4 @@ const Sections = () => {
   );
 };
 
-export default Sections;
- */
+export default Sections; */

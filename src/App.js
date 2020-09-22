@@ -104,11 +104,11 @@ function App() {
     }
   };
   console.log(noticiasDestacadas);
-
+  console.log(admin);
   return (
     <Router>
-      <Header categorias={categorias}></Header>
-      {admin.logueado === true ? <HeaderAdm></HeaderAdm> : null}
+      <Header categorias={categorias} admin={admin} setAdmin={setAdmin}></Header>
+      {admin.logueado === true ? <HeaderAdm admin={admin} setActualizarAdmin={setActualizarAdmin}></HeaderAdm> : null}
       <Switch>
         <Route exact path="/">
           <Inicio
@@ -152,16 +152,10 @@ function App() {
           render={(props) => {
             //quiero tomar el parametro de la url
             const parametroCategoria = props.match.params.noticiasxCategoria;
-            console.log("parametro de la url" +  parametroCategoria);
-            //filtro el arreglo noticias (el state) y buscar la categoria
-            const categoriaEncontrada = noticias.filter(
-              (unaCategoria) =>
-                unaCategoria.categoria === parametroCategoria
-            );
-            console.log(categoriaEncontrada);
             return (
               <CategoriasNoticias
-                 categoriaEncontrada ={categoriaEncontrada}
+                 categoria={parametroCategoria}
+                 noticias={noticias}
               ></CategoriasNoticias>
             );
           }}
