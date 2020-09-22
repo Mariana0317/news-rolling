@@ -45,3 +45,14 @@
 .botonbt{
     font-weight: bold;
 }
+.text-none:hover{
+    text-decoration: none!important;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
+.lowercase{
+    text-transform: lowercase;
+}

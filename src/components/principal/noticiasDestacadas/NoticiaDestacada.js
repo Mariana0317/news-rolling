@@ -1,33 +1,65 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
+import "./NoticiasDestacadas.css";
 
-const NoticiaDestacada2 = () => {
+const NoticiaDestacada2 = (props) => {
   return (
-    <div className="col h-100 px-md-0 px-lg-0 p-0 mb-2">
-      <Card className="text-light h-100 m-0 text-md-left text-justify">
-        <Card.Body
-          className="d-flex p-3 flex-column justify-content-end w-100 h-100 rounded"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.100), rgba(0, 0, 0, 0.600), rgba(0,0,0,0.800)), url(https://imagenes.elpais.com/resizer/I7qG1O0V4NUbI32a_eYLlZt-m8E=/643x361/cloudfront-eu-central-1.images.arcpublishing.com/prisa/WCJ7V7OXBNAE3N5C6TGZ2XQWXU.jpg)",
-            backgroundSize: "100% 100%",
-          }}
-        >
-          <div>
-            <span className="badge badge-danger"><h6 className="m-0 text-light">Informacion</h6></span>
-          </div>
-          <Card.Title>
+    <Link
+      to={`/detalle-noticia/${
+        props.noticiasDestacadas !== undefined
+          ? props.noticiasDestacadas._id
+          : null
+      }`}
+      className="text-none"
+    >
+      <div
+        className="col px-md-0 px-lg-0 p-0 text-none"
+        style={{ height: "400px" }}
+      >
+        <Card className="text-light h-100 m-0 text-md-left text-justify">
+          <Card.Body
+            className="d-flex p-3 flex-column justify-content-end w-100 h-100 rounded"
+            style={{
+              background: `linear-gradient(to bottom, rgba(0,0,0,0.100), rgba(0, 0, 0, 0.600), rgba(0,0,0,0.800)), url(${
+                props.noticiasDestacadas !== undefined
+                  ? props.noticiasDestacadas.imgPrincipal
+                  : null
+              })`,
+              backgroundSize: "100% 100%",
+            }}
+          >
+            <div>
+            <span className="badge badge-danger">
+              <h6 className="m-0 text-light">
+                  {props.noticiasDestacadas !== undefined
+                    ? props.noticiasDestacadas.categoria
+                    : null}
+                </h6>
+              </span>
+            </div>
+            <Card.Title>
             <h2 className="m-0 text-light">
-              Tras los enfrentamientos con la Policía, ruralistas esperan
-              señales de la Casa de Gobierno
-            </h2>
-          </Card.Title>
-          <Card.Footer className="p-0">
-            <small className="text-muted">La Gaceta - 10/09/2020</small>
-          </Card.Footer>
-        </Card.Body>
-      </Card>
-    </div>
+                {props.noticiasDestacadas !== undefined
+                  ? props.noticiasDestacadas.titulo
+                  : null}
+              </h2>
+            </Card.Title>
+            <Card.Footer className="p-0">
+              <small className="text-muted">
+                {props.noticiasDestacadas !== undefined
+                  ? props.noticiasDestacadas.autor
+                  : null}{" "}
+                -{" "}
+                {props.noticiasDestacadas !== undefined
+                  ? props.noticiasDestacadas.fecha
+                  : null}
+              </small>
+            </Card.Footer>
+          </Card.Body>
+        </Card>
+      </div>
+    </Link>
   );
 };
 

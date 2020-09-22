@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Swal from 'sweetalert2';
@@ -9,58 +9,113 @@ import "./Login.css";
 
 
 const Login = (props) => {
-    const [email, setEmail] = useState("");
-    const [contrasenia, setContrasenia] = useState("");
-    const [error, setError] = useState(false);
+    console.log(props.admin)
 
-    const handleSubmit = (e) => {
+    const [error, setError] = useState(false);
+    const [mensajeError, setMensajeError] = useState("");
+
+    const [formulario, setFormulario] = useState({
+        email: "",
+        contrasenia: ""
+    });
+
+    const { email, contrasenia } = formulario;
+
+    const handleChange = (e) => {
+        setFormulario({
+            ...formulario,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        //Validar los campos
-        if (email.trim() === ""
-            || contrasenia.trim() === "") {
-            //Mostrar cartel de error
-            setError(true);
-            return;
-        } else if (email.toLowerCase() === "admin@rollingnews.com"
-            && parseInt(contrasenia) === 1234) {
-            props.history.push("/adm-inicio");
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Bienvenido administrador!',
-                showConfirmButton: false,
-                timer: 1500
-            });
-            return;
+        const expresion = /\w+@\w+\.[a-z]/;
+        console.log(expresion.test(email))
+        if (email.trim() !== "" && contrasenia.trim() !== "") {
+            if (expresion.test(email)) {
+                setError(false)
+                //Preguntar si el correo coincide con el del admin, en caso contrario dar error y mensaje de email no registrado 
+                if (email === props.admin.email) {
+                    if (contrasenia === props.admin.contraseña) {
+                        const adminLog = {
+                            "userAdm": "rollingNews1",
+                            "email": "rolling.news22@gmail.com",
+                            "contraseña": "rolling2225",
+                            "logueado": true,
+                            "activo": true
+                        }
+                        try {
+                            const consulta = await fetch(
+                                `https://rolling-news.herokuapp.com/adm/${props.admin._id}`,
+                                {
+                                    method: "PUT",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                    },
+                                    body: JSON.stringify(adminLog),
+                                }
+                            );
+                            if (consulta.status === 200) {
+                                Swal.fire(
+                                    "Bienvenido administrador!",
+                                    "Usted se registró como administrador exitósamente.",
+                                    "success"
+                                );
+                                props.setActualizarAdmin(true);
+                                props.history.push("/");
+                            }
+                        } catch (error) {
+                            console.log(error);
+                        }
+                    } else {
+                        setError(true);
+                        setMensajeError("Contraseña incorrecta.");
+                    }
+                } else {
+                    setError(true);
+                    setMensajeError("Email no registrado.");
+                }
+            } else {
+                setError(true);
+                setMensajeError("Email inválido")
+            }
         } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Usuario inválido',
-                text: 'Intente nuevamente!'
-            });
+            setError(true);
+            setMensajeError("Todos los campos son obligatorios")
         }
     }
 
     return (
         <Container>
-            <h2 className="text-center mt-5">Iniciar sesión</h2>
-            {error ? (<Alert variant={'danger'}>
-                Todos los campos son obligatorios
-            </Alert>) : null}
+            <h1 className="display-3 text-center my-3">Iniciar sesión</h1>
             <Form className="my-4" onSubmit={handleSubmit}>
                 <Form.Group controlId="email">
-                    <Form.Label className="labels">Correo electrónico</Form.Label>
-                    <Form.Control type="email" placeholder="Ingresa tu correo electrónico" onChange={(e) => setEmail(e.target.value)} />
+                    <Form.Label>Correo electrónico</Form.Label>
+                    <Form.Control
+                        name="email"
+                        type="email"
+                        placeholder="Ingresa tu correo electrónico"
+                        onChange={handleChange}
+                        value={email} />
                 </Form.Group>
 
                 <Form.Group controlId="contrasenia">
-                    <Form.Label className="labels">Contraseña</Form.Label>
-                    <Form.Control type="password" placeholder="Ingresa tu contraseña" onChange={(e) => setContrasenia(e.target.value)} />
+                    <Form.Label>Contraseña</Form.Label>
+                    <Form.Control
+                        name="contrasenia"
+                        type="password"
+                        placeholder="Ingresa tu contraseña"
+                        onChange={handleChange}
+                        value={contrasenia} />
                 </Form.Group>
-                <Form.Group controlId="formBasicCheckbox">
+                <Form.Group controlId="recordar">
                     <Form.Check type="checkbox" label="Recordarme" />
                 </Form.Group>
-                <Button type="submit">
+                {error ? (<Alert variant={'danger'}>
+                    {mensajeError}
+                </Alert>) : null}
+                <Button variant="success" type="submit">
                     Ingresar
                 </Button>
             </Form>

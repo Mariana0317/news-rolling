@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/commons/Header";
 import Footer from "./components/commons/Footer";
 import Inicio from "./components/principal/Inicio";
 import CategoriasNoticias from "./components/noticias/CategoriasNoticias";
 import DetalleNoticia from "./components/noticias/DetalleNoticia";
 import FormSuscripcion from "./components/principal/FormSuscripcion";
-import InicioAdm from "./components/principal/InicioAdm";
 import ListaCategorias from "./components/adm-crud/ListaCategorias";
 import ListaNoticias from "./components/adm-crud/ListaNoticias";
 import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
@@ -21,6 +19,8 @@ import EditarNoticias from "./components/adm-crud/EditarNoticias";
 import EditarCategoria from "./components/adm-crud/EditarCategoria";
 import Error404 from "./components/error404/Error404";
 import PaginaAcercaDeNosotros from "./components/AcercaDeNosotros/AcercaDeNosotros";
+import Fotos from "./components/fotos/Fotos";
+import Header from "./components/commons/Header";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -58,7 +58,9 @@ function App() {
 
   const consultarCategorias = async () => {
     try {
-      const respuesta = await fetch("http://localhost:4001/categorias");
+      const respuesta = await fetch(
+        "https://rolling-news.herokuapp.com/categorias"
+      );
       const resultado = await respuesta.json();
       setCategorias(resultado);
     } catch (error) {
@@ -78,7 +80,6 @@ function App() {
       const respuesta = await fetch("https://rolling-news.herokuapp.com/adm");
       const resultado = await respuesta.json();
       setAdmin(resultado[0]);
-      console.log(admin)
     } catch (error) {
       console.log(error);
     }
@@ -93,7 +94,9 @@ function App() {
 
   const consultarNoticiasDestacadas = async () => {
     try {
-      const respuesta = await fetch("https://rolling-news.herokuapp.com/highlights");
+      const respuesta = await fetch(
+        "https://rolling-news.herokuapp.com/highlights"
+      );
       const resultado = await respuesta.json();
       setNoticiasDestacadas(resultado); //Quitar despues para usar bd
     } catch (error) {
@@ -104,24 +107,65 @@ function App() {
 
   return (
     <Router>
-      <Header></Header>
-      {admin.logueado === true ? <HeaderAdm></HeaderAdm> : null};
+      <Header categorias={categorias}></Header>
+      {admin.logueado === true ? <HeaderAdm></HeaderAdm> : null}
       <Switch>
-        <Route exact path={"/sections/:category"}>
-          <Sections />
-        </Route>
-        <Route exact path={"/sections/:category/:id"}>
-          <Notice />
-        </Route>
         <Route exact path="/">
           <Inicio
             noticiasDestacadas={noticiasDestacadas}
             noticias={noticias}
-            ></Inicio>
+          ></Inicio>
+        </Route>
+        <Route exact path={"/secciones/:categoria"}>
+          <Sections />
+        </Route>
+        <Route exact path={"/secciones/:categoria/:id"}>
+          <Notice />
         </Route>
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>
         </Route>
+        <Route exact path="/detalle-noticia/:id" render={(props)=>{
+          const idNoticia = props.match.params.id;
+          let noticia = {};
+          const noticiaEncontrada = noticias.find((noticia)=> noticia._id === idNoticia);
+          const noticiaDestacadaEncontrada = noticiasDestacadas.find((noticia)=> noticia._id === idNoticia);
+          if(noticiaEncontrada === undefined){
+            noticia = noticiaDestacadaEncontrada;
+          }else{
+            noticia = noticiaEncontrada;
+          }
+          return(
+            <DetalleNoticia noticias={noticias}  noticia={noticia}></DetalleNoticia>
+          )
+        }}>
+        </Route>
+        <Route exact path="/fotos">
+          <Fotos noticias={noticias}></Fotos>
+        </Route>
+        <Route exact path="/">
+          <Inicio></Inicio>
+        </Route>
+        <Route
+          exact
+          path="/categoria-noticias/:noticiasxCategoria"
+          render={(props) => {
+            //quiero tomar el parametro de la url
+            const parametroCategoria = props.match.params.noticiasxCategoria;
+            console.log("parametro de la url" +  parametroCategoria);
+            //filtro el arreglo noticias (el state) y buscar la categoria
+            const categoriaEncontrada = noticias.filter(
+              (unaCategoria) =>
+                unaCategoria.categoria === parametroCategoria
+            );
+            console.log(categoriaEncontrada);
+            return (
+              <CategoriasNoticias
+                 categoriaEncontrada ={categoriaEncontrada}
+              ></CategoriasNoticias>
+            );
+          }}
+        ></Route>
         <Route exact path="/detalle-noticia">
           <DetalleNoticia></DetalleNoticia>
         </Route>
@@ -129,13 +173,18 @@ function App() {
           <FormSuscripcion></FormSuscripcion>
         </Route>
         <Route exact path="/login">
-          <Login></Login>
+          <Login setAdmin={setAdmin}
+                  setActualizarAdmin={setActualizarAdmin}
+            admin={admin}></Login>
         </Route>
-        <Route exact path="/about-us">
+        <Route exact path="/acercadenosotros">
           <PaginaAcercaDeNosotros></PaginaAcercaDeNosotros>
         </Route>
         <Route exact path="/adm-inicio">
-          <InicioAdm></InicioAdm>
+          <Inicio
+            noticiasDestacadas={noticiasDestacadas}
+            noticias={noticias}
+          ></Inicio>
         </Route>
         <Route exact path="/adm-inicio/listacategoria">
           <ListaCategorias
@@ -154,8 +203,10 @@ function App() {
             setActualizarCategorias={setActualizarCategorias}
           ></NuevaCategoria>
         </Route>
-        <Route exact path="/adm-inicio/listanoticias/nuevanoticia">
+        <Route exact path="/adm-inicio/listanoticias/nueva">
           <NuevaNoticia
+            categorias={categorias}
+            setActualizarCategorias={setActualizarCategorias}
             setActualizarNoticias={setActualizarNoticias}
           ></NuevaNoticia>
         </Route>
@@ -163,16 +214,16 @@ function App() {
           exact
           path="/adm-inicio/listanoticias/editarnoticia/:id"
           render={(props) => {
-            //tomo el id de la url
-            const idNoticia = parseInt(props.match.params.id);
-            //filtro el arreglo y busco el producto
+            const idNoticia = props.match.params.id;
             const noticiaEncontrada = noticias.find(
-              (noticia) => noticia.id === idNoticia
+              (noticia) => noticia._id === idNoticia
             );
             return (
               <EditarNoticias
                 noticiaEncontrada={noticiaEncontrada}
                 setActualizarNoticias={setActualizarNoticias}
+                categorias={categorias}
+                setActualizarCategorias={setActualizarCategorias}
               ></EditarNoticias>
             );
           }}
@@ -181,11 +232,9 @@ function App() {
           exact
           path="/adm-inicio/listacategoria/editarcategoria/:id"
           render={(props) => {
-            //tomo el id de la url
-            const idCategoria = parseInt(props.match.params.id);
-            //filtro el arreglo y busco el producto
+            const idCategoria = props.match.params.id;
             const categoriaEncontrada = categorias.find(
-              (categoria) => categoria.id === idCategoria
+              (categoria) => categoria._id === idCategoria
             );
             return (
               <EditarCategoria

@@ -4,111 +4,131 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Swal from "sweetalert2";
 import Alert from "react-bootstrap/Alert";
+import Container from "react-bootstrap/Container";
 import { withRouter } from "react-router-dom";
 import "./Login.css";
 
 const FormSuscripcion = (props) => {
-  const [nombreYApellido, setNombreYApellido] = useState("");
-  const [email, setEmail] = useState("");
-  const [codigoPostal, setCodigoPostal] = useState("");
-  const [localidad, setLocalidad] = useState("");
-  const [direccion, setDireccion] = useState("");
   const [error, setError] = useState(false);
+  const [mensajeError, setMensajeError] = useState("");
+
+
+  const [formulario, setFormulario] = useState({
+    nombreYApellido: "",
+    email: "",
+    codigoPostal: "",
+    localidad: "",
+    direccion: "",
+  });
+
+  let {
+    nombreYApellido,
+    email,
+    codigoPostal,
+    localidad,
+    direccion,
+  } = formulario;
+
+  const handleChange = (e) => {
+    setFormulario({
+      ...formulario,
+      [e.target.name]: e.target.value,
+    })
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const expresion = /\w+@\w+\.[a-z]/;
     //Validar los campos
-    if (
-      nombreYApellido.trim() === "" ||
-      email.trim() === "" ||
-      codigoPostal === "" ||
-      localidad === "" ||
-      direccion === ""
-    ) {
-      //Mostrar cartel de error
+    console.log()
+    if (nombreYApellido.trim() !== "" &&
+      email.trim() !== "" &&
+      codigoPostal.trim() !== "" &&
+      localidad.trim() !== "" &&
+      direccion.trim() !== "") {
+      if (expresion.test(email)) {
+        Swal.fire(
+          "Datos registrados!",
+          "Pronto nos pondremos en contacto con usted para finalizar la suscripción.",
+          "success"
+        );
+        props.history.push("/");
+      } else {
+        setError(true)
+        setMensajeError("Email inválido");
+        return;
+      }
+
+    } else {
       setError(true);
-      return;
+      setMensajeError("Todos los campos son obligatorios");
     }
-    setError(false);
-
-    const datos = {
-      nombreYApellido,
-      email,
-      codigoPostal,
-      localidad,
-      direccion,
-    };
-
-    console.log(datos);
-
-    Swal.fire(
-      "Datos registrados!",
-      "Pronto nos pondremos en contacto con usted para finalizar la suscripción.",
-      "success"
-    );
-    props.history.push("/");
   };
 
   return (
-    <div className="container">
-      <h2 className="text-center mt-5">Formulario de suscripción</h2>
-      {error ? (
-        <Alert variant={"danger"}>Todos los campos son obligatorios</Alert>
-      ) : null}
-      <Form className="my-4" onSubmit={handleSubmit}>
-        <Form.Row>
-          <Form.Group as={Col} controlId="nombreYApellido">
-            <Form.Label className="labels">Nombre completo *</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Ingresa tu apellido y nombre"
-              onChange={(e) => setNombreYApellido(e.target.value)}
-            />
-          </Form.Group>
+    <div className="formularios">
+      <Container className="text-dark rounded">
+        <h2 className="text-center mt-5 text-danger">Formulario de suscripción</h2>
+        <Form className="my-4" onSubmit={handleSubmit}>
+            <Form.Group as={Col} controlId="nombreYApellido">
+              <Form.Label className="formLetraCategoria"><strong>Nombre completo *</strong></Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingresa tu apellido y nombre"
+                name="nombreYApellido"
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-          <Form.Group as={Col} controlId="email">
-            <Form.Label>Correo electrónico *</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Ingresa tu correo electrónico"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
-        </Form.Row>
+            <Form.Group as={Col} controlId="email">
+              <Form.Label className="formLetraCategoria"><strong>Correo electrónico *</strong></Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Ingresa tu correo electrónico"
+                name="email"
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-        <Form.Row>
-          <Form.Group as={Col} controlId="codigoPostal">
-            <Form.Label>Código postal *</Form.Label>
-            <Form.Control
-              type="number"
-              placeholder="Ingresa tu código postal"
-              onChange={(e) => setCodigoPostal(e.target.value)}
-            />
-          </Form.Group>
+            <Form.Group as={Col} controlId="direccion">
+              <Form.Label className="formLetraCategoria"><strong>Domicilio *</strong></Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingresa tu dirección"
+                name="direccion"
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-          <Form.Group as={Col} controlId="localidad">
-            <Form.Label>Localidad *</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Ingresa el nombre de tu ciudad"
-              onChange={(e) => setLocalidad(e.target.value)}
-            />
-          </Form.Group>
+            <Form.Group as={Col} controlId="localidad">
+              <Form.Label className="formLetraCategoria"><strong>Localidad</strong></Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingresa el nombre de tu ciudad"
+                onChange={handleChange}
+                name="localidad"
+              />
+            </Form.Group>
 
-          <Form.Group as={Col} controlId="direccion">
-            <Form.Label>Dirección *</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Ingresa tu dirección"
-              onChange={(e) => setDireccion(e.target.value)}
-            />
-          </Form.Group>
-        </Form.Row>
+            <Form.Group as={Col} controlId="codigoPostal">
+              <Form.Label className="formLetraCategoria"><strong>Código postal</strong></Form.Label>
+              <Form.Control
+                className="col-sm-2 col-md-2 col-lg-2"
+                type="number"
+                placeholder="Ingresa tu código postal"
+                name="codigoPostal"
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-        <Button variant="danger" type="submit" className="botonbt">
-          Enviar
-        </Button>
-      </Form>
+          {error ? (
+            <Alert variant={"warning"}>{mensajeError}</Alert>
+          ) : null}
+          <Button variant="danger" type="submit" className="mt-5 ml-2">
+            Enviar
+          </Button>
+        </Form>
+      </Container>
     </div>
   );
 };

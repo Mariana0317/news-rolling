@@ -1,11 +1,5 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLinkedin,
-  faGithub,
-  faInstagramSquare,
-  faTwitterSquare,
-} from "@fortawesome/free-brands-svg-icons";
 import { faAward } from "@fortawesome/free-solid-svg-icons";
 
 const Caracteristicas = () => {

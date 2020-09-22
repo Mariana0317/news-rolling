@@ -9,16 +9,16 @@ import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
 
 const EditarNoticias = (props) => {
-  const tituloNoticiaRef = useRef("");
-  const descripcionBreveNoticiaRef = useRef("");
-  const imgPrincipalNoticiaRef = useRef("");
-  const pieImgPrincipalNoticiaRef = useRef("");
-  const descripcionDetalladaNoticiaRef = useRef("");
-  const imgSecundariaNoticiaRef = useRef("");
-  const pieImgSecundariaNoticiaRef = useRef("");
-  const categoriaNoticiaRef = useRef("");
-  const autorNoticiaRef = useRef("");
-  const fechaNoticiaRef = useRef("");
+  const tituloRef = useRef("");
+  const descripcionRef = useRef("");
+  const imgPrincipalRef = useRef("");
+  const pieDeImgPrincipalRef = useRef("");
+  const contenidoRef = useRef("");
+  const imgSecundariaRef = useRef("");
+  const pieDeImgSecundariaRef = useRef("");
+  const categoriaRef = useRef("");
+  const autorRef = useRef("");
+  const fechaRef = useRef("");
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -31,21 +31,21 @@ const EditarNoticias = (props) => {
     setValidated(false);
 
     const noticiaEditada = {
-      tituloNoticia: tituloNoticiaRef.current.value,
-      descripcionBreveNoticia: descripcionBreveNoticiaRef.current.value,
-      imgPrincipalNoticia: imgPrincipalNoticiaRef.current.value,
-      pieImgPrincipalNoticia: pieImgPrincipalNoticiaRef.current.value,
-      descripcionDetalladaNoticia: descripcionDetalladaNoticiaRef.current.value,
-      imgSecundariaNoticia: imgSecundariaNoticiaRef.current.value,
-      pieImgSecundariaNoticia: pieImgSecundariaNoticiaRef.current.value,
-      categoriaNoticia: categoriaNoticiaRef.current.value,
-      autorNoticia: autorNoticiaRef.current.value,
-      fechaNoticia: fechaNoticiaRef.current.value,
+      titulo: tituloRef.current.value,
+      descripcion: descripcionRef.current.value,
+      imgPrincipal: imgPrincipalRef.current.value,
+      pieDeImgPrincipal: pieDeImgPrincipalRef.current.value,
+      contenido: contenidoRef.current.value,
+      imgSecundaria: imgSecundariaRef.current.value,
+      pieDeImgSecundaria: pieDeImgSecundariaRef.current.value,
+      categoria: categoriaRef.current.value,
+      autor: autorRef.current.value,
+      fecha: fechaRef.current.value,
     };
 
     try {
       const consulta = await fetch(
-        `http://localhost:4000/noticias/${props.noticiaEncontrada.id}`,
+        `https://rolling-news.herokuapp.com/news/${props.noticiaEncontrada._id}`,
         {
           method: "PUT",
           headers: {
@@ -76,7 +76,7 @@ const EditarNoticias = (props) => {
       <Container className="text-dark py-5 rounded">
         <h1 className="text-center display-4 pb-5">Editar Noticia</h1>
         <Form onSubmit={handleSubmit} noValidate validated={validated}>
-          <Form.Group controlId="tituloNoticia" className="text-center">
+          <Form.Group controlId="titulo" className="text-center">
             <Form.Label className="formLetraCategoria">
               <strong>Titulo*</strong>
             </Form.Label>
@@ -85,14 +85,14 @@ const EditarNoticias = (props) => {
               placeholder="Ingrese aqui el titulo de su noticia"
               className="text-center border border-dark"
               minLength="40"
-              maxLength="100"
+              maxLength="90"
               required
-              ref={tituloNoticiaRef}
-              defaultValue={props.noticiaEncontrada.tituloNoticia}
+              ref={tituloRef}
+              defaultValue={props.noticiaEncontrada.titulo}
             />
           </Form.Group>
           <Form.Group
-            controlId="descripcionBreveNoticia"
+            controlId="descripcion"
             className="text-center pt-4"
           >
             <Form.Label className="formLetraCategoria">
@@ -105,14 +105,14 @@ const EditarNoticias = (props) => {
               className="text-center border border-dark"
               maxLength="150"
               required
-              ref={descripcionBreveNoticiaRef}
-              defaultValue={props.noticiaEncontrada.descripcionBreveNoticia}
+              ref={descripcionRef}
+              defaultValue={props.noticiaEncontrada.descripcion}
             />
           </Form.Group>
           <Row>
             <Col className="col-12 col-md-6">
               <Form.Group
-                controlId="imgPrincipalNoticia"
+                controlId="imgPrincipal"
                 className="text-center pt-4"
               >
                 <Form.Label className="formLetraCategoria">
@@ -123,14 +123,14 @@ const EditarNoticias = (props) => {
                   placeholder="https://images.ole.com.ar/2020/09/08/iMGWVvyx0_320x210__1.jpg"
                   className="text-center border border-dark"
                   required
-                  ref={imgPrincipalNoticiaRef}
-                  defaultValue={props.noticiaEncontrada.imgPrincipalNoticia}
+                  ref={imgPrincipalRef}
+                  defaultValue={props.noticiaEncontrada.imgPrincipal}
                 />
               </Form.Group>
             </Col>
             <Col className="col-12 col-md-6">
               <Form.Group
-                controlId="pieImgPrincipalNoticia"
+                controlId="pieDeImgPrincipal"
                 className="text-center pt-4"
               >
                 <Form.Label className="formLetraCategoria">
@@ -142,14 +142,14 @@ const EditarNoticias = (props) => {
                   className="text-center border border-dark"
                   maxLength="100"
                   required
-                  ref={pieImgPrincipalNoticiaRef}
-                  defaultValue={props.noticiaEncontrada.pieImgPrincipalNoticia}
+                  ref={pieDeImgPrincipalRef}
+                  defaultValue={props.noticiaEncontrada.pieDeImgPrincipal}
                 />
               </Form.Group>
             </Col>
           </Row>
           <Form.Group
-            controlId="descripcionDetalladaNoticia"
+            controlId="contenido"
             className="text-center pt-4"
           >
             <Form.Label className="formLetraCategoria">
@@ -161,14 +161,14 @@ const EditarNoticias = (props) => {
               placeholder="Ingrese aqui todos los detalles de su noticia"
               className="text-center border border-dark"
               required
-              ref={descripcionDetalladaNoticiaRef}
-              defaultValue={props.noticiaEncontrada.descripcionDetalladaNoticia}
+              ref={contenidoRef}
+              defaultValue={props.noticiaEncontrada.contenido}
             />
           </Form.Group>
           <Row>
             <Col className="col-12 col-md-6">
               <Form.Group
-                controlId="imgSecundariaNoticia"
+                controlId="imgSecundaria"
                 className="text-center pt-4"
               >
                 <Form.Label className="formLetraCategoria">
@@ -178,14 +178,14 @@ const EditarNoticias = (props) => {
                   type="text"
                   placeholder="https://images.ole.com.ar/2020/09/15/11o2w01An_320x210__1.jpg"
                   className="text-center border border-dark"
-                  ref={imgSecundariaNoticiaRef}
-                  defaultValue={props.noticiaEncontrada.imgSecundariaNoticia}
+                  ref={imgSecundariaRef}
+                  defaultValue={props.noticiaEncontrada.imgSecundaria}
                 />
               </Form.Group>
             </Col>
             <Col className="col-12 col-md-6">
               <Form.Group
-                controlId="pieImgSecundariaNoticia"
+                controlId="pieDeImgSecundaria"
                 className="text-center pt-4"
               >
                 <Form.Label className="formLetraCategoria">
@@ -196,15 +196,15 @@ const EditarNoticias = (props) => {
                   placeholder="Detalle lo que muestra la imagen secundaria"
                   className="text-center border border-dark"
                   maxLength="100"
-                  ref={pieImgSecundariaNoticiaRef}
-                  defaultValue={props.noticiaEncontrada.pieImgSecundariaNoticia}
+                  ref={pieDeImgSecundariaRef}
+                  defaultValue={props.noticiaEncontrada.pieDeImgSecundaria}
                 />
               </Form.Group>
             </Col>
           </Row>
           <Row>
             <Col className="col-12 col-md-4">
-              <Form.Group controlId="autorNoticia" className="text-center pt-4">
+              <Form.Group controlId="autor" className="text-center pt-4">
                 <Form.Label className="formLetraCategoria">
                   <strong>Autor*</strong>
                 </Form.Label>
@@ -214,13 +214,13 @@ const EditarNoticias = (props) => {
                   className="text-center border border-dark"
                   required
                   maxLength="30"
-                  ref={autorNoticiaRef}
-                  defaultValue={props.noticiaEncontrada.autorNoticia}
+                  ref={autorRef}
+                  defaultValue={props.noticiaEncontrada.autor}
                 />
               </Form.Group>
             </Col>
             <Col className="col-12 col-md-4">
-              <Form.Group controlId="categoriaNoticia" className="text-center pt-4">
+              <Form.Group controlId="categoria" className="text-center pt-4">
                 <Form.Label className="formLetraCategoria">
                   <strong>Categoria*</strong>
                 </Form.Label>
@@ -228,23 +228,23 @@ const EditarNoticias = (props) => {
                   as="select"
                   className="border border-dark"
                   required
-                  ref={categoriaNoticiaRef}
-                  defaultValue={props.noticiaEncontrada.categoriaNoticia}
+                  ref={categoriaRef}
+                  defaultValue={props.noticiaEncontrada.categoria}
                 >
                   <option value="">Seleccione una..</option>
-                  <option value="Actualidad">Actualidad</option>
-                  <option value="Espectaculos">Espectáculos</option>
-                  <option value="Tecnologia">Tecnología</option>
-                  <option value="Deportes">Deportes</option>
-                  <option value="Politica">Política</option>
-                  <option value="Economia">Economía</option>
-                  <option value="Salud">Salud</option>
-                  <option value="Fotografia">Fotografía</option>
+                  {props.categorias.map((categoria, indice) => {
+                    return (
+                      <option value={categoria.titulo}
+                         key={indice}>
+                        {categoria.titulo}
+                      </option>
+                    );
+                  })}
                 </Form.Control>
               </Form.Group>
             </Col>
             <Col className="col-12 col-md-4">
-              <Form.Group controlId="fechaNoticia" className="text-center pt-4">
+              <Form.Group controlId="fecha" className="text-center pt-4">
                 <Form.Label className="formLetraCategoria">
                   <strong>Fecha*</strong>
                 </Form.Label>
@@ -254,8 +254,8 @@ const EditarNoticias = (props) => {
                   className="text-center border border-dark"
                   maxLength="30"
                   required
-                  ref={fechaNoticiaRef}
-                  defaultValue={props.noticiaEncontrada.fechaNoticia}
+                  ref={fechaRef}
+                  defaultValue={props.noticiaEncontrada.fecha}
                 />
               </Form.Group>
             </Col>

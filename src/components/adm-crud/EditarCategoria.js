@@ -7,8 +7,8 @@ import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
 
 const EditarCategoria = (props) => {
-  const tituloCategoriaRef = useRef("");
-  const descripcionCategoriaRef = useRef("");
+  const tituloRef = useRef("");
+  const descripcionRef = useRef("");
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -21,13 +21,13 @@ const EditarCategoria = (props) => {
     setValidated(false);
 
     const categoriaEditada = {
-      tituloCategoria: tituloCategoriaRef.current.value,
-      descripcionCategoria: descripcionCategoriaRef.current.value,
+      titulo: tituloRef.current.value,
+      descripcion: descripcionRef.current.value,
     };
 
     try {
       const consulta = await fetch(
-        `http://localhost:4000/categorias/${props.categoriaEncontrada.id}`,
+        `https://rolling-news.herokuapp.com/categorias/${props.categoriaEncontrada._id}`,
         {
           method: "PUT",
           headers: {
@@ -62,18 +62,19 @@ const EditarCategoria = (props) => {
             </Alert>
           ) : null}
         </div>
-        <Form.Group controlId="nombreCategoria">
+        <Form.Group controlId="titulo">
           <Form.Label>Nombre*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Máximo 15 caracteres"
+            placeholder="15 caracteres"
+            className="lowercase"
             maxLength="15"
             required
-            ref={tituloCategoriaRef}
-            defaultValue={props.categoriaEncontrada.tituloCategoria}
+            ref={tituloRef}
+            defaultValue={props.categoriaEncontrada.titulo}
           />
         </Form.Group>
-        <Form.Group controlId="descripcionCategoria">
+        <Form.Group controlId="descripcion">
           <Form.Label>Descripción*</Form.Label>
           <Form.Control
             as="textarea"
@@ -81,8 +82,8 @@ const EditarCategoria = (props) => {
             placeholder=""
             className=""
             required
-            ref={descripcionCategoriaRef}
-            defaultValue={props.categoriaEncontrada.descripcionCategoria}
+            ref={descripcionRef}
+            defaultValue={props.categoriaEncontrada.descripcion}
           />
         </Form.Group>
         <Button variant="dark" type="submit">

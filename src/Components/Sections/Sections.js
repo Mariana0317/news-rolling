@@ -1,5 +1,4 @@
-import React from "react";
-import db from "../../db.json";
+/* import React from "react";
 import { Link, useParams } from "react-router-dom";
 const Sections = () => {
   let { category } = useParams();
@@ -44,3 +43,4 @@ const Sections = () => {
 };
 
 export default Sections;
+ */

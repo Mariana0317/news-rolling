@@ -3,7 +3,6 @@ import "./footer.css";
 import Card from "react-bootstrap/Card";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-//import ListGroup from "react-bootstrap/ListGroup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookSquare,
@@ -20,6 +19,7 @@ const Footer = () => {
           <img
             src={process.env.PUBLIC_URL + "img/rollingnews-text.png"}
             id="logo_text"
+            alt="imagen del logo"
           />
           </div>
           <section className="col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center about">

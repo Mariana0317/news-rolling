@@ -11,7 +11,8 @@ const ListaNoticias = (props) => {
         <CardColumns class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-justify">    
               {props.noticias.map((noticia) => (
                 <CardsNoticias
-                  key={noticia.id}
+                  key={noticia._id}
+                  id={noticia._id}
                   noticia={noticia}
                   setActualizarNoticias={props.setActualizarNoticias}
                 ></CardsNoticias>

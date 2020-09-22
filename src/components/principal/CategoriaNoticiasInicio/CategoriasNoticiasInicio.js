@@ -13,25 +13,17 @@ const CategoriaNoticias = (props) => {
         })
       );
     }
-  },[props.noticias]);
+  }, [props.noticias, props.categoria]);
 
   return (
     <div className="p-0 w-100">
       <ListGroup variant="flush">
         <ListGroup.Item className="mb-2">
-          <h1>
-            {props.categoria}
-          </h1>
+          <h1>{props.categoria}</h1>
         </ListGroup.Item>
-        <CategoriaNoticiaInicio
-          noticia={categoria[0]}
-        ></CategoriaNoticiaInicio>
-        <CategoriaNoticiaInicio
-          noticia={categoria[1]}
-        ></CategoriaNoticiaInicio>
-        <CategoriaNoticiaInicio
-          noticia={categoria[2]}
-        ></CategoriaNoticiaInicio>
+        <CategoriaNoticiaInicio noticia={categoria[0]}></CategoriaNoticiaInicio>
+        <CategoriaNoticiaInicio noticia={categoria[1]}></CategoriaNoticiaInicio>
+        <CategoriaNoticiaInicio noticia={categoria[2]}></CategoriaNoticiaInicio>
       </ListGroup>
     </div>
   );
