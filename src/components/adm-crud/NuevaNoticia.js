@@ -20,6 +20,10 @@ const NuevaNoticia = (props) => {
   const [autor, setAutor] = useState("");
   const [fecha, setFecha] = useState("");
   const [validated, setValidated] = useState(false);
+  const [destacar, setDestacar] = useState(false);
+
+  console.log(destacar)
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,6 +60,11 @@ const NuevaNoticia = (props) => {
         "https://rolling-news.herokuapp.com/news",
         cabecera
       );
+
+      if (destacar) {
+        await fetch("https://rolling-news.herokuapp.com/highlights", cabecera);
+      }
+
       console.log(resultado);
       if (resultado.status === 201) {
         Swal.fire(
@@ -78,7 +87,7 @@ const NuevaNoticia = (props) => {
   return (
     <div className="formularios">
       <Container className="text-dark rounded">
-      <h2 className="text-center mt-5 text-danger">Nueva Noticia</h2>
+        <h2 className="text-center mt-5 text-danger">Nueva Noticia</h2>
         <Form onSubmit={handleSubmit} noValidate validated={validated}>
           <Form.Group controlId="titulo" className="text-center">
             <Form.Label className="formLetraCategoria">
@@ -220,8 +229,11 @@ const NuevaNoticia = (props) => {
                   <option value="">Seleccione una..</option>
                   {props.categorias.map((categoria, indice) => {
                     return (
-                      <option value={categoria.titulo}
-                         key={indice} className="capitalize">
+                      <option
+                        value={categoria.titulo}
+                        key={indice}
+                        className="capitalize"
+                      >
                         {categoria.titulo}
                       </option>
                     );
@@ -244,6 +256,11 @@ const NuevaNoticia = (props) => {
                 />
               </Form.Group>
             </Col>
+            <div className="text-center col-12">
+              <Form.Check type="checkbox" value={destacar} onChange={()=>{
+                destacar ? setDestacar(false) : setDestacar(true)
+              }} label={`Destacar Noticia`} />
+            </div>
           </Row>
           <div className="d-flex justify-content-center py-3">
             {validated ? (

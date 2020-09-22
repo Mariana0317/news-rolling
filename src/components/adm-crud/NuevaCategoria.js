@@ -60,7 +60,7 @@ const NuevaCategoria = (props) => {
   return (
     <div className="formularios">
       <Container className="text-dark rounded">
-      <h2 className="text-center mt-5 text-danger">Nueva Categoria</h2>
+        <h2 className="text-center mt-5 text-danger">Nueva Categoria</h2>
         <Form onSubmit={handleSubmit} noValidate validated={validated}>
           <Form.Group controlId="nombre" className="text-center">
             <Form.Label className="formLetraCategoria">
@@ -75,10 +75,7 @@ const NuevaCategoria = (props) => {
               onChange={(e) => setTitulo(e.target.value)}
             />
           </Form.Group>
-          <Form.Group
-            controlId="descripcion"
-            className="text-center pt-4"
-          >
+          <Form.Group controlId="descripcion" className="text-center pt-4">
             <Form.Label className="formLetraCategoria">
               <strong>Descripción*</strong>
             </Form.Label>
