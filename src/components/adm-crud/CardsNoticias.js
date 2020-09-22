@@ -22,15 +22,18 @@ const CardsNoticias = (props) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const resultado = await fetch(
-            `https://rolling-news.herokuapp.com/news/${id}`,
-            {
-              method: "DELETE",
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
+          let url = "";
+          if (props.highlight === false) {
+            url = `https://rolling-news.herokuapp.com/news/${id}`;
+          } else {
+            url = `https://rolling-news.herokuapp.com/highlights/${id}`;
+          }
+          const resultado = await fetch(url, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
 
           console.log(resultado);
           if (resultado.status === 200) {
@@ -48,23 +51,21 @@ const CardsNoticias = (props) => {
   return (
     <div className="p-1">
       <Card className="border border-dark">
-        <Card.Img
-          variant="top"
-          src={props.noticia.imgPrincipal}
-          height="200"
-        />
+        <Card.Img variant="top" src={props.noticia.imgPrincipal} height="200" />
         <Card.Body>
-          <Card.Title className="textoTitulo">{props.noticia.titulo}</Card.Title>
+          <Card.Title className="textoTitulo">
+            {props.noticia.titulo}
+          </Card.Title>
           <Card.Text className="textoCuerpo">
             {props.noticia.descripcion}
             <br />
             <br />
           </Card.Text>
-          <Card.Text className="capitalize">  
+          <Card.Text className="capitalize">
             <strong>Categoria: </strong>
             {props.noticia.categoria}
-            <br/>
-            <br/>
+            <br />
+            <br />
             <strong>Fecha: </strong>
             {props.noticia.fecha}
           </Card.Text>
@@ -80,7 +81,8 @@ const CardsNoticias = (props) => {
               </Link>
             </Col>
             <Col>
-              <Link className="btn btn-dark w-100 p-2"
+              <Link
+                className="btn btn-dark w-100 p-2"
                 to={`/detalle-noticia/${props.noticia._id}`}
               >
                 <FontAwesomeIcon icon={faEye} />
