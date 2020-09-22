@@ -57,9 +57,10 @@ const CardClima = () => {
             <img
               src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
               alt="Wheather"
+              className="ml-3"
             ></img>
           ) : null}
-          <p>{weather.weather ? weather.main.temp + " °C" : null}</p>
+          <p className="pt-2">{weather.weather ? weather.main.temp + " °C" : null}</p>
         </div>
       </div>
     </div>

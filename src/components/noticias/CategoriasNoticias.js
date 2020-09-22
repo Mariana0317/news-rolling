@@ -6,7 +6,7 @@ import CategoriasNoticiasInicio from "../principal/CategoriaNoticiasInicio/Categ
 const CategoriasNoticias = (props) => {
   console.log(props.categoriaEncontrada)
   return (
-    <Container className="container-fluid ">
+    <Container className="container-fluid">
        <CategoriasNoticiasInicio noticias={props.noticias} categoria={props.categoria} cantidad={100}></CategoriasNoticiasInicio>
     </Container>
   );

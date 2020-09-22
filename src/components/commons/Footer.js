@@ -3,7 +3,7 @@ import "./footer.css";
 import Card from "react-bootstrap/Card";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookSquare,
@@ -51,21 +51,27 @@ const Footer = () => {
         <Navbar>
           <Nav className="container-fluid d-flex justify-content-around">
             <div className="row">
-              <Nav.Link className="col-sm-12 col-md-3 col-lg-3 text-center text-light">
+              <NavLink
+                exact={true}
+                to="Error404"
+                className="col-sm-12 col-md-3 col-lg-3 text-center text-light"
+              >
                 © 2020 Rolling News
-              </Nav.Link>
-              <Nav.Link
-                href="#"
+              </NavLink>
+              <NavLink
+                exact={true}
+                to="Error404"
                 className="col-sm-12 col-md-3 col-lg-3 text-center text-light"
               >
                 Politicas de privacidad
-              </Nav.Link>
-              <Nav.Link
-                href="#"
+              </NavLink>
+              <NavLink
+                exact={true}
+                to="Error404"
                 className="col-sm-12 col-md-3 col-lg-3 text-center text-light"
               >
                 Politicas de cookies
-              </Nav.Link>
+              </NavLink>
               <NavLink
                 exact={true}
                 to="/acercadenosotros"
