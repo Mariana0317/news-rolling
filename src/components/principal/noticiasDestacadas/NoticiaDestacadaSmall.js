@@ -14,14 +14,13 @@ const NoticiaDestacadaSmall = (props) => {
         <Card className="text-light h-100 m-0 text-md-left text-justify">
           <Card.Body
             className="d-flex p-3 flex-column justify-content-between rounded shadow"
-            /* style={{
+            style={{
               background: `linear-gradient(to left, rgba(0,0,0,0.100), rgba(0, 0, 0, 0.400), rgba(0,0,0,0.800)), url(${
                 props.noticiasDestacadas !== undefined
                   ? props.noticiasDestacadas.imgPrincipal
                   : null
-              })`,
-              backgroundSize: "100% 100%"
-            }} */
+              })`
+            }}
           >
             <div>
               <span className="badge badge-primary">
