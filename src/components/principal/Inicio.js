@@ -36,6 +36,12 @@ const Inicio = (props) => {
           id="logo-header"
         />
         </a>
+        <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
+          src={process.env.PUBLIC_URL + "img/banners/1.jpg"}
+          className="mt-4 mb-4 w-100"
+          id="logo-header"
+        />
+        </a>
         </div>
       </section>
     </div>
