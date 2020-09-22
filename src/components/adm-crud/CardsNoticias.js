@@ -79,7 +79,7 @@ const CardsNoticias = (props) => {
             <Col>
               <Link
                 className="btn btn-info w-100 p-2"
-                to={`/adm-inicio/listanoticias/editarnoticia/${props.noticia._id}`}
+                to={props.highlight === false ? `/adm-inicio/listanoticias/editarnoticia/${props.noticia._id}` : `/adm-inicio/listanoticias/editarnoticiadestacada/${props.noticia._id}`}
               >
                 <FontAwesomeIcon icon={faEdit} />
               </Link>

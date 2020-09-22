@@ -217,6 +217,24 @@ function App() {
         ></Route>
         <Route
           exact
+          path="/adm-inicio/listanoticias/editarnoticiadestacada/:id"
+          render={(props) => {
+            const idNoticia = props.match.params.id;
+            const noticiaEncontrada = noticiasDestacadas.find(
+              (noticia) => noticia._id === idNoticia
+            );
+            return (
+              <EditarNoticias
+                noticiaEncontrada={noticiaEncontrada}
+                setActualizarNoticias={setActualizarNoticias}
+                categorias={categorias}
+                setActualizarCategorias={setActualizarCategorias}
+              ></EditarNoticias>
+            );
+          }}
+        ></Route>
+        <Route
+          exact
           path="/adm-inicio/listacategoria/editarcategoria/:id"
           render={(props) => {
             const idCategoria = props.match.params.id;
