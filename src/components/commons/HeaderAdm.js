@@ -3,6 +3,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 const HeaderAdm = (props) => {
   const desloguear = async () => {
@@ -38,7 +40,7 @@ const HeaderAdm = (props) => {
     <div>
       <Navbar
         collapseOnSelect
-        expand="lg"
+        expand="md"
         bg="light"
         variant="light"
         className="d-flex justify-content-center"
@@ -82,7 +84,7 @@ const HeaderAdm = (props) => {
           <Nav>
             <Nav.Link>
               <Button variant="danger" onClick={() => desloguear()}>
-                Cerrar Sesion
+                <FontAwesomeIcon icon={faSignOutAlt} />
               </Button>
             </Nav.Link>
           </Nav>

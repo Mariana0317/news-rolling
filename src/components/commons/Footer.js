@@ -3,7 +3,7 @@ import "./footer.css";
 import Card from "react-bootstrap/Card";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookSquare,
@@ -34,15 +34,21 @@ const Footer = () => {
           </section>
           <section className="col-sm-12 col-md-4 col-lg-4 mt-4 text-center">
             <h5 className="">Siguenos</h5>
-            <span className="mx-3">
-              <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
-            </span>
-            <span className="mx-3">
+            <NavLink exact={true} to="error404" className="mx-2">
+              <span>
+                <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
+              </span>
+            </NavLink>
+            <NavLink exact={true} to="error404" className="mx-2">
+              <span>
               <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
-            </span>
-            <span className="mx-3">
+              </span>
+            </NavLink>
+            <NavLink exact={true} to="error404" className="mx-2">
+              <span>
               <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
-            </span>
+              </span>
+            </NavLink>
           </section>
         </div>
       </Card.Body>
@@ -53,21 +59,21 @@ const Footer = () => {
             <div className="row">
               <NavLink
                 exact={true}
-                to="Error404"
+                to="error404"
                 className="col-sm-12 col-md-3 col-lg-3 text-center text-light"
               >
                 © 2020 Rolling News
               </NavLink>
               <NavLink
                 exact={true}
-                to="Error404"
+                to="error404"
                 className="col-sm-12 col-md-3 col-lg-3 text-center text-light"
               >
                 Politicas de privacidad
               </NavLink>
               <NavLink
                 exact={true}
-                to="Error404"
+                to="error404"
                 className="col-sm-12 col-md-3 col-lg-3 text-center text-light"
               >
                 Politicas de cookies

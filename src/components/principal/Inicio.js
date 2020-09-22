@@ -16,15 +16,6 @@ const Inicio = (props) => {
 
       </section>
 
-      <section className="container">
-      <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
-          src={process.env.PUBLIC_URL + "img/banners/CovidBanner.jpg"}
-          className="mt-4 mb-4 w-100"
-          id="logo-header"
-        />
-      </a>
-      </section>
-
       <section className="container d-flex">
         <div className="col-lg-8 col-12 px-1">
           <CategoriasNoticiasInicio noticias={props.noticias} categoria={"deportes"} cantidad={3}></CategoriasNoticiasInicio>
@@ -34,16 +25,74 @@ const Inicio = (props) => {
           src={process.env.PUBLIC_URL + "img/banners/3.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
+          alt="banner covid"
         />
         </a>
         <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
           src={process.env.PUBLIC_URL + "img/banners/1.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
+          alt="banner covid"
         />
         </a>
         </div>
       </section>
+
+      <section className="container">
+      <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
+          src={process.env.PUBLIC_URL + "img/banners/CovidBanner.jpg"}
+          className="mt-4 mb-4 w-100"
+          id="logo-header"
+          alt="banner covid"
+        />
+      </a>
+      </section>
+
+      <section className="container d-flex">
+        <div className="col-lg-8 col-12 px-1">
+          <CategoriasNoticiasInicio noticias={props.noticias} categoria={"actualidad"} cantidad={3}></CategoriasNoticiasInicio>
+        </div>
+        <div className="col-4 border border-dark d-none d-lg-block">
+        <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
+          src={process.env.PUBLIC_URL + "img/banners/3.jpg"}
+          className="mt-4 mb-4 w-100"
+          id="logo-header"
+          alt="banner covid"
+        />
+        </a>
+        <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
+          src={process.env.PUBLIC_URL + "img/banners/1.jpg"}
+          className="mt-4 mb-4 w-100"
+          id="logo-header"
+          alt="banner covid"
+        />
+        </a>
+        </div>
+      </section>
+
+      <section className="container d-flex">
+        <div className="col-lg-8 col-12 px-1">
+          <CategoriasNoticiasInicio noticias={props.noticias} categoria={"politica"} cantidad={3}></CategoriasNoticiasInicio>
+        </div>
+        <div className="col-4 border border-dark d-none d-lg-block mt-4">
+        <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
+          src={process.env.PUBLIC_URL + "img/banners/3.jpg"}
+          className="mt-4 mb-4 w-100"
+          id="logo-header"
+          alt="banner covid"
+        />
+        </a>
+        <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
+          src={process.env.PUBLIC_URL + "img/banners/1.jpg"}
+          className="mt-4 mb-4 w-100"
+          id="logo-header"
+          alt="banner covid"
+        />
+        </a>
+        </div>
+      </section>
+
+
     </div>
   );
 };

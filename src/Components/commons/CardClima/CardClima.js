@@ -13,13 +13,11 @@ const CardClima = () => {
   const ApiRequest = async () => {
     const requestApi = await fetch("http://ip-api.com/json");
     const responseApi = await requestApi.json();
-    console.log(responseApi);
     setLocated(responseApi);
     const url = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${responseApi.city},${responseApi.countryCode}&appid=a27847aac3dab2bcb81154f5a2bc6868&units=metric`
     );
     const responseWeather = await url.json();
-    console.log(responseWeather);
     setWeather(responseWeather);
   };
 

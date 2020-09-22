@@ -1,7 +1,6 @@
 import React from "react";
 
 const MonedaValor = (props) => {
-  console.log(props.moneda);
   return (
     <div className="d-lg-flex flex-column px-2 py-1 col-3 d-none d-lg-block mt-5 mb-3" >
       <div className="border border-dark">

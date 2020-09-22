@@ -101,8 +101,7 @@ function App() {
       console.log(error);
     }
   };
-  console.log(noticiasDestacadas);
-  console.log(admin);
+  
   return (
     <Router>
       <Header categorias={categorias} admin={admin} setAdmin={setAdmin}></Header>

@@ -23,8 +23,6 @@ const Header = (props) => {
   const categoriasPrincipales = categoriasSinFotografia.slice(0, 4);
   const categoriasSecundarias = categoriasSinFotografia.slice(4);
 
-  console.log(categoriasSecundarias);
-
   return (
     <div className="">
       <CardClima></CardClima>
@@ -41,7 +39,7 @@ const Header = (props) => {
         </div>
       </Container>
 
-      <Navbar expand="lg" className="d-flex justify-content-center text-light">
+      <Navbar expand="md" className="d-flex justify-content-center text-light">
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="container d-flex justify-content-between">

@@ -19,7 +19,6 @@ const MonedasValores = () => {
     setDolarBlue(responseApi[1].casa);
     setDolarBolsa(responseApi[4].casa);
     setDolarTurista(responseApi[6].casa);
-    console.log(responseApi[0].casa);
   };
 
   return (
