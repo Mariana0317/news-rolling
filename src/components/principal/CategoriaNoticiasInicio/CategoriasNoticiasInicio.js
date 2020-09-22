@@ -15,15 +15,17 @@ const CategoriaNoticias = (props) => {
     }
   }, [props.noticias, props.categoria]);
 
+  const cantidadDeNoticias = categoria.slice(0,props.cantidad);
+
   return (
     <div className="p-0 w-100">
       <ListGroup variant="flush">
         <ListGroup.Item className="mb-2">
           <h1>{props.categoria}</h1>
         </ListGroup.Item>
-        <CategoriaNoticiaInicio noticia={categoria[0]}></CategoriaNoticiaInicio>
-        <CategoriaNoticiaInicio noticia={categoria[1]}></CategoriaNoticiaInicio>
-        <CategoriaNoticiaInicio noticia={categoria[2]}></CategoriaNoticiaInicio>
+        {cantidadDeNoticias.map((noticia)=>{
+          return(<CategoriaNoticiaInicio noticia={noticia}></CategoriaNoticiaInicio>)
+        })}
       </ListGroup>
     </div>
   );

@@ -18,7 +18,7 @@ const Inicio = (props) => {
 
       <section className="container d-flex">
         <div className="col-lg-8 col-12 px-1">
-          <CategoriasNoticiasInicio noticias={props.noticias} categoria={"cine"}></CategoriasNoticiasInicio>
+          <CategoriasNoticiasInicio noticias={props.noticias} categoria={"cine"} cantidad={3}></CategoriasNoticiasInicio>
         </div>
         <div className="col-4 border border-dark d-none d-lg-block">
 
