@@ -8,19 +8,19 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 
-const Nosotros = () => {
+const Nosotros = (props) => {
+  console.log(props.nos)
   return (
     <div className="d-flex col-md-5 ml-md-3 ml-0 shadow col-12 border pt-3 rounded mb-3">
       <div className="col-4">
         <img
-          src={process.env.PUBLIC_URL + "img/leo.JPG"}
+          src={process.env.PUBLIC_URL + `${props.nos.img}`}
           className="img-fluid rounded-circle mb-3"
           alt="leo"
         />
       </div>
       <div className="col-8 text-left">
-        <h6>Leo</h6>
-        <p>Scrum Master</p>
+        <h6>{props.nos.nombre}</h6>
         <div className="w-100 d-flex">
           <a style={{ color: "#1DA1F2" }} href="https://twitter.com/" className="rounded-circle">
             <FontAwesomeIcon
@@ -44,15 +44,15 @@ const Nosotros = () => {
             <FontAwesomeIcon className="mr-2" icon={faGithub} size="2x" />
           </a>
         </div>
+        <p><span className="badge badge-info">{props.nos.sm}</span></p>
         <hr />
         <p className="font-weight-light">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem dicta
-          sit fuga totam ratione repellendus.
+          {props.nos.descripcion}
         </p>
         <hr />
         <div className="blockquote d-flex align-items-center">
           <FontAwesomeIcon className="mr-2" icon={faUserGraduate} size="1x" />
-          <p className="m-0 ml-2">Rolling Code</p>
+          <p className="m-0 ml-2">Rolling Code School</p>
         </div>
       </div>
     </div>
