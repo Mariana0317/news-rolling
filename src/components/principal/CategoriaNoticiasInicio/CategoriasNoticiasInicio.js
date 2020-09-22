@@ -24,7 +24,7 @@ const CategoriaNoticias = (props) => {
           <h1>{props.categoria}</h1>
         </ListGroup.Item>
         {cantidadDeNoticias.map((noticia)=>{
-          return(<CategoriaNoticiaInicio noticia={noticia}></CategoriaNoticiaInicio>)
+          return(<CategoriaNoticiaInicio noticia={noticia} key={noticia._id}></CategoriaNoticiaInicio>)
         })}
       </ListGroup>
     </div>
