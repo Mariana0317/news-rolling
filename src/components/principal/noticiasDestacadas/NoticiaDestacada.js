@@ -30,8 +30,8 @@ const NoticiaDestacada2 = (props) => {
             }}
           >
             <div>
-              <span className="badge badge-primary">
-                <h6 className="m-0">
+            <span className="badge badge-danger">
+              <h6 className="m-0 text-light">
                   {props.noticiasDestacadas !== undefined
                     ? props.noticiasDestacadas.categoria
                     : null}
@@ -39,7 +39,7 @@ const NoticiaDestacada2 = (props) => {
               </span>
             </div>
             <Card.Title>
-              <h2 className="m-0">
+            <h2 className="m-0 text-light">
                 {props.noticiasDestacadas !== undefined
                   ? props.noticiasDestacadas.titulo
                   : null}

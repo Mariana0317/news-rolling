@@ -11,8 +11,8 @@
 
 .wheather img{
     filter: invert(30%);
-    width: 16%;
-    margin-top: -14px;
+    width: 12%;
+    margin-top: -10px;
 }
 
 #top{
@@ -20,6 +20,6 @@
 }
 
 .wheather p{
-    margin-top: -16px;
-    font-size: 12px;
+    margin-top: -12px;
+    font-size: 14px;
 }

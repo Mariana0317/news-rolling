@@ -4,7 +4,9 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Swal from "sweetalert2";
 import Alert from "react-bootstrap/Alert";
+import Container from "react-bootstrap/Container";
 import { withRouter } from "react-router-dom";
+import "./Login.css";
 
 const FormSuscripcion = (props) => {
   const [error, setError] = useState(false);
@@ -64,69 +66,69 @@ const FormSuscripcion = (props) => {
   };
 
   return (
-    <div className="container">
-      <h1 className="display-3 text-center my-3">Formulario de suscripción</h1>
-      <Form className="my-4" onSubmit={handleSubmit}>
-        <Form.Row>
-          <Form.Group as={Col} controlId="nombreYApellido">
-            <Form.Label>Nombre completo *</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Ingresa tu apellido y nombre"
-              name="nombreYApellido"
-              onChange={handleChange}
-            />
-          </Form.Group>
+    <div className="formularios">
+      <Container className="text-dark rounded">
+        <h2 className="text-center mt-5 text-danger">Formulario de suscripción</h2>
+        <Form className="my-4" onSubmit={handleSubmit}>
+            <Form.Group as={Col} controlId="nombreYApellido">
+              <Form.Label className="formLetraCategoria"><strong>Nombre completo *</strong></Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingresa tu apellido y nombre"
+                name="nombreYApellido"
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-          <Form.Group as={Col} controlId="email">
-            <Form.Label>Correo electrónico *</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Ingresa tu correo electrónico"
-              name="email"
-              onChange={handleChange}
-            />
-          </Form.Group>
-        </Form.Row>
+            <Form.Group as={Col} controlId="email">
+              <Form.Label className="formLetraCategoria"><strong>Correo electrónico *</strong></Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Ingresa tu correo electrónico"
+                name="email"
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-        <Form.Row>
-          <Form.Group as={Col} controlId="codigoPostal">
-            <Form.Label>Código postal *</Form.Label>
-            <Form.Control
-              type="number"
-              placeholder="Ingresa tu código postal"
-              name="codigoPostal"
-              onChange={handleChange}
-            />
-          </Form.Group>
+            <Form.Group as={Col} controlId="direccion">
+              <Form.Label className="formLetraCategoria"><strong>Domicilio *</strong></Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingresa tu dirección"
+                name="direccion"
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-          <Form.Group as={Col} controlId="localidad">
-            <Form.Label>Localidad *</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Ingresa el nombre de tu ciudad"
-              onChange={handleChange}
-              name="localidad"
-            />
-          </Form.Group>
+            <Form.Group as={Col} controlId="localidad">
+              <Form.Label className="formLetraCategoria"><strong>Localidad</strong></Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingresa el nombre de tu ciudad"
+                onChange={handleChange}
+                name="localidad"
+              />
+            </Form.Group>
 
-          <Form.Group as={Col} controlId="direccion">
-            <Form.Label>Dirección *</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Ingresa tu dirección"
-              name="direccion"
-              onChange={handleChange}
-            />
-          </Form.Group>
-        </Form.Row>
-        {error ? (
-          <Alert variant={"danger"}>{mensajeError}</Alert>
-        ) : null}
-        <Button variant="success" type="submit">
-          Enviar
-        </Button>
-      </Form>
+            <Form.Group as={Col} controlId="codigoPostal">
+              <Form.Label className="formLetraCategoria"><strong>Código postal</strong></Form.Label>
+              <Form.Control
+                className="col-sm-2 col-md-2 col-lg-2"
+                type="number"
+                placeholder="Ingresa tu código postal"
+                name="codigoPostal"
+                onChange={handleChange}
+              />
+            </Form.Group>
+
+          {error ? (
+            <Alert variant={"warning"}>{mensajeError}</Alert>
+          ) : null}
+          <Button variant="danger" type="submit" className="mt-5 ml-2">
+            Enviar
+          </Button>
+        </Form>
+      </Container>
     </div>
   );
 };

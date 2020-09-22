@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 import { withRouter } from 'react-router-dom';
+import "./Login.css";
 
 
 const Login = (props) => {
@@ -116,7 +117,7 @@ const Login = (props) => {
                 </Alert>) : null}
                 <Button variant="success" type="submit">
                     Ingresar
-            </Button>
+                </Button>
             </Form>
         </Container>
     );

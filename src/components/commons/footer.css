@@ -1,12 +1,12 @@
 .footer span{
     /*font-size: 35px;*/
-    color: rgb(222,83,64);
+    color: rgb(220,53,69);
 }
 
 #logo_text{
   height: 120px;
 }
 
-p{
+.about p{
   font-size: 12px;
 }

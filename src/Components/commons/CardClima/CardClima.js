@@ -49,7 +49,7 @@ const CardClima = () => {
           <h2 className="display-5 text-center text-light" id="hours">...</h2>
           <p className="text-center mb-1" id="date">Cargando...</p>
         </div>
-        <div className="col-4 d-flex flex-column justify-content-around align-items-center">
+        <div className="wheather col-4 d-flex flex-column justify-content-around align-items-center">
           <p className="m-0 mt-2">{located.city}</p>
         </div>
         <div className="wheather col-4 d-flex flex-column justify-content-start align-items-center">

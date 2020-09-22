@@ -59,8 +59,8 @@ const NuevaCategoria = (props) => {
 
   return (
     <div className="formularios">
-      <Container className="text-dark py-5 rounded">
-        <h1 className="text-center display-4 pb-5">Nueva categoria</h1>
+      <Container className="text-dark rounded">
+      <h2 className="text-center mt-5 text-danger">Nueva Categoria</h2>
         <Form onSubmit={handleSubmit} noValidate validated={validated}>
           <Form.Group controlId="nombre" className="text-center">
             <Form.Label className="formLetraCategoria">
@@ -101,7 +101,7 @@ const NuevaCategoria = (props) => {
           </div>
           <div className="d-flex justify-content-center">
             <Button
-              variant="light"
+              variant="danger"
               type="submit"
               className="border border-dark"
             >

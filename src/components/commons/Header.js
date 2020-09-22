@@ -24,8 +24,8 @@ const Header = (props) => {
         </div>
       </Container>
 
-      <Navbar expand="lg" className="text-light">
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar expand="lg" className="d-flex justify-content-center text-light">
+        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="container d-flex justify-content-between">
             <NavLink className="text-dark text-decoration-none" exact={true} to="/">
@@ -76,6 +76,7 @@ const Header = (props) => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      <hr></hr>
     </div>
   );
 };
