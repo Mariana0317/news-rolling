@@ -180,6 +180,8 @@ function App() {
         <Route exact path="/adm-inicio/listanoticias">
           <ListaNoticias
             noticias={noticias}
+            noticiasDestacadas = {noticiasDestacadas}
+            setActualizarNoticiasDestacadas = {setActualizarNoticiasDestacadas}
             setActualizarNoticias={setActualizarNoticias}
           ></ListaNoticias>
         </Route>
