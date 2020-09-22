@@ -59,7 +59,7 @@ const Login = (props) => {
                             if (consulta.status === 200) {
                                 Swal.fire(
                                     "Bienvenido administrador!",
-                                    "Usted se registró como administrador exitósamente.",
+                                    "Usted se inicio como administrador exitósamente.",
                                     "success"
                                 );
                                 props.setActualizarAdmin(true);

@@ -27,7 +27,7 @@ const Inicio = (props) => {
 
       <section className="container d-flex">
         <div className="col-lg-8 col-12 px-1">
-          <CategoriasNoticiasInicio noticias={props.noticias} categoria={"cine"} cantidad={3}></CategoriasNoticiasInicio>
+          <CategoriasNoticiasInicio noticias={props.noticias} categoria={"deportes"} cantidad={3}></CategoriasNoticiasInicio>
         </div>
         <div className="col-4 border border-dark d-none d-lg-block">
         <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img

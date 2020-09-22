@@ -40,8 +40,8 @@ const HeaderAdm = (props) => {
       <Navbar
         collapseOnSelect
         expand="lg"
-        bg="dark"
-        variant="dark"
+        bg="light"
+        variant="light"
         className="d-flex justify-content-center"
       >
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -82,7 +82,7 @@ const HeaderAdm = (props) => {
           </Nav>
           <Nav>
             <Nav.Link>
-              <Button variant="success" onClick={() => desloguear()}>
+              <Button variant="danger" onClick={() => desloguear()}>
                 Cerrar Sesion
               </Button>
             </Nav.Link>
