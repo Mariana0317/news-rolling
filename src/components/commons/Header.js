@@ -90,18 +90,22 @@ const Header = (props) => {
                 </div>
               ) : null}
             </NavDropdown>
-            <NavLink
-              className="text-dark text-decoration-none"
-              exact={true}
-              to="/login"
-            >
-              Login <FontAwesomeIcon icon={faUser} />
-            </NavLink>
-            <NavLink exact={true} to="/suscripcion-form">
-              <Button variant="outline-dark" id="opciones">
-                Suscribirse
-              </Button>
-            </NavLink>
+            {props.admin.logueado === false ? (
+                <NavLink
+                  className="text-dark text-decoration-none"
+                  exact={true}
+                  to="/login"
+                >
+                  Login <FontAwesomeIcon icon={faUser} />
+                </NavLink>
+            ) : null}
+            {props.admin.logueado === false ? (
+                <NavLink exact={true} to="/suscripcion-form">
+                  <Button variant="outline-dark" id="opciones">
+                    Suscribirse
+                  </Button>
+                </NavLink>
+            ) : null}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

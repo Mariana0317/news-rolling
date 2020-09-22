@@ -104,11 +104,11 @@ function App() {
     }
   };
   console.log(noticiasDestacadas);
-
+  console.log(admin);
   return (
     <Router>
-      <Header categorias={categorias}></Header>
-      {admin.logueado === true ? <HeaderAdm></HeaderAdm> : null}
+      <Header categorias={categorias} admin={admin} setAdmin={setAdmin}></Header>
+      {admin.logueado === true ? <HeaderAdm admin={admin} setActualizarAdmin={setActualizarAdmin}></HeaderAdm> : null}
       <Switch>
         <Route exact path="/">
           <Inicio
