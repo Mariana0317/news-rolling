@@ -22,7 +22,7 @@
     }
     
     .recomendadas{
-        font-size: 22px;
+        display: none;
     }
     
     .titulo{
@@ -40,8 +40,8 @@
         font-size: 14px;
     }
     
-    .recomendadas{
-        font-size: 17px;
+    .seccion{
+        display: none;
     }
     
     .titulo{

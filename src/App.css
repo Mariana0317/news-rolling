@@ -49,3 +49,10 @@
 .lowercase{
     text-transform: lowercase;
 }
+
+@media all and (max-width: 599px) {
+    .listaCategorias{
+        font-size: 15px;
+    }
+}
+

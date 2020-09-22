@@ -45,7 +45,7 @@ const LineaCategoria = (props) => {
 
   return (
     <ListGroup.Item className="border-bottom border-dark d-flex justify-content-between">
-      <h4>{props.categoria.titulo}</h4>
+      <h4 className="listaCategorias">{props.categoria.titulo}</h4>
       <div>
         <Button className="btn btn-dark py-1 px-2 mx-1">
           <FontAwesomeIcon icon={faEye} />
