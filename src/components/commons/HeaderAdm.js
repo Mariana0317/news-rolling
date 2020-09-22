@@ -3,7 +3,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
-import Swal from "sweetalert2";
 
 const HeaderAdm = (props) => {
   const desloguear = async () => {

@@ -12,8 +12,6 @@ import ListaNoticias from "./components/adm-crud/ListaNoticias";
 import NuevaCategoria from "./components/adm-crud/NuevaCategoria";
 import NuevaNoticia from "./components/adm-crud/NuevaNoticia";
 import HeaderAdm from "./components/commons/HeaderAdm";
-import Sections from "./components/Sections/Sections";
-import Notice from "./components/Notice/Notice";
 import Login from "./components/principal/Login";
 import EditarNoticias from "./components/adm-crud/EditarNoticias";
 import EditarCategoria from "./components/adm-crud/EditarCategoria";
@@ -115,12 +113,6 @@ function App() {
             noticiasDestacadas={noticiasDestacadas}
             noticias={noticias}
           ></Inicio>
-        </Route>
-        <Route exact path={"/secciones/:categoria"}>
-          <Sections />
-        </Route>
-        <Route exact path={"/secciones/:categoria/:id"}>
-          <Notice />
         </Route>
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>

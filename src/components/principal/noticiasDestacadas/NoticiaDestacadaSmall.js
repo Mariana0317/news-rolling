@@ -19,8 +19,7 @@ const NoticiaDestacadaSmall = (props) => {
                 props.noticiasDestacadas !== undefined
                   ? props.noticiasDestacadas.imgPrincipal
                   : null
-              })`,
-              backgroundSize: "100% 100%",
+              })`
             }}
           >
             <div>

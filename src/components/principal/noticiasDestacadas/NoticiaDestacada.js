@@ -19,14 +19,13 @@ const NoticiaDestacada2 = (props) => {
       >
         <Card className="text-light h-100 m-0 text-md-left text-justify">
           <Card.Body
-            className="d-flex p-3 flex-column justify-content-end w-100 h-100 rounded"
+            className="d-flex p-3 flex-column h-100 w-100 justify-content-end rounded"
             style={{
               background: `linear-gradient(to bottom, rgba(0,0,0,0.100), rgba(0, 0, 0, 0.600), rgba(0,0,0,0.800)), url(${
                 props.noticiasDestacadas !== undefined
                   ? props.noticiasDestacadas.imgPrincipal
                   : null
-              })`,
-              backgroundSize: "100% 100%",
+              })`
             }}
           >
             <div>
