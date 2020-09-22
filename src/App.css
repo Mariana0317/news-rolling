@@ -1,65 +1,82 @@
-.formLetraCategoria{
-    font-size: 20px;
+.formLetraCategoria {
+  font-size: 20px;
 }
 
-.textoTitulo { 
-    height: 70px;
-    max-height: 70px;
+.textoTitulo {
+  height: 90px;
+  max-height: 90px;
 }
 
-.textoCuerpo { 
-    height: 100px;
-    max-height: 100px;
-}
-#logo-header{
-    width: 40%;
+.textoCuerpo {
+  height: 110px;
+  max-height: 110px;
 }
 
-.encuadres{
-    background-color: #efa9a0;
+.encuadres {
+  background-color: #efa9a0;
 }
 
-.encuadres h5{
-    color: whitesmoke;
+.encuadres h5 {
+  color: whitesmoke;
 }
 
-.encuadres p{
-    font-size: 14px;
-}
-  
-#opciones:hover{
-    background-color: rgb(222,83,64);
-    opacity: 1;
-    color: white;
-    opacity: 0.6;
+.encuadres p {
+  font-size: 14px;
 }
 
-.moneda{
-    background-color: black;
+#opciones:hover {
+  background-color: rgb(222, 83, 64);
+  opacity: 1;
+  color: white;
+  opacity: 0.6;
 }
 
-.moneda h5{
-    color: whitesmoke;
+.moneda {
+  background-color: black;
 }
 
-.botonbt{
-    font-weight: bold;
-}
-.text-none:hover{
-    text-decoration: none!important;
+.moneda h5 {
+  color: whitesmoke;
 }
 
-.capitalize{
-    text-transform: capitalize;
+.botonbt {
+  font-weight: bold;
+}
+.text-none:hover {
+  text-decoration: none !important;
 }
 
-.lowercase{
-    text-transform: lowercase;
+.capitalize {
+  text-transform: capitalize;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 340px) and (max-width: 766px) {
+  #logo-header {
+    width: 80%;
+  }
 }
 
 @media all and (max-width: 599px) {
-    .listaCategorias{
-        font-size: 15px;
-    }
+  .listaCategorias {
+    font-size: 15px;
+  }
 }
 
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #logo-header {
+    width: 60%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1600px) {
+  #logo-header {
+    width: 40%;
+  }
+}
