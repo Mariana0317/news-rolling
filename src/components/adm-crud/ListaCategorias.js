@@ -7,7 +7,7 @@ const ListaCategorias = (props) => {
   return (
     <div className="py-5 formularios">
       <Container>
-      <h2 className="text-center mt-5">Lista de Categorias</h2>
+      <h2 className="text-center mb-5 text-danger">Lista de Categorias</h2>
         <ListGroup>
           {props.categorias.map((categoria) => (
             <LineasCategorias

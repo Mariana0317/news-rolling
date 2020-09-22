@@ -39,9 +39,11 @@ const AcercaDeNosotros = () => {
 
 
   return (
-    <div>
-      <h2 className="text-center display-4">Nuestro equipo</h2>
-      <hr />
+    <div className="container text-center">
+      <img
+          src={process.env.PUBLIC_URL + "img/rolling-news-frase.png"}
+          className="mt-4 mb-4 w-75"
+        />
       <section className="container-fluid mx-auto row justify-content-center m-0 px-2 px-md-0">
         <Nosotros nos={nos[0]}></Nosotros>
         <Nosotros nos={nos[1]}></Nosotros>

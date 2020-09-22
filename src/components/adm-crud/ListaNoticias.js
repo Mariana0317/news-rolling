@@ -7,7 +7,7 @@ const ListaNoticias = (props) => {
   return (
     <div className="formularios py-5">
       <Container>
-      <h2 className="text-center mb-5">Lista de Noticias</h2>
+      <h2 className="text-center mb-5 text-danger">Lista de Noticias</h2>
         <CardColumns class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-justify">    
               {props.noticias.map((noticia) => (
                 <CardsNoticias
