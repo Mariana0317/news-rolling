@@ -16,10 +16,10 @@ const DetalleNoticia = (props) => {
       <div className="pl-3 pr-3 mt-5 mb-5 col-9">
         <div className="container">
           <h1>{props.noticia !== undefined ? props.noticia.titulo : null}</h1>
-          <h4>
+          <h6 className="py-3">
             {props.noticia !== undefined ? props.noticia.descripcion : null}
-          </h4>
-          <p>
+          </h6>
+          <p className="mt-3 capitalize">
             Por:{" "}
             <strong>
               {props.noticia !== undefined ? props.noticia.autor : null}
