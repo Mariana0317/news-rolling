@@ -60,7 +60,7 @@ const NuevaCategoria = (props) => {
   return (
     <div className="formularios">
       <Container className="text-dark rounded">
-      <h2 className="text-center mb-5">Nueva Categoria</h2>
+      <h2 className="text-center mb-5 text-danger">Nueva Categoria</h2>
         <Form onSubmit={handleSubmit} noValidate validated={validated}>
           <Form.Group controlId="nombreCategoria" className="text-center">
             <Form.Label className="formLetraCategoria">

@@ -80,7 +80,7 @@ const NuevaNoticia = (props) => {
   return (
     <div className="formularios">
       <Container className="text-dark rounded">
-      <h2 className="text-center mb-5">Nueva Noticia</h2>
+      <h2 className="text-center mb-5 text-danger">Nueva Noticia</h2>
         <Form onSubmit={handleSubmit} noValidate validated={validated}>
           <Form.Group controlId="tituloNoticia" className="text-center">
             <Form.Label className="formLetraCategoria">
