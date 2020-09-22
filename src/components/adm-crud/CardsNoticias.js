@@ -50,17 +50,12 @@ const CardsNoticias = (props) => {
 
   return (
     <div className="p-1">
-<<<<<<< HEAD
       <Card className="border border-dark shadow-sm">
         <Card.Img
           variant="top"
           src={props.noticia.imgPrincipal}
           height="200"
         />
-=======
-      <Card className="border border-dark">
-        <Card.Img variant="top" src={props.noticia.imgPrincipal} height="200" />
->>>>>>> origin/fixDestacar
         <Card.Body>
           <Card.Title className="textoTitulo">
             {props.noticia.titulo}
