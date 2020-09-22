@@ -173,7 +173,9 @@ function App() {
           <FormSuscripcion></FormSuscripcion>
         </Route>
         <Route exact path="/login">
-          <Login></Login>
+          <Login setAdmin={setAdmin}
+                  setActualizarAdmin={setActualizarAdmin}
+            admin={admin}></Login>
         </Route>
         <Route exact path="/acercadenosotros">
           <PaginaAcercaDeNosotros></PaginaAcercaDeNosotros>

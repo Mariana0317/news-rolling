@@ -7,53 +7,65 @@ import Alert from "react-bootstrap/Alert";
 import { withRouter } from "react-router-dom";
 
 const FormSuscripcion = (props) => {
-  const [nombreYApellido, setNombreYApellido] = useState("");
-  const [email, setEmail] = useState("");
-  const [codigoPostal, setCodigoPostal] = useState("");
-  const [localidad, setLocalidad] = useState("");
-  const [direccion, setDireccion] = useState("");
   const [error, setError] = useState(false);
+  const [mensajeError, setMensajeError] = useState("");
+
+
+  const [formulario, setFormulario] = useState({
+    nombreYApellido: "",
+    email: "",
+    codigoPostal: "",
+    localidad: "",
+    direccion: "",
+  });
+
+  let {
+    nombreYApellido,
+    email,
+    codigoPostal,
+    localidad,
+    direccion,
+  } = formulario;
+
+  const handleChange = (e) => {
+    setFormulario({
+      ...formulario,
+      [e.target.name]: e.target.value,
+    })
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const expresion = /\w+@\w+\.[a-z]/;
     //Validar los campos
-    if (
-      nombreYApellido.trim() === "" ||
-      email.trim() === "" ||
-      codigoPostal === "" ||
-      localidad === "" ||
-      direccion === ""
-    ) {
-      //Mostrar cartel de error
+    console.log()
+    if (nombreYApellido.trim() !== "" &&
+      email.trim() !== "" &&
+      codigoPostal.trim() !== "" &&
+      localidad.trim() !== "" &&
+      direccion.trim() !== "") {
+      if (expresion.test(email)) {
+        Swal.fire(
+          "Datos registrados!",
+          "Pronto nos pondremos en contacto con usted para finalizar la suscripción.",
+          "success"
+        );
+        props.history.push("/");
+      } else {
+        setError(true)
+        setMensajeError("Email inválido");
+        return;
+      }
+
+    } else {
       setError(true);
-      return;
+      setMensajeError("Todos los campos son obligatorios");
     }
-    setError(false);
-
-    const datos = {
-      nombreYApellido,
-      email,
-      codigoPostal,
-      localidad,
-      direccion,
-    };
-
-    console.log(datos);
-
-    Swal.fire(
-      "Datos registrados!",
-      "Pronto nos pondremos en contacto con usted para finalizar la suscripción.",
-      "success"
-    );
-    props.history.push("/");
   };
 
   return (
     <div className="container">
       <h1 className="display-3 text-center my-3">Formulario de suscripción</h1>
-      {error ? (
-        <Alert variant={"danger"}>Todos los campos son obligatorios</Alert>
-      ) : null}
       <Form className="my-4" onSubmit={handleSubmit}>
         <Form.Row>
           <Form.Group as={Col} controlId="nombreYApellido">
@@ -61,7 +73,8 @@ const FormSuscripcion = (props) => {
             <Form.Control
               type="text"
               placeholder="Ingresa tu apellido y nombre"
-              onChange={(e) => setNombreYApellido(e.target.value)}
+              name="nombreYApellido"
+              onChange={handleChange}
             />
           </Form.Group>
 
@@ -70,7 +83,8 @@ const FormSuscripcion = (props) => {
             <Form.Control
               type="email"
               placeholder="Ingresa tu correo electrónico"
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              onChange={handleChange}
             />
           </Form.Group>
         </Form.Row>
@@ -81,7 +95,8 @@ const FormSuscripcion = (props) => {
             <Form.Control
               type="number"
               placeholder="Ingresa tu código postal"
-              onChange={(e) => setCodigoPostal(e.target.value)}
+              name="codigoPostal"
+              onChange={handleChange}
             />
           </Form.Group>
 
@@ -90,7 +105,8 @@ const FormSuscripcion = (props) => {
             <Form.Control
               type="text"
               placeholder="Ingresa el nombre de tu ciudad"
-              onChange={(e) => setLocalidad(e.target.value)}
+              onChange={handleChange}
+              name="localidad"
             />
           </Form.Group>
 
@@ -99,11 +115,14 @@ const FormSuscripcion = (props) => {
             <Form.Control
               type="text"
               placeholder="Ingresa tu dirección"
-              onChange={(e) => setDireccion(e.target.value)}
+              name="direccion"
+              onChange={handleChange}
             />
           </Form.Group>
         </Form.Row>
-
+        {error ? (
+          <Alert variant={"danger"}>{mensajeError}</Alert>
+        ) : null}
         <Button variant="success" type="submit">
           Enviar
         </Button>
