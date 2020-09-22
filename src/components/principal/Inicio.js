@@ -2,6 +2,7 @@ import React from "react";
 import CategoriasNoticiasInicio from "./CategoriaNoticiasInicio/CategoriasNoticiasInicio";
 import MonedasValores from "./MonedaApi/MonedasValores";
 import NoticiasDestacadas from "./noticiasDestacadas/NoticiasDestacadas";
+import { Link } from "react-router-dom";
 
 const Inicio = (props) => {
   return (
@@ -20,75 +21,68 @@ const Inicio = (props) => {
         <div className="col-lg-8 col-12 px-1">
           <CategoriasNoticiasInicio noticias={props.noticias} categoria={"deportes"} cantidad={3}></CategoriasNoticiasInicio>
         </div>
-        <div className="col-4 border border-dark d-none d-lg-block">
-        <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
+        <div className="col-4 d-none d-lg-block">
+        <Link exact={true} to="error404"><img
           src={process.env.PUBLIC_URL + "img/banners/3.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
           alt="banner covid"
         />
-        </a>
-        <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
+        </Link>
+        <Link exact={true} to="error404"><img
           src={process.env.PUBLIC_URL + "img/banners/1.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
           alt="banner covid"
         />
-        </a>
+        </Link>
         </div>
       </section>
 
       <section className="container">
-      <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
+      <Link exact={true} to="error404"><img
           src={process.env.PUBLIC_URL + "img/banners/CovidBanner.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
           alt="banner covid"
         />
-      </a>
+      </Link>
       </section>
 
       <section className="container d-flex">
         <div className="col-lg-8 col-12 px-1">
           <CategoriasNoticiasInicio noticias={props.noticias} categoria={"actualidad"} cantidad={3}></CategoriasNoticiasInicio>
         </div>
-        <div className="col-4 border border-dark d-none d-lg-block">
-        <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
-          src={process.env.PUBLIC_URL + "img/banners/3.jpg"}
+        <div className="col-4 d-none d-lg-block">
+        <Link exact={true} to="error404"><img
+          src={process.env.PUBLIC_URL + "img/publicidad4.png"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
           alt="banner covid"
         />
-        </a>
-        <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
-          src={process.env.PUBLIC_URL + "img/banners/1.jpg"}
-          className="mt-4 mb-4 w-100"
-          id="logo-header"
-          alt="banner covid"
-        />
-        </a>
+        </Link>
         </div>
       </section>
 
       <section className="container d-flex">
         <div className="col-lg-8 col-12 px-1">
-          <CategoriasNoticiasInicio noticias={props.noticias} categoria={"politica"} cantidad={3}></CategoriasNoticiasInicio>
+          <CategoriasNoticiasInicio noticias={props.noticias} categoria={"cine"} cantidad={3}></CategoriasNoticiasInicio>
         </div>
-        <div className="col-4 border border-dark d-none d-lg-block mt-4">
-        <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
-          src={process.env.PUBLIC_URL + "img/banners/3.jpg"}
+        <div className="col-4 d-none d-lg-block mt-4">
+        <Link exact={true} to="error404"><img
+          src={process.env.PUBLIC_URL + "img/publicidad6.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
           alt="banner covid"
         />
-        </a>
-        <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019"><img
+        </Link>
+        <Link exact={true} to="error404"><img
           src={process.env.PUBLIC_URL + "img/banners/1.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
           alt="banner covid"
         />
-        </a>
+        </Link>
         </div>
       </section>
 

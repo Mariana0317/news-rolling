@@ -8,7 +8,7 @@ import Alert from "react-bootstrap/Alert";
 import Swal from "sweetalert2";
 import { withRouter } from "react-router-dom";
 
-const EditarNoticias = (props) => {
+const EditarNoticiasDestacada = (props) => {
   const tituloRef = useRef("");
   const descripcionRef = useRef("");
   const imgPrincipalRef = useRef("");
@@ -61,7 +61,7 @@ const EditarNoticias = (props) => {
           "Se lo reenviara a la seccion de noticias",
           "success"
         );
-        props.setActualizarNoticias(true);
+        props.setActualizarNoticiasDestacadas(true);
 
         props.history.push("/adm-inicio/listanoticias");
 
@@ -278,4 +278,4 @@ const EditarNoticias = (props) => {
   );
 };
 
-export default withRouter(EditarNoticias);
+export default withRouter(EditarNoticiasDestacada);

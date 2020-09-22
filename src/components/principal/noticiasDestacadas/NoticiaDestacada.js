@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import "./NoticiasDestacadas.css";
 
 const NoticiaDestacada2 = (props) => {
-  console.log(props.noticiasDestacadas !== undefined
-    ? props.noticiasDestacadas.imgPrincipal
-    : null)
   return (
     <Link
       to={`/detalle-noticia/${
@@ -28,8 +25,7 @@ const NoticiaDestacada2 = (props) => {
                 props.noticiasDestacadas !== undefined
                   ? props.noticiasDestacadas.imgPrincipal
                   : null
-              })`,
-              backgroundSize: "100% 100%",
+              })`
             }}
 
           >

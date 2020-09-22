@@ -19,6 +19,7 @@ import Error404 from "./components/error404/Error404";
 import PaginaAcercaDeNosotros from "./components/AcercaDeNosotros/AcercaDeNosotros";
 import Fotos from "./components/fotos/Fotos";
 import Header from "./components/commons/Header";
+import EditarNoticiasDestacada from "./components/adm-crud/EditarNoticiasDestacada";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
@@ -224,12 +225,12 @@ function App() {
               (noticia) => noticia._id === idNoticia
             );
             return (
-              <EditarNoticias
+              <EditarNoticiasDestacada
                 noticiaEncontrada={noticiaEncontrada}
-                setActualizarNoticias={setActualizarNoticias}
+                setActualizarNoticiasDestacadas={setActualizarNoticiasDestacadas}
                 categorias={categorias}
                 setActualizarCategorias={setActualizarCategorias}
-              ></EditarNoticias>
+              ></EditarNoticiasDestacada>
             );
           }}
         ></Route>

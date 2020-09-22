@@ -3,7 +3,7 @@ import "./footer.css";
 import Card from "react-bootstrap/Card";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookSquare,
@@ -17,11 +17,13 @@ const Footer = () => {
       <Card.Body>
         <div className="row">
           <div className="col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center mb-4">
-            <img
-              src={process.env.PUBLIC_URL + "img/rollingnews-text.png"}
-              id="logo_text"
-              alt="imagen del logo"
-            />
+            <Link exact={true} to="/">
+              <img
+                src={process.env.PUBLIC_URL + "img/rollingnews-text.png"}
+                id="logo_text"
+                alt="imagen del logo"
+              />
+            </Link>
           </div>
           <section className="col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center about">
             <p>
@@ -41,12 +43,12 @@ const Footer = () => {
             </NavLink>
             <NavLink exact={true} to="error404" className="mx-2">
               <span>
-              <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
+                <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
               </span>
             </NavLink>
             <NavLink exact={true} to="error404" className="mx-2">
               <span>
-              <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
+                <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
               </span>
             </NavLink>
           </section>
