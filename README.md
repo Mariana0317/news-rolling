@@ -14,7 +14,6 @@ Leonardo Palavecino<br/>
 Mariana Granara<br/>
 
 
-
 Este proyecto se inicio con [Create React App](https://github.com/facebook/create-react-app).
 
 ## Scripts disponibles
@@ -28,9 +27,6 @@ Abre [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
 
 La página se volverá a cargar si realiza modificaciones.<br />
 También verá errores en la consola.
-
-
-
 
 
 ### `npm run build`
