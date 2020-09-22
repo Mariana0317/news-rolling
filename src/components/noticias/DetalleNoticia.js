@@ -13,19 +13,19 @@ const DetalleNoticia = (props) => {
   console.log(noticiaRecomendadas);
   return (
     <section className="row m-0">
-      <div className="pl-3 pr-3 mt-5 mb-5 col-9">
+      <div className="pl-3 pr-3 mt-5 mb-5 col-12 col-lg-8">
         <div className="container">
-          <h1>{props.noticia !== undefined ? props.noticia.titulo : null}</h1>
-          <h4>
+          <h1 className='mt-3 titulo'>{props.noticia !== undefined ? props.noticia.titulo : null}</h1>
+          <h6 className="py-3 descripcion">
             {props.noticia !== undefined ? props.noticia.descripcion : null}
-          </h4>
-          <p>
+          </h6>
+          <p className="mt-3 capitalize">
             Por:{" "}
             <strong>
               {props.noticia !== undefined ? props.noticia.autor : null}
             </strong>
           </p>
-          <span>
+          <span className='descripcion'>
             {props.noticia !== undefined ? props.noticia.fecha : null}
           </span>
 
@@ -44,14 +44,14 @@ const DetalleNoticia = (props) => {
                 }`}
               />
             </Card>
-            <span>
+            <span className="pie">
               {props.noticia !== undefined
                 ? props.noticia.pieDeImgPrincipal
                 : null}
             </span>
           </div>
-          <div className="mt-3 mb-3">
-            <p className="parrafo">
+          <div className="my-5">
+            <p className="contenido">
               {props.noticia !== undefined ? props.noticia.contenido : null}
             </p>
           </div>
@@ -69,15 +69,15 @@ const DetalleNoticia = (props) => {
                 }`}
               />
             </Card>) : null}
-            <span>
+            <span className="pie">
               {props.noticia !== undefined
                 ? props.noticia.pieDeImgSecundaria
                 : null}
             </span>
         </div>
       </div>
-      <div className="pl-3 pr-3 mt-5 mb-5 col-3">
-        <h3>Noticias Recomendadas</h3>
+      <div className="pl-3 pr-3 mt-5 mb-5 col-12 col-lg-4 seccion">
+        <h3 className="recomendadas my-3">Noticias Recomendadas</h3>
         <CategoriaNoticiaInicio
           noticia={noticiaRecomendadas[0]}
         ></CategoriaNoticiaInicio>
