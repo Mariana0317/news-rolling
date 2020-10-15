@@ -97,7 +97,7 @@ function App() {
         "https://rolling-news.herokuapp.com/highlights"
       );
       const resultado = await respuesta.json();
-      setNoticiasDestacadas(resultado); //Quitar despues para usar bd
+      setNoticiasDestacadas(resultado); 
     } catch (error) {
       console.log(error);
     }
