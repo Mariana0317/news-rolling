@@ -1,0 +1,29 @@
+.img-fotos{
+    height: 350px!important;
+}
+
+/*Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {
+    .img-fotos{
+        height: 275px!important;
+    }
+    .card-title{
+        font-size: 17px!important;
+        text-align: justify;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .img-fotos{
+        height: 350px!important;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .img-fotos{
+        height: 300px!important;
+    }
+}
