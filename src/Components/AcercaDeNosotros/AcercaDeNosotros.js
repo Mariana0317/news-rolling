@@ -7,28 +7,28 @@ const AcercaDeNosotros = () => {
   const nos = [{
     nombre: "Fabricio Oller",
     img: "img/fabri.jpg",
-    descripcion: "Estudió climatología en la universidad de oxford, es nuestro especialista en meteorología. Actualmente se encuentra investigando sobre el cambio climático. En sus varias misiones a la Antártida tuvo que aprender sobre primeros auxilios para ayudar a sus compañeros. Ahora es un apasionado socorrista. Próximamente quiere abrir una fábrica de alfajores."
+    descripcion: "Estudió climatología en la universidad de oxford, es nuestro especialista en meteorología. Actualmente se encuentra investigando sobre el cambio climático. En sus varias misiones a la Antártida tuvo que aprender sobre primeros auxilios para ayudar a sus compañeros. Próximamente quiere abrir una fábrica de alfajores."
   },
   {
     nombre: "Franco Luna",
-    img: "img/franco.jpeg",
+    img: "img/franco.jpg",
     descripcion: "La experiencia profesional de Franco es en finanzas corporativas, administración, marketing, ventas y contabilidad. Ha construido 6 empresas como startups y ha hecho crecer cada una a un nivel conocido y respetado a nivel nacional. Las industrias en las que creó estas empresas incluyen indumentaria, televisión y deportes."
   },
   {
     nombre: "Hernán Sánchez Ortiz",
-    img: "img/hernan.jpeg",
+    img: "img/hernan.jpg",
     descripcion: "Se graduó en ciencias de la computación en la universidad politécnica de Valencia. Es nuestro experto en tecnología. Le encantan los drones  y fundó su propia empresa para fabricarlos en Argentina y venderlos al mundo, su principal comprador es la República Popular de China. "
   },
   {
     nombre: "Leonardo Palavecino",
-    img: "img/leo.JPG",
-    descripcion: "Se graduó de la universidad con títulos de enseñanza en educación tanto en psicología como en educación física. Luego obtuvo una licenciatura en negocios y posteriormente su MBA en marketing. Se embarcó en una carrera muy exitosa como entrenador y educador universitario. Además, durante el verano, fue director de un campamento residencial de verano para niños.",
+    img: "img/leo.jpg",
+    descripcion: "Se graduó de la universidad con títulos de enseñanza en educación tanto en psicología como en educación física. Luego obtuvo una licenciatura en negocios y posteriormente su MBA en marketing. Se embarcó en una carrera muy exitosa como entrenador y educador universitario.",
     sm: "Scrum master"
   },
   {
     nombre: "Mariana Granara",
     img: "img/mariana.jpg",
-    descripcion: "Es la única mujer del grupo, por ende la encargada de poner orden y verificar que todo funcione. Le gustan las artes, es cantante, bailarina y diseñadora de interiores. Obvio es nuestra especialista en espectáculos. Estudió en la universidad de La Soborna en París y trabajó en el equipo del arquitecto Cesar pelli como diseñadora. "
+    descripcion: "Es la única mujer del grupo, por ende la encargada de poner orden y verificar que todo funcione. Le gustan las artes, es cantante, bailarina y diseñadora de interiores. Obvio es nuestra especialista en espectáculos. Estudió en la universidad de La Soborna en París. "
   },
   {
     nombre: "Mauro Cardone",

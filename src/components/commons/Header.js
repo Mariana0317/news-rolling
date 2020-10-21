@@ -39,7 +39,7 @@ const Header = (props) => {
         </div>
       </Container>
 
-      <Navbar expand="md" className="d-flex justify-content-center text-light">
+      <Navbar className="d-flex justify-content-center text-light">
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="container d-flex justify-content-between">
@@ -56,6 +56,7 @@ const Header = (props) => {
                     <Link
                       to={`/categoria-noticias/${categoria.titulo}`}
                       className="nav-link"
+                      activeClassName="selected"
                       id="opciones"
                       key={indice}
                     >
@@ -93,12 +94,13 @@ const Header = (props) => {
                   className="text-dark text-decoration-none"
                   exact={true}
                   to="/login"
+                  id="login"
                 >
                   Login <FontAwesomeIcon icon={faUser} />
                 </NavLink>
             ) : null}
             {props.admin.logueado === false ? (
-                <NavLink exact={true} to="/suscripcion-form">
+                <NavLink exact={true} to="/suscripcion-form" id="suscripcion">
                   <Button variant="outline-dark" id="opciones">
                     Suscribirse
                   </Button>

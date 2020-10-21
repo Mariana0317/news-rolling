@@ -45,7 +45,7 @@ const HeaderAdm = (props) => {
         variant="light"
         className="d-flex justify-content-center"
       >
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" className="w-100" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto w-100 d-flex justify-content-around">
             <NavLink

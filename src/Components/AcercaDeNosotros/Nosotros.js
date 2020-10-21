@@ -10,19 +10,19 @@ import { Link } from "react-router-dom";
 import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 
 const Nosotros = (props) => {
-  console.log(props.nos)
   return (
-    <div className="d-flex col-md-5 ml-md-3 ml-0 shadow col-12 border pt-3 rounded mb-3">
-      <div className="col-4">
+    <div className="d-flex flex-column align-items-center col-12 col-md-5 ml-md-3 shadow border pt-3 rounded mb-3">
+      <div>
         <img
           src={process.env.PUBLIC_URL + `${props.nos.img}`}
-          className="img-fluid rounded-circle mb-3"
+          className="img-fluid rounded-circle mb-3 nosotros"
           alt="leo"
         />
       </div>
-      <div className="col-8 text-left">
+      <div className="col-12 text-left d-flex flex-column align-items-center">
         <h6>{props.nos.nombre}</h6>
-        <div className="w-100 d-flex">
+        <p><span className="badge badge-info">{props.nos.sm}</span></p>
+        <div className="w-100 d-flex justify-content-center">
           <Link style={{ color: "#1DA1F2" }} exact={true} to="/error404" className="rounded-circle">
             <FontAwesomeIcon
               className="mr-2"
@@ -44,7 +44,6 @@ const Nosotros = (props) => {
             <FontAwesomeIcon className="mr-2" icon={faGithub} size="2x" />
           </Link>
         </div>
-        <p><span className="badge badge-info">{props.nos.sm}</span></p>
         <hr />
         <p className="font-weight-light">
           {props.nos.descripcion}
@@ -54,7 +53,7 @@ const Nosotros = (props) => {
           <FontAwesomeIcon className="mr-2" icon={faUserGraduate} size="1x" />
           <p className="m-0 ml-2">Rolling Code School</p>
         </div>
-      </div>
+      </div>  
     </div>
   );
 };

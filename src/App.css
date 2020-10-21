@@ -53,11 +53,34 @@
   text-transform: lowercase;
 }
 
+.nosotros{
+  width: 150px;
+}
+
+
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 340px) and (max-width: 766px) {
   #logo-header {
     width: 80%;
   }
+
+  #opciones{
+    padding-left: 10px;
+  }
+
+  #login{
+    padding-left: 40px;
+  }
+
+  #suscripcion{
+    padding-right: 40px;
+  }
+
+  .nosotros{
+    width: 100px;
+  }
+
 }
 
 @media all and (max-width: 599px) {
@@ -70,6 +93,10 @@
 @media (min-width: 768px) and (max-width: 991.98px) {
   #logo-header {
     width: 60%;
+  }
+
+  .nosotros{
+    width: 120px;
   }
 }
 
