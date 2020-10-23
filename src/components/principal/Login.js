@@ -108,7 +108,10 @@ const Login = (props) => {
                 "success"
               );
               setError(false);
-              props.history.push("/");
+              window.setInterval(()=>{
+                window.location.href = "/"
+              },3300)
+              
             } else {
               Swal.fire({
                 icon: "warning",
