@@ -20,16 +20,23 @@ import PaginaAcercaDeNosotros from "./components/AcercaDeNosotros/AcercaDeNosotr
 import Fotos from "./components/fotos/Fotos";
 import Header from "./components/commons/Header";
 import EditarNoticiasDestacada from "./components/adm-crud/EditarNoticiasDestacada";
+import Cookies from "universal-cookie";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
   const [actualizarNoticias, setActualizarNoticias] = useState(true);
   const [categorias, setCategorias] = useState([]);
   const [actualizarCategorias, setActualizarCategorias] = useState(true);
-  const [admin, setAdmin] = useState([]);
-  const [actualizarAdmin, setActualizarAdmin] = useState(true);
+  const [actualizarUsers, setActualizarUsers] = useState(true);
+  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState({});
   const [noticiasDestacadas, setNoticiasDestacadas] = useState([]);
-  const [actualizarNoticiasDestacadas, setActualizarNoticiasDestacadas] = useState(true);
+  const [
+    actualizarNoticiasDestacadas,
+    setActualizarNoticiasDestacadas,
+  ] = useState(true);
+
+  const cookies = new Cookies();
 
   useEffect(() => {
     if (actualizarNoticias) {
@@ -68,21 +75,29 @@ function App() {
   };
 
   useEffect(() => {
-    if (actualizarAdmin) {
-      consultarAdmin();
-      setActualizarAdmin(false);
-    }
-  }, [actualizarAdmin]);
+    const usuario = users.find((usuario) => {
+      return usuario._id === cookies.get("id");
+    });
+    setUser(usuario);
+  }, [users, cookies]);
 
-  const consultarAdmin = async () => {
+  const consultarUsers = async () => {
     try {
-      const respuesta = await fetch("https://rolling-news.herokuapp.com/adm");
+      const respuesta = await fetch("https://rolling-news.herokuapp.com/users");
       const resultado = await respuesta.json();
-      setAdmin(resultado[0]);
+      setUsers(resultado);
+      console.log(resultado);
     } catch (error) {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (actualizarUsers) {
+      setActualizarUsers(false);
+      consultarUsers();
+    }
+  }, [actualizarUsers]);
 
   useEffect(() => {
     if (actualizarNoticiasDestacadas) {
@@ -97,16 +112,21 @@ function App() {
         "https://rolling-news.herokuapp.com/highlights"
       );
       const resultado = await respuesta.json();
-      setNoticiasDestacadas(resultado); 
+      setNoticiasDestacadas(resultado);
     } catch (error) {
       console.log(error);
     }
   };
-  
+  console.log(user)
+
   return (
     <Router>
-      <Header categorias={categorias} admin={admin} setAdmin={setAdmin}></Header>
-      {admin.logueado === true ? <HeaderAdm admin={admin} setActualizarAdmin={setActualizarAdmin}></HeaderAdm> : null}
+      <Header categorias={categorias} user={user} setUser={setUser}></Header>
+      {user !== undefined ? (
+        user.usuario === 1 ? (
+          <HeaderAdm user={user}></HeaderAdm>
+        ) : null
+      ) : null}
       <Switch>
         <Route exact path="/">
           <Inicio
@@ -117,21 +137,31 @@ function App() {
         <Route exact path="/categoria-noticias">
           <CategoriasNoticias></CategoriasNoticias>
         </Route>
-        <Route exact path="/detalle-noticia/:id" render={(props)=>{
-          const idNoticia = props.match.params.id;
-          let noticia = {};
-          const noticiaEncontrada = noticias.find((noticia)=> noticia._id === idNoticia);
-          const noticiaDestacadaEncontrada = noticiasDestacadas.find((noticia)=> noticia._id === idNoticia);
-          if(noticiaEncontrada === undefined){
-            noticia = noticiaDestacadaEncontrada;
-          }else{
-            noticia = noticiaEncontrada;
-          }
-          return(
-            <DetalleNoticia noticias={noticias}  noticia={noticia}></DetalleNoticia>
-          )
-        }}>
-        </Route>
+        <Route
+          exact
+          path="/detalle-noticia/:id"
+          render={(props) => {
+            const idNoticia = props.match.params.id;
+            let noticia = {};
+            const noticiaEncontrada = noticias.find(
+              (noticia) => noticia._id === idNoticia
+            );
+            const noticiaDestacadaEncontrada = noticiasDestacadas.find(
+              (noticia) => noticia._id === idNoticia
+            );
+            if (noticiaEncontrada === undefined) {
+              noticia = noticiaDestacadaEncontrada;
+            } else {
+              noticia = noticiaEncontrada;
+            }
+            return (
+              <DetalleNoticia
+                noticias={noticias}
+                noticia={noticia}
+              ></DetalleNoticia>
+            );
+          }}
+        ></Route>
         <Route exact path="/fotos">
           <Fotos noticias={noticias}></Fotos>
         </Route>
@@ -146,8 +176,8 @@ function App() {
             const parametroCategoria = props.match.params.noticiasxCategoria;
             return (
               <CategoriasNoticias
-                 categoria={parametroCategoria}
-                 noticias={noticias}
+                categoria={parametroCategoria}
+                noticias={noticias}
               ></CategoriasNoticias>
             );
           }}
@@ -159,9 +189,7 @@ function App() {
           <FormSuscripcion></FormSuscripcion>
         </Route>
         <Route exact path="/login">
-          <Login setAdmin={setAdmin}
-                  setActualizarAdmin={setActualizarAdmin}
-            admin={admin}></Login>
+          <Login setUser={setUser} user={user}></Login>
         </Route>
         <Route exact path="/acercadenosotros">
           <PaginaAcercaDeNosotros></PaginaAcercaDeNosotros>
@@ -181,8 +209,8 @@ function App() {
         <Route exact path="/adm-inicio/listanoticias">
           <ListaNoticias
             noticias={noticias}
-            noticiasDestacadas = {noticiasDestacadas}
-            setActualizarNoticiasDestacadas = {setActualizarNoticiasDestacadas}
+            noticiasDestacadas={noticiasDestacadas}
+            setActualizarNoticiasDestacadas={setActualizarNoticiasDestacadas}
             setActualizarNoticias={setActualizarNoticias}
           ></ListaNoticias>
         </Route>
@@ -227,7 +255,9 @@ function App() {
             return (
               <EditarNoticiasDestacada
                 noticiaEncontrada={noticiaEncontrada}
-                setActualizarNoticiasDestacadas={setActualizarNoticiasDestacadas}
+                setActualizarNoticiasDestacadas={
+                  setActualizarNoticiasDestacadas
+                }
                 categorias={categorias}
                 setActualizarCategorias={setActualizarCategorias}
               ></EditarNoticiasDestacada>

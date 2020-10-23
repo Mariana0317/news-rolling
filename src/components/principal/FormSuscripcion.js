@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -7,6 +7,7 @@ import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { withRouter } from "react-router-dom";
 import "./Login.css";
+import Cookies from "universal-cookie";
 
 const FormSuscripcion = (props) => {
   const [error, setError] = useState(false);
@@ -22,6 +23,8 @@ const FormSuscripcion = (props) => {
     reContrasenia: "",
   });
 
+  const cookies = new Cookies();
+
   let {
     nombre,
     email,
@@ -31,6 +34,12 @@ const FormSuscripcion = (props) => {
     contrasenia,
     reContrasenia,
   } = formulario;
+
+  useEffect(()=>{
+    if (cookies.get("id")) {
+      window.location.href = "/"
+    }
+  })
 
   const handleChange = (e) => {
     setFormulario({
@@ -54,7 +63,7 @@ const FormSuscripcion = (props) => {
       if (expresion.test(email)) {
         if (contrasenia === reContrasenia) {
           try {
-            const consulta = await fetch(`http://localhost:4000/users/singup`, {
+            const consulta = await fetch(`https://rolling-news.herokuapp.com/users/singup`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -67,7 +76,6 @@ const FormSuscripcion = (props) => {
                 codigoPostal,
                 contrasenia,
                 activo: false,
-                logueado: false,
                 usuario: 2,
               }),
             });
@@ -86,6 +94,11 @@ const FormSuscripcion = (props) => {
               setMensajeError(resultado.mensaje);
             }
           } catch (error) {
+            Swal.fire({
+              icon: 'error',
+              title: 'A ocurrido un error...',
+              text: 'Ocurrió un error, intentelo nuevamente',
+            })
             console.log(error);
           }
         } else {

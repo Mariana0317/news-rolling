@@ -5,35 +5,17 @@ import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import Cookies from "universal-cookie";
 
-const HeaderAdm = (props) => {
+const cookies = new Cookies();
+
+const HeaderAdm = () => {
   const desloguear = async () => {
-    const admin = {
-      activo: true,
-      contraseña: "rolling2225",
-      email: "rolling.news22@gmail.com",
-      logueado: false,
-      userAdm: "rollingNews1",
-    };
-    try {
-      const consulta = await fetch(
-        `https://rolling-news.herokuapp.com/adm/${props.admin._id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(admin),
-        }
-      );
-
-      if (consulta.status === 200) {
-        props.setActualizarAdmin(true);
-        props.history.push("/");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    cookies.remove("id", { path: "/" });
+    cookies.remove("nombre", { path: "/" });
+    cookies.remove("email", { path: "/" });
+    cookies.remove("nivel", { path: "/" });
+    window.location.reload();
   };
 
   return (

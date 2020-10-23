@@ -11,7 +11,11 @@ import {
   faUser,
   faHome,
   faCameraRetro,
+  faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const Header = (props) => {
   const categoriasSinFotografia = props.categorias.filter((producto) => {
@@ -22,6 +26,18 @@ const Header = (props) => {
   });
   const categoriasPrincipales = categoriasSinFotografia.slice(0, 4);
   const categoriasSecundarias = categoriasSinFotografia.slice(4);
+
+  console.log(props.user);
+
+  const removeCookiesUser = () => {
+    cookies.remove("id", { path: "/" });
+    cookies.remove("nombre", { path: "/" });
+    cookies.remove("email", { path: "/" });
+    cookies.remove("nivel", { path: "/" });
+    window.location.reload();
+  };
+
+  console.log(props.user);
 
   return (
     <div className="">
@@ -40,7 +56,7 @@ const Header = (props) => {
       </Container>
 
       <Navbar expand="md" className="d-flex justify-content-center text-light">
-        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="container d-flex justify-content-between">
             <NavLink
@@ -50,6 +66,7 @@ const Header = (props) => {
             >
               Inicio <FontAwesomeIcon icon={faHome} />
             </NavLink>
+
             {props.categorias !== undefined
               ? categoriasPrincipales.map((categoria, indice) => {
                   return (
@@ -64,6 +81,7 @@ const Header = (props) => {
                   );
                 })
               : null}
+
             <NavDropdown title="+ Noticias" id="categoria">
               {categoriasSecundarias.map((categoria, indice) =>
                 categoria !== undefined ? (
@@ -88,22 +106,30 @@ const Header = (props) => {
                 </div>
               ) : null}
             </NavDropdown>
-            {props.admin.logueado === false ? (
-                <NavLink
-                  className="text-dark text-decoration-none"
-                  exact={true}
-                  to="/login"
-                >
-                  Login <FontAwesomeIcon icon={faUser} />
-                </NavLink>
+            {props.user ? (
+              props.user.usuario === 2 ? (
+                <Button variant="danger" onClick={() => removeCookiesUser()}>
+                  <FontAwesomeIcon icon={faSignOutAlt} />
+                </Button>
+              ) : null
             ) : null}
-            {props.admin.logueado === false ? (
-                <NavLink exact={true} to="/suscripcion-form">
-                  <Button variant="outline-dark" id="opciones">
-                    Suscribirse
-                  </Button>
-                </NavLink>
-            ) : null}
+
+            {cookies.get("id") ? null : (
+              <NavLink
+                className="text-dark text-decoration-none"
+                exact={true}
+                to="/login"
+              >
+                Login <FontAwesomeIcon icon={faUser} />
+              </NavLink>
+            )}
+            {cookies.get("id") ? null : (
+              <NavLink exact={true} to="/suscripcion-form">
+                <Button variant="outline-dark" id="opciones">
+                  Suscribirse
+                </Button>
+              </NavLink>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
