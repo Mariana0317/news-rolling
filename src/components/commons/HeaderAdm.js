@@ -15,7 +15,7 @@ const HeaderAdm = () => {
     cookies.remove("nombre", { path: "/" });
     cookies.remove("email", { path: "/" });
     cookies.remove("nivel", { path: "/" });
-    window.location.reload();
+    window.location.href= "/";
   };
 
   return (

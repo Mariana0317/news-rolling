@@ -34,7 +34,7 @@ const Header = (props) => {
     cookies.remove("nombre", { path: "/" });
     cookies.remove("email", { path: "/" });
     cookies.remove("nivel", { path: "/" });
-    window.location.reload();
+    window.location.href= "/";
   };
 
   console.log(props.user);
