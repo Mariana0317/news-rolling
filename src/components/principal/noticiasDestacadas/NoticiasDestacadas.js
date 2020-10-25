@@ -21,12 +21,12 @@ const NoticiasDestacadas = (props) => {
         ></NoticiaDestacada>
       </div>
       <div className="col-lg-4 col-12 d-flex flex-column flex-md-row flex-lg-column px-1 px-md-0">
-        <div className="h-50 mb-2 p-0 rounded shadow">
+        <div className="h-md-50 h-100 mb-2 p-0 rounded shadow">
           <NoticiaDestacadaSmall
             noticiasDestacadas={noticiasDestacadas[1]}
           ></NoticiaDestacadaSmall>
         </div>
-        <div className="h-50 rounded shadow">
+        <div className="h-md-50 h-100 rounded shadow ">
           <NoticiaDestacadaSmall
             noticiasDestacadas={noticiasDestacadas[2]}
           ></NoticiaDestacadaSmall>

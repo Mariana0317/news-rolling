@@ -49,7 +49,11 @@ function App() {
     try {
       const respuesta = await fetch("https://rolling-news.herokuapp.com/news");
       const resultado = await respuesta.json();
-      setNoticias(resultado);
+      const noticias = resultado.filter((noticia) => {
+        return noticia.destacado === false;
+      });
+      console.log(noticias);
+      setNoticias(noticias);
     } catch (error) {
       console.log(error);
     }
@@ -108,16 +112,18 @@ function App() {
 
   const consultarNoticiasDestacadas = async () => {
     try {
-      const respuesta = await fetch(
-        "https://rolling-news.herokuapp.com/highlights"
-      );
+      const respuesta = await fetch("https://rolling-news.herokuapp.com/news");
       const resultado = await respuesta.json();
-      setNoticiasDestacadas(resultado);
+      const noticias = resultado.filter((noticia) => {
+        return noticia.destacado === true;
+      });
+      console.log(noticias);
+      setNoticiasDestacadas(noticias);
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(user)
+  console.log(user);
 
   return (
     <Router>
@@ -194,92 +200,100 @@ function App() {
         <Route exact path="/acercadenosotros">
           <PaginaAcercaDeNosotros></PaginaAcercaDeNosotros>
         </Route>
-        <Route exact path="/adm-inicio">
-          <Inicio
-            noticiasDestacadas={noticiasDestacadas}
-            noticias={noticias}
-          ></Inicio>
-        </Route>
-        <Route exact path="/adm-inicio/listacategoria">
-          <ListaCategorias
-            categorias={categorias}
-            setActualizarCategorias={setActualizarCategorias}
-          ></ListaCategorias>
-        </Route>
-        <Route exact path="/adm-inicio/listanoticias">
-          <ListaNoticias
-            noticias={noticias}
-            noticiasDestacadas={noticiasDestacadas}
-            setActualizarNoticiasDestacadas={setActualizarNoticiasDestacadas}
-            setActualizarNoticias={setActualizarNoticias}
-          ></ListaNoticias>
-        </Route>
-        <Route exact path="/adm-inicio/listacategoria/nueva">
-          <NuevaCategoria
-            setActualizarCategorias={setActualizarCategorias}
-          ></NuevaCategoria>
-        </Route>
-        <Route exact path="/adm-inicio/listanoticias/nueva">
-          <NuevaNoticia
-            categorias={categorias}
-            setActualizarCategorias={setActualizarCategorias}
-            setActualizarNoticias={setActualizarNoticias}
-          ></NuevaNoticia>
-        </Route>
-        <Route
-          exact
-          path="/adm-inicio/listanoticias/editarnoticia/:id"
-          render={(props) => {
-            const idNoticia = props.match.params.id;
-            const noticiaEncontrada = noticias.find(
-              (noticia) => noticia._id === idNoticia
-            );
-            return (
-              <EditarNoticias
-                noticiaEncontrada={noticiaEncontrada}
-                setActualizarNoticias={setActualizarNoticias}
-                categorias={categorias}
-                setActualizarCategorias={setActualizarCategorias}
-              ></EditarNoticias>
-            );
-          }}
-        ></Route>
-        <Route
-          exact
-          path="/adm-inicio/listanoticias/editarnoticiadestacada/:id"
-          render={(props) => {
-            const idNoticia = props.match.params.id;
-            const noticiaEncontrada = noticiasDestacadas.find(
-              (noticia) => noticia._id === idNoticia
-            );
-            return (
-              <EditarNoticiasDestacada
-                noticiaEncontrada={noticiaEncontrada}
-                setActualizarNoticiasDestacadas={
-                  setActualizarNoticiasDestacadas
-                }
-                categorias={categorias}
-                setActualizarCategorias={setActualizarCategorias}
-              ></EditarNoticiasDestacada>
-            );
-          }}
-        ></Route>
-        <Route
-          exact
-          path="/adm-inicio/listacategoria/editarcategoria/:id"
-          render={(props) => {
-            const idCategoria = props.match.params.id;
-            const categoriaEncontrada = categorias.find(
-              (categoria) => categoria._id === idCategoria
-            );
-            return (
-              <EditarCategoria
-                categoriaEncontrada={categoriaEncontrada}
-                setActualizarCategorias={setActualizarCategorias}
-              ></EditarCategoria>
-            );
-          }}
-        ></Route>
+        {user !== undefined ? (
+          user.usuario === 1 ? (
+            <div>
+              <Route exact path="/adm-inicio">
+                <Inicio
+                  noticiasDestacadas={noticiasDestacadas}
+                  noticias={noticias}
+                ></Inicio>
+              </Route>
+              <Route exact path="/adm-inicio/listacategoria">
+                <ListaCategorias
+                  categorias={categorias}
+                  setActualizarCategorias={setActualizarCategorias}
+                ></ListaCategorias>
+              </Route>
+              <Route exact path="/adm-inicio/listanoticias">
+                <ListaNoticias
+                  noticias={noticias}
+                  noticiasDestacadas={noticiasDestacadas}
+                  setActualizarNoticiasDestacadas={
+                    setActualizarNoticiasDestacadas
+                  }
+                  setActualizarNoticias={setActualizarNoticias}
+                ></ListaNoticias>
+              </Route>
+              <Route exact path="/adm-inicio/listacategoria/nueva">
+                <NuevaCategoria
+                  setActualizarCategorias={setActualizarCategorias}
+                ></NuevaCategoria>
+              </Route>
+              <Route exact path="/adm-inicio/listanoticias/nueva">
+                <NuevaNoticia
+                  categorias={categorias}
+                  setActualizarCategorias={setActualizarCategorias}
+                  setActualizarNoticias={setActualizarNoticias}
+                ></NuevaNoticia>
+              </Route>
+              <Route
+                exact
+                path="/adm-inicio/listanoticias/editarnoticia/:id"
+                render={(props) => {
+                  const idNoticia = props.match.params.id;
+                  const noticiaEncontrada = noticias.find(
+                    (noticia) => noticia._id === idNoticia
+                  );
+                  return (
+                    <EditarNoticias
+                      noticiaEncontrada={noticiaEncontrada}
+                      setActualizarNoticias={setActualizarNoticias}
+                      categorias={categorias}
+                      setActualizarCategorias={setActualizarCategorias}
+                    ></EditarNoticias>
+                  );
+                }}
+              ></Route>
+              <Route
+                exact
+                path="/adm-inicio/listanoticias/editarnoticiadestacada/:id"
+                render={(props) => {
+                  const idNoticia = props.match.params.id;
+                  const noticiaEncontrada = noticiasDestacadas.find(
+                    (noticia) => noticia._id === idNoticia
+                  );
+                  return (
+                    <EditarNoticiasDestacada
+                      noticiaEncontrada={noticiaEncontrada}
+                      setActualizarNoticiasDestacadas={
+                        setActualizarNoticiasDestacadas
+                      }
+                      categorias={categorias}
+                      setActualizarCategorias={setActualizarCategorias}
+                    ></EditarNoticiasDestacada>
+                  );
+                }}
+              ></Route>
+              <Route
+                exact
+                path="/adm-inicio/listacategoria/editarcategoria/:id"
+                render={(props) => {
+                  const idCategoria = props.match.params.id;
+                  const categoriaEncontrada = categorias.find(
+                    (categoria) => categoria._id === idCategoria
+                  );
+                  return (
+                    <EditarCategoria
+                      categoriaEncontrada={categoriaEncontrada}
+                      setActualizarCategorias={setActualizarCategorias}
+                    ></EditarCategoria>
+                  );
+                }}
+              ></Route>
+            </div>
+          ) : null
+        ) : null}
         <Route exact path="*">
           <Error404></Error404>
         </Route>

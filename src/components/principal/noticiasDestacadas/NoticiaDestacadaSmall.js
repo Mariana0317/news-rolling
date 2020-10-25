@@ -13,7 +13,7 @@ const NoticiaDestacadaSmall = (props) => {
       <div className="col h-100 px-md-0 px-0 mb-0 mb-lg-2 rounded">
         <Card className="text-light h-100 m-0 text-md-left text-justify">
           <Card.Body
-            className="d-flex p-3 flex-column justify-content-between rounded shadow"
+            className="d-flex p-3 flex-column justify-content-between rounded shadow h-100"
             style={{
               background: `linear-gradient(to left, rgba(0,0,0,0.100), rgba(0, 0, 0, 0.400), rgba(0,0,0,0.800)), url(${
                 props.noticiasDestacadas !== undefined

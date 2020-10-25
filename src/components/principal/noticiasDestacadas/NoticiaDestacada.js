@@ -14,7 +14,7 @@ const NoticiaDestacada2 = (props) => {
       className="text-none"
     >
       <div
-        className="col px-md-0 px-lg-0 p-0 text-none"
+        className="col px-md-0 px-lg-0 p-0 text-none h-100"
         style={{ height: "400px" }}
       >
         <Card className="text-light h-100 m-0 text-md-left text-justify">
