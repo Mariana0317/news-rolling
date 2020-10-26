@@ -22,20 +22,12 @@ const CardsNoticias = (props) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          let url = "";
-          if (props.highlight === false) {
-            url = `https://rolling-news.herokuapp.com/news/${id}`;
-          } else {
-            url = `https://rolling-news.herokuapp.com/highlights/${id}`;
-          }
-          const resultado = await fetch(url, {
+          const resultado = await fetch(`https://rolling-news.herokuapp.com/news/${id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
             },
           });
-
-          console.log(resultado);
           if (resultado.status === 200) {
             Swal.fire("Eliminada", "La noticia fue eliminada", "success");
           }
@@ -79,7 +71,7 @@ const CardsNoticias = (props) => {
             <Col>
               <Link
                 className="btn btn-info w-100 p-2"
-                to={props.highlight === false ? `/adm-inicio/listanoticias/editarnoticia/${props.noticia._id}` : `/adm-inicio/listanoticias/editarnoticiadestacada/${props.noticia._id}`}
+                to={`/adm-inicio/listanoticias/editarnoticia/${props.noticia._id}`}
               >
                 <FontAwesomeIcon icon={faEdit} />
               </Link>

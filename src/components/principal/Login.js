@@ -73,7 +73,6 @@ const Login = (props) => {
             }
           );
           const resultado = await consulta.json();
-          console.log(resultado.user);
           if (resultado.match) {
             if (resultado.user.activo) {
               cookies.set("id", resultado.user._id, {

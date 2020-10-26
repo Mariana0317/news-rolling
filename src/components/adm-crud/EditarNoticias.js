@@ -45,7 +45,6 @@ const EditarNoticias = (props) => {
       fecha: fechaRef.current.value,
       destacado: destacadoRef.current.checked,
     };
-    console.log(noticiaEditada);
     try {
       const consulta = await fetch(
         `https://rolling-news.herokuapp.com/news/${props.noticiaEncontrada._id}`,
@@ -64,10 +63,9 @@ const EditarNoticias = (props) => {
           "Se lo reenviara a la seccion de noticias",
           "success"
         );
+        props.history.push("/adm-inicio/listanoticias");
         props.setActualizarNoticias(true);
         props.setActualizarNoticiasDestacadas(true);
-
-        props.history.push("/adm-inicio/listanoticias");
       }
     } catch (error) {
       console.log(error);

@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 
 const Nosotros = (props) => {
-  console.log(props.nos)
   return (
     <div className="d-flex col-md-5 ml-md-3 ml-0 shadow col-12 border pt-3 rounded mb-3">
       <div className="col-4">

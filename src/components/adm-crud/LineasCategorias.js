@@ -29,8 +29,6 @@ const LineaCategoria = (props) => {
               },
             }
           );
-
-          console.log(resultado);
           if (resultado.status === 200) {
             Swal.fire("Eliminada", "La categoria fue eliminada", "success");
           }

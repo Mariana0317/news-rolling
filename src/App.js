@@ -19,7 +19,6 @@ import Error404 from "./components/error404/Error404";
 import PaginaAcercaDeNosotros from "./components/AcercaDeNosotros/AcercaDeNosotros";
 import Fotos from "./components/fotos/Fotos";
 import Header from "./components/commons/Header";
-import EditarNoticiasDestacada from "./components/adm-crud/EditarNoticiasDestacada";
 import Cookies from "universal-cookie";
 
 function App() {
@@ -54,7 +53,6 @@ function App() {
         return noticia.destacado === false;
       });
       setAllNews(resultado);
-      console.log(noticias);
       setNoticias(noticias);
     } catch (error) {
       console.log(error);
@@ -92,7 +90,6 @@ function App() {
       const respuesta = await fetch("https://rolling-news.herokuapp.com/users");
       const resultado = await respuesta.json();
       setUsers(resultado);
-      console.log(resultado);
     } catch (error) {
       console.log(error);
     }
@@ -119,13 +116,11 @@ function App() {
       const noticias = resultado.filter((noticia) => {
         return noticia.destacado === true;
       });
-      console.log(noticias);
       setNoticiasDestacadas(noticias);
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(user);
 
   return (
     <Router>
@@ -244,7 +239,7 @@ function App() {
                 path="/adm-inicio/listanoticias/editarnoticia/:id"
                 render={(props) => {
                   const idNoticia = props.match.params.id;
-                  const noticiaEncontrada = noticias.find(
+                  const noticiaEncontrada = allNews.find(
                     (noticia) => noticia._id === idNoticia
                   );
                   return (
@@ -257,26 +252,6 @@ function App() {
                       categorias={categorias}
                       setActualizarCategorias={setActualizarCategorias}
                     ></EditarNoticias>
-                  );
-                }}
-              ></Route>
-              <Route
-                exact
-                path="/adm-inicio/listanoticias/editarnoticiadestacada/:id"
-                render={(props) => {
-                  const idNoticia = props.match.params.id;
-                  const noticiaEncontrada = noticiasDestacadas.find(
-                    (noticia) => noticia._id === idNoticia
-                  );
-                  return (
-                    <EditarNoticiasDestacada
-                      noticiaEncontrada={noticiaEncontrada}
-                      setActualizarNoticiasDestacadas={
-                        setActualizarNoticiasDestacadas
-                      }
-                      categorias={categorias}
-                      setActualizarCategorias={setActualizarCategorias}
-                    ></EditarNoticiasDestacada>
                   );
                 }}
               ></Route>

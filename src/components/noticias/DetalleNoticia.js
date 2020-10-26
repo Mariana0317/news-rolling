@@ -10,7 +10,6 @@ const DetalleNoticia = (props) => {
       ? noticias._id !== props.noticia._id
       : null
   });
-  console.log(noticiaRecomendadas);
   return (
     <section className="row m-0">
       <div className="pl-3 pr-3 mt-5 mb-5 col-12 col-lg-8">

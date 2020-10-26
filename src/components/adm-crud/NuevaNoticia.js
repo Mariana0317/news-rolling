@@ -22,9 +22,6 @@ const NuevaNoticia = (props) => {
   const [validated, setValidated] = useState(false);
   const [destacar, setDestacar] = useState(false);
 
-  console.log(destacar)
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -64,8 +61,6 @@ const NuevaNoticia = (props) => {
       if (destacar) {
         await fetch("https://rolling-news.herokuapp.com/highlights", cabecera);
       }
-
-      console.log(resultado);
       if (resultado.status === 201) {
         Swal.fire(
           "Noticia enviada!",
@@ -80,8 +75,6 @@ const NuevaNoticia = (props) => {
     } catch (error) {
       console.log(error);
     }
-
-    console.log(noticia);
   };
 
   return (

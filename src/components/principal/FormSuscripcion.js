@@ -52,7 +52,6 @@ const FormSuscripcion = (props) => {
     e.preventDefault();
     const expresion = /\w+@\w+\.[a-z]/;
     //Validar los campos
-    console.log();
     if (
       nombre.trim() !== "" &&
       email.trim() !== "" &&
@@ -80,8 +79,6 @@ const FormSuscripcion = (props) => {
               }),
             });
             const resultado = await consulta.json();
-            console.log(consulta);
-            console.log(resultado);
             if (consulta.status === 201) {
               Swal.fire(
                 "Datos registrados!",

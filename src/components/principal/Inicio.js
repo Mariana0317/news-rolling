@@ -22,14 +22,14 @@ const Inicio = (props) => {
           <CategoriasNoticiasInicio noticias={props.noticias} categoria={"deportes"} cantidad={3}></CategoriasNoticiasInicio>
         </div>
         <div className="col-4 d-none d-lg-block">
-        <Link exact={true} to="error404"><img
+        <Link exact="true" to="error404"><img
           src={process.env.PUBLIC_URL + "img/banners/3.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
           alt="banner covid"
         />
         </Link>
-        <Link exact={true} to="error404"><img
+        <Link exact="true" to="error404"><img
           src={process.env.PUBLIC_URL + "img/banners/1.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
@@ -40,7 +40,7 @@ const Inicio = (props) => {
       </section>
 
       <section className="container">
-      <Link exact={true} to="error404"><img
+      <Link exact="true" to="error404"><img
           src={process.env.PUBLIC_URL + "img/banners/CovidBanner.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
@@ -54,7 +54,7 @@ const Inicio = (props) => {
           <CategoriasNoticiasInicio noticias={props.noticias} categoria={"actualidad"} cantidad={3}></CategoriasNoticiasInicio>
         </div>
         <div className="col-4 d-none d-lg-block">
-        <Link exact={true} to="error404"><img
+        <Link exact="true" to="error404"><img
           src={process.env.PUBLIC_URL + "img/publicidad4.png"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
@@ -69,14 +69,14 @@ const Inicio = (props) => {
           <CategoriasNoticiasInicio noticias={props.noticias} categoria={"cine"} cantidad={3}></CategoriasNoticiasInicio>
         </div>
         <div className="col-4 d-none d-lg-block mt-4">
-        <Link exact={true} to="error404"><img
+        <Link exact="true" to="error404"><img
           src={process.env.PUBLIC_URL + "img/publicidad6.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"
           alt="banner covid"
         />
         </Link>
-        <Link exact={true} to="error404"><img
+        <Link exact="true" to="error404"><img
           src={process.env.PUBLIC_URL + "img/banners/1.jpg"}
           className="mt-4 mb-4 w-100"
           id="logo-header"

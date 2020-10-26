@@ -17,7 +17,7 @@ const Footer = () => {
       <Card.Body>
         <div className="row">
           <div className="col-sm-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center mb-4">
-            <Link exact={true} to="/">
+            <Link exact="true" to="/">
               <img
                 src={process.env.PUBLIC_URL + "img/rollingnews-text.png"}
                 id="logo_text"

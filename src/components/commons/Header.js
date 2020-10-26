@@ -27,7 +27,6 @@ const Header = (props) => {
   const categoriasPrincipales = categoriasSinFotografia.slice(0, 4);
   const categoriasSecundarias = categoriasSinFotografia.slice(4);
 
-  console.log(props.user);
 
   const removeCookiesUser = () => {
     cookies.remove("id", { path: "/" });
@@ -36,8 +35,6 @@ const Header = (props) => {
     cookies.remove("nivel", { path: "/" });
     window.location.href= "/";
   };
-
-  console.log(props.user);
 
   return (
     <div className="">
