@@ -45,7 +45,7 @@ const EditarNoticiasDestacada = (props) => {
 
     try {
       const consulta = await fetch(
-        `https://rolling-news.herokuapp.com/highlights/${props.noticiaEncontrada._id}`,
+        `https://rolling-news.herokuapp.com/news/${props.noticiaEncontrada._id}`,
         {
           method: "PUT",
           headers: {

@@ -24,6 +24,7 @@ import Cookies from "universal-cookie";
 
 function App() {
   const [noticias, setNoticias] = useState([]);
+  const [allNews, setAllNews] = useState([]);
   const [actualizarNoticias, setActualizarNoticias] = useState(true);
   const [categorias, setCategorias] = useState([]);
   const [actualizarCategorias, setActualizarCategorias] = useState(true);
@@ -52,6 +53,7 @@ function App() {
       const noticias = resultado.filter((noticia) => {
         return noticia.destacado === false;
       });
+      setAllNews(resultado);
       console.log(noticias);
       setNoticias(noticias);
     } catch (error) {
@@ -169,7 +171,7 @@ function App() {
           }}
         ></Route>
         <Route exact path="/fotos">
-          <Fotos noticias={noticias}></Fotos>
+          <Fotos noticias={allNews}></Fotos>
         </Route>
         <Route exact path="/">
           <Inicio></Inicio>
@@ -183,7 +185,7 @@ function App() {
             return (
               <CategoriasNoticias
                 categoria={parametroCategoria}
-                noticias={noticias}
+                noticias={allNews}
               ></CategoriasNoticias>
             );
           }}
@@ -249,6 +251,9 @@ function App() {
                     <EditarNoticias
                       noticiaEncontrada={noticiaEncontrada}
                       setActualizarNoticias={setActualizarNoticias}
+                      setActualizarNoticiasDestacadas={
+                        setActualizarNoticiasDestacadas
+                      }
                       categorias={categorias}
                       setActualizarCategorias={setActualizarCategorias}
                     ></EditarNoticias>

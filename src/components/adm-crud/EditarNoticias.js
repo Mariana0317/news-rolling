@@ -19,12 +19,14 @@ const EditarNoticias = (props) => {
   const categoriaRef = useRef("");
   const autorRef = useRef("");
   const fechaRef = useRef("");
+  const destacadoRef = useRef(false);
   const [validated, setValidated] = useState(false);
+  /*   const [destacar, setDestacar] = useState(false) */
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
-    if (form.checkValidity() === false){
+    if (form.checkValidity() === false) {
       setValidated(true);
       return;
     }
@@ -41,8 +43,9 @@ const EditarNoticias = (props) => {
       categoria: categoriaRef.current.value,
       autor: autorRef.current.value,
       fecha: fechaRef.current.value,
+      destacado: destacadoRef.current.checked,
     };
-
+    console.log(noticiaEditada);
     try {
       const consulta = await fetch(
         `https://rolling-news.herokuapp.com/news/${props.noticiaEncontrada._id}`,
@@ -55,16 +58,16 @@ const EditarNoticias = (props) => {
         }
       );
 
-      if(consulta.status === 200){
+      if (consulta.status === 200) {
         Swal.fire(
           "Noticia modificada",
           "Se lo reenviara a la seccion de noticias",
           "success"
         );
         props.setActualizarNoticias(true);
+        props.setActualizarNoticiasDestacadas(true);
 
         props.history.push("/adm-inicio/listanoticias");
-
       }
     } catch (error) {
       console.log(error);
@@ -91,10 +94,7 @@ const EditarNoticias = (props) => {
               defaultValue={props.noticiaEncontrada.titulo}
             />
           </Form.Group>
-          <Form.Group
-            controlId="descripcion"
-            className="text-center pt-4"
-          >
+          <Form.Group controlId="descripcion" className="text-center pt-4">
             <Form.Label className="formLetraCategoria">
               <strong>Descripción breve*</strong>
             </Form.Label>
@@ -111,10 +111,7 @@ const EditarNoticias = (props) => {
           </Form.Group>
           <Row>
             <Col className="col-12 col-md-6">
-              <Form.Group
-                controlId="imgPrincipal"
-                className="text-center pt-4"
-              >
+              <Form.Group controlId="imgPrincipal" className="text-center pt-4">
                 <Form.Label className="formLetraCategoria">
                   <strong>Imagen principal (URL)*</strong>
                 </Form.Label>
@@ -148,10 +145,7 @@ const EditarNoticias = (props) => {
               </Form.Group>
             </Col>
           </Row>
-          <Form.Group
-            controlId="contenido"
-            className="text-center pt-4"
-          >
+          <Form.Group controlId="contenido" className="text-center pt-4">
             <Form.Label className="formLetraCategoria">
               <strong>Descripción detallada*</strong>
             </Form.Label>
@@ -234,8 +228,7 @@ const EditarNoticias = (props) => {
                   <option value="">Seleccione una..</option>
                   {props.categorias.map((categoria, indice) => {
                     return (
-                      <option value={categoria.titulo}
-                         key={indice}>
+                      <option value={categoria.titulo} key={indice}>
                         {categoria.titulo}
                       </option>
                     );
@@ -259,6 +252,14 @@ const EditarNoticias = (props) => {
                 />
               </Form.Group>
             </Col>
+            <div className="text-center col-12">
+              <Form.Check
+                type="checkbox"
+                label="Destacar Noticia"
+                ref={destacadoRef}
+                defaultChecked={props.noticiaEncontrada.destacado}
+              />
+            </div>
           </Row>
           <div className="d-flex justify-content-center py-3">
             {validated ? (
@@ -268,7 +269,11 @@ const EditarNoticias = (props) => {
             ) : null}
           </div>
           <div className="d-flex justify-content-center">
-            <Button variant="light" type="submit" className="border border-dark">
+            <Button
+              variant="light"
+              type="submit"
+              className="border border-dark"
+            >
               <strong>Enviar Noticia</strong>
             </Button>
           </div>
