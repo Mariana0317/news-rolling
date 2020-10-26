@@ -197,7 +197,6 @@ function App() {
         <Route exact path="/acercadenosotros">
           <PaginaAcercaDeNosotros></PaginaAcercaDeNosotros>
         </Route>
-        
         {user !== undefined ? (
           user.usuario === 1 ? (
             <Fragment>
@@ -272,11 +271,12 @@ function App() {
                   );
                 }}
               ></Route>
+              <Route exact path="*">
+                <Error404></Error404>
+              </Route>
             </Fragment>
           ) : null
         ) : null}
-      </Switch>
-      <Switch>
         <Route exact path="*">
           <Error404></Error404>
         </Route>
