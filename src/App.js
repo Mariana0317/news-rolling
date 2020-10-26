@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import "./App.css";
 import "./bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -197,9 +197,10 @@ function App() {
         <Route exact path="/acercadenosotros">
           <PaginaAcercaDeNosotros></PaginaAcercaDeNosotros>
         </Route>
+        
         {user !== undefined ? (
           user.usuario === 1 ? (
-            <div>
+            <Fragment>
               <Route exact path="/adm-inicio">
                 <Inicio
                   noticiasDestacadas={noticiasDestacadas}
@@ -271,9 +272,11 @@ function App() {
                   );
                 }}
               ></Route>
-            </div>
+            </Fragment>
           ) : null
         ) : null}
+      </Switch>
+      <Switch>
         <Route exact path="*">
           <Error404></Error404>
         </Route>

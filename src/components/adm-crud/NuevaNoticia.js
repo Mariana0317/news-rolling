@@ -20,7 +20,7 @@ const NuevaNoticia = (props) => {
   const [autor, setAutor] = useState("");
   const [fecha, setFecha] = useState("");
   const [validated, setValidated] = useState(false);
-  const [destacar, setDestacar] = useState(false);
+  const [destacado, setDestacado] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,6 +42,7 @@ const NuevaNoticia = (props) => {
       categoria,
       autor,
       fecha,
+      destacado
     };
 
     try {
@@ -52,15 +53,10 @@ const NuevaNoticia = (props) => {
         },
         body: JSON.stringify(noticia),
       };
-
       const resultado = await fetch(
         "https://rolling-news.herokuapp.com/news",
         cabecera
       );
-
-      if (destacar) {
-        await fetch("https://rolling-news.herokuapp.com/highlights", cabecera);
-      }
       if (resultado.status === 201) {
         Swal.fire(
           "Noticia enviada!",
@@ -250,9 +246,14 @@ const NuevaNoticia = (props) => {
               </Form.Group>
             </Col>
             <div className="text-center col-12">
-              <Form.Check type="checkbox" value={destacar} onChange={()=>{
-                destacar ? setDestacar(false) : setDestacar(true)
-              }} label={`Destacar Noticia`} />
+              <Form.Check
+                type="checkbox"
+                value={destacado}
+                onChange={() => {
+                  destacado ? setDestacado(false) : setDestacado(true);
+                }}
+                label={`Destacar Noticia`}
+              />
             </div>
           </Row>
           <div className="d-flex justify-content-center py-3">
