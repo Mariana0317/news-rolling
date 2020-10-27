@@ -70,6 +70,7 @@ const Header = (props) => {
                     <Link
                       to={`/categoria-noticias/${categoria.titulo}`}
                       className="nav-link"
+                      activeClassName="selected"
                       id="opciones"
                       key={indice}
                     >
