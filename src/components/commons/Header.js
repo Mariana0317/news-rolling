@@ -52,7 +52,7 @@ const Header = (props) => {
         </div>
       </Container>
 
-      <Navbar expand="md" className="d-flex justify-content-center text-light">
+      <Navbar className="d-flex justify-content-center text-light">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="container d-flex justify-content-between">

@@ -8,13 +8,19 @@ const AcercaDeNosotros = () => {
   {
     nombre: "Franco Luna",
     img: "img/franco.jpg",
-    descripcion: "La experiencia profesional de Franco es en finanzas corporativas, administración, marketing, ventas y contabilidad. Ha construido 6 empresas como startups y ha hecho crecer cada una a un nivel conocido y respetado a nivel nacional. Las industrias en las que creó estas empresas incluyen indumentaria, televisión y deportes."
+    descripcion: "La experiencia profesional de Franco es en finanzas corporativas, administración, marketing, ventas y contabilidad. Ha construido 6 empresas como startups y ha hecho crecer cada una a un nivel conocido y respetado a nivel nacional. Las industrias en las que creó estas empresas incluyen indumentaria, televisión y deportes.",
+    linkedin: "https://www.linkedin.com/in/franco-agustin-luna-63b169192/",
+    git: "https://github.com/francooluna1",
+    instagram: "https://www.instagram.com/francooluna1/",
+    twitter: "https://twitter.com/FrancooLuna1"
   },
   {
     nombre: "Leonardo Palavecino",
     img: "img/leo.jpg",
     descripcion: "Se graduó de la universidad con títulos de enseñanza en educación tanto en psicología como en educación física. Luego obtuvo una licenciatura en negocios y posteriormente su MBA en marketing. Se embarcó en una carrera muy exitosa como entrenador y educador universitario.",
-    sm: "Scrum master"
+    sm: "Scrum master",
+    linkedin: "https://www.linkedin.com/in/leonardo-palavecino",
+    git: "https://github.com/leo43161"
   },
   {
     nombre: "Hernán Sánchez Ortiz",

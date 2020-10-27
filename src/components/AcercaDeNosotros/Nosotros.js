@@ -6,7 +6,6 @@ import {
   faInstagramSquare,
   faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
 import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 
 const Nosotros = (props) => {
@@ -22,26 +21,26 @@ const Nosotros = (props) => {
       <div className="col-12 text-left d-flex flex-column align-items-center">
         <h6>{props.nos.nombre}</h6>
         <div className="w-100 d-flex justify-content-center">
-          <Link style={{ color: "#1DA1F2" }} exact={true} to="/error404" className="rounded-circle">
+          <a style={{ color: "#1DA1F2" }} href={props.nos.twitter} target="blank" className="rounded-circle">
             <FontAwesomeIcon
               className="mr-2"
               icon={faTwitterSquare}
               size="2x"
             />
-          </Link>
-          <Link style={{ color: "#D42C7F" }} exact={true} to="/error404" className="rounded-circle">
+          </a>
+          <a style={{ color: "#D42C7F" }} href={props.nos.instagram} target="blank" className="rounded-circle">
             <FontAwesomeIcon
               className="mr-2"
               icon={faInstagramSquare}
               size="2x"
             />
-          </Link>
-          <Link style={{ color: "#2977C9" }} exact={true} to="/error404" className="rounded-circle">
+          </a>
+          <a style={{ color: "#2977C9" }} href={props.nos.linkedin} target="blank" className="rounded-circle">
             <FontAwesomeIcon className="mr-2" icon={faLinkedin} size="2x" />
-          </Link>
-          <Link style={{ color: "#24292E" }} exact={true} to="/error404" className="rounded-circle">
+          </a>
+          <a style={{ color: "#24292E" }} href={props.nos.git} target="blank" className="rounded-circle">
             <FontAwesomeIcon className="mr-2" icon={faGithub} size="2x" />
-          </Link>
+          </a>
           <p><span className="badge badge-info">{props.nos.sm}</span></p>
         </div>
         <hr />
