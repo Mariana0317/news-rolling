@@ -82,6 +82,7 @@ function App() {
     const usuario = users.find((usuario) => {
       return usuario._id === cookies.get("id");
     });
+    console.log(window.location.pathname);
     setUser(usuario);
   }, [users, cookies]);
 
@@ -200,6 +201,9 @@ function App() {
         {user !== undefined ? (
           user.usuario === 1 ? (
             <Fragment>
+              <Route exact path="/error404">
+                <Error404></Error404>
+              </Route>
               <Route exact path="/adm-inicio">
                 <Inicio
                   noticiasDestacadas={noticiasDestacadas}
@@ -271,9 +275,6 @@ function App() {
                   );
                 }}
               ></Route>
-              <Route exact path="*">
-                <Error404></Error404>
-              </Route>
             </Fragment>
           ) : null
         ) : null}

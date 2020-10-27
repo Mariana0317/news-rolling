@@ -41,7 +41,7 @@ const CardsNoticias = (props) => {
   };
 
   return (
-    <div className="p-1">
+    <div className="p-1 col-4">
       <Card className="border border-dark shadow-sm">
         <Card.Img
           variant="top"

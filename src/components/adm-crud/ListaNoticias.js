@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import CardsNoticias from "./CardsNoticias";
-import CardColumns from "react-bootstrap/CardColumns";
 
 const ListaNoticias = (props) => {
   return (
@@ -10,7 +9,7 @@ const ListaNoticias = (props) => {
         <h2 className="text-center mb-5 text-danger">
           Lista de Noticias Destacadas
         </h2>
-        <CardColumns class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-justify">
+        <div className="row card-deck row-cols-lg-3 d-flex justify-content-justify">
           {props.noticiasDestacadas.map((noticia) => (
             <CardsNoticias
               key={noticia._id}
@@ -20,10 +19,10 @@ const ListaNoticias = (props) => {
               setActualizarNoticias={props.setActualizarNoticiasDestacadas}
             ></CardsNoticias>
           ))}
-        </CardColumns>
+        </div>
         <hr />
         <h2 className="text-center mb-5 text-danger">Lista de Noticias</h2>
-        <CardColumns class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-justify">
+        <div className="row card-deck row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-justify">
           {props.noticias.map((noticia) => (
             <CardsNoticias
               key={noticia._id}
@@ -33,7 +32,7 @@ const ListaNoticias = (props) => {
               setActualizarNoticias={props.setActualizarNoticias}
             ></CardsNoticias>
           ))}
-        </CardColumns>
+        </div>
       </Container>
     </div>
   );
