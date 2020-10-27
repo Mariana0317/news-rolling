@@ -61,17 +61,13 @@ const CardsNoticias = (props) => {
             {props.noticia.titulo}
           </Card.Title>
           <Card.Text className="textoCuerpo">
-            {props.noticia.descripcion}
-            <br />
-            <br />
+            <p>{props.noticia.descripcion}</p>
           </Card.Text>
           <Card.Text className="capitalize">
-            <strong>Categoria: </strong>
-            {props.noticia.categoria}
-            <br />
-            <br />
-            <strong>Fecha: </strong>
-            {props.noticia.fecha}
+            <p><strong>Categoria: </strong>
+            {props.noticia.categoria}</p>
+            <p><strong>Fecha: </strong>
+            {props.noticia.fecha}</p>
           </Card.Text>
         </Card.Body>
         <Card.Footer>

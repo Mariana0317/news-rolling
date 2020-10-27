@@ -21,7 +21,6 @@ const Nosotros = (props) => {
       </div>
       <div className="col-12 text-left d-flex flex-column align-items-center">
         <h6>{props.nos.nombre}</h6>
-        <p><span className="badge badge-info">{props.nos.sm}</span></p>
         <div className="w-100 d-flex justify-content-center">
           <Link style={{ color: "#1DA1F2" }} exact={true} to="/error404" className="rounded-circle">
             <FontAwesomeIcon
@@ -43,6 +42,7 @@ const Nosotros = (props) => {
           <Link style={{ color: "#24292E" }} exact={true} to="/error404" className="rounded-circle">
             <FontAwesomeIcon className="mr-2" icon={faGithub} size="2x" />
           </Link>
+          <p><span className="badge badge-info">{props.nos.sm}</span></p>
         </div>
         <hr />
         <p className="font-weight-light">
