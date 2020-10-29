@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import CardsNoticias from "./CardsNoticias";
 
 const ListaNoticias = (props) => {
@@ -9,7 +9,7 @@ const ListaNoticias = (props) => {
         <h2 className="text-center mb-5 text-danger">
           Lista de Noticias Destacadas
         </h2>
-        <div className="row card-deck row-cols-lg-3 d-flex justify-content-justify">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
           {props.noticiasDestacadas.map((noticia) => (
             <CardsNoticias
               key={noticia._id}
@@ -22,7 +22,7 @@ const ListaNoticias = (props) => {
         </div>
         <hr />
         <h2 className="text-center mb-5 text-danger">Lista de Noticias</h2>
-        <div className="row card-deck row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-justify">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
           {props.noticias.map((noticia) => (
             <CardsNoticias
               key={noticia._id}
