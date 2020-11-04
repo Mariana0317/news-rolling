@@ -14,67 +14,16 @@ Leonardo Palavecino<br/>
 Mariana Granara<br/>
 
 
-Este proyecto se inicio con [Create React App](https://github.com/facebook/create-react-app).
+## Pasos para clonar el repositorio, todos los comandos van sin comillas!!
 
-## Scripts disponibles
+### 1. `Primero paso`
 
-En el proyecto puede ejecutar los siguientes comandos:
+Ejecutar 'git clone https://github.com/francooluna1/news-rolling.git' en su terminal 
 
-### `npm start`
+### 2. `Segundo paso`
 
-Ejecuta la aplicación en el modo desarrollo.<br />
-Abre [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
+Ejecutar 'npm install' tambien en la terminal
 
-La página se volverá a cargar si realiza modificaciones.<br />
-También verá errores en la consola.
+### 3. `Tercer paso`
 
-
-### `npm run build`
-
-Crea la aplicación para producción en la carpeta `build`.<br />
-Agrupa correctamente React en el modo de producción y optimiza la compilación para obtener el mejor rendimiento.
-
-La compilación se minimiza y los nombres de archivo incluyen los hash. <br />
-¡Tu aplicación está lista para implementarse!
-
-Consulte la sección sobre [implementación](https://facebook.github.io/create-react-app/docs/deployment) para mas información.
-
-### `npm run eject`
-
-**Nota: esta es una operación unidireccional. Una vez que haya "eject", no podrá volver atrás.**
-
-Si no está satisfecho con la herramienta de compilación y las opciones de configuración, puede "expulsar" en cualquier momento. Este comando eliminará la dependencia de compilación única de su proyecto.
-
-En su lugar, copiará todos los archivos de configuración y las dependencias transitivas (paquete web, Babel, ESLint, etc.) directamente en su proyecto para que tenga control total sobre ellos. Todos los comandos excepto `eject` seguirán funcionando, pero apuntarán a los scripts copiados para que pueda modificarlos. En este punto estás solo.
-
-No es necesario que utilice nunca "eject". El conjunto de funciones seleccionadas es adecuado para implementaciones pequeñas y medianas, y no debe sentirse obligado a utilizar esta función. Sin embargo, entendemos que esta herramienta no sería útil si no pudiera personalizarla cuando esté listo para usarla.
-
-## Aprender mas
-
-Puede obtener más información en la [documentación de la aplicación Create React] (https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Division de codigo
-
-Esta sección se ha movido aquí: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analizar el tamaño del paquete
-
-Esta sección se ha movido aquí: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Hacer una aplicación web progresiva
-
-Esta sección se ha movido aquí: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Configuración Avanzada
-
-Esta sección se ha movido aquí: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Despliegue
-
-Esta sección se ha movido aquí: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` Falla al minificar
-
-Esta sección se ha movido aquí: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Para correr el proyecto usar 'npm start'
