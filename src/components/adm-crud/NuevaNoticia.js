@@ -86,7 +86,6 @@ const NuevaNoticia = (props) => {
               type="text"
               placeholder="Ingrese aqui el titulo de su noticia"
               className="text-center border border-dark"
-              minLength="40"
               maxLength="90"
               required
               onChange={(e) => setTitulo(e.target.value)}

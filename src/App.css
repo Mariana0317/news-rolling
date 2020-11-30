@@ -58,6 +58,12 @@
 }
 
 
+@media all and (max-width: 339px) {
+  #logo-header {
+    width: 80%;
+  }
+}
+
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 340px) and (max-width: 766px) {

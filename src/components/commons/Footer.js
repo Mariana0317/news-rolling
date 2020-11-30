@@ -36,17 +36,17 @@ const Footer = () => {
           </section>
           <section className="col-sm-12 col-md-4 col-lg-4 mt-4 text-center">
             <h5 className="">Siguenos</h5>
-            <NavLink exact={true} to="error404" className="mx-2">
+            <NavLink exact={true} to="/error404" className="mx-2">
               <span>
                 <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
               </span>
             </NavLink>
-            <NavLink exact={true} to="error404" className="mx-2">
+            <NavLink exact={true} to="/error404" className="mx-2">
               <span>
                 <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
               </span>
             </NavLink>
-            <NavLink exact={true} to="error404" className="mx-2">
+            <NavLink exact={true} to="/error404" className="mx-2">
               <span>
                 <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
               </span>
@@ -61,21 +61,21 @@ const Footer = () => {
             <div className="row">
               <NavLink
                 exact={true}
-                to="error404"
+                to="/error404"
                 className="col-sm-12 col-md-3 col-lg-3 text-center text-light"
               >
                 © 2020 Rolling News
               </NavLink>
               <NavLink
                 exact={true}
-                to="error404"
+                to="/error404"
                 className="col-sm-12 col-md-3 col-lg-3 text-center text-light"
               >
                 Politicas de privacidad
               </NavLink>
               <NavLink
                 exact={true}
-                to="error404"
+                to="/error404"
                 className="col-sm-12 col-md-3 col-lg-3 text-center text-light"
               >
                 Politicas de cookies
